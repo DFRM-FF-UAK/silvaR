@@ -2,4 +2,5 @@
 
 export("%>%")
 export(h_growth)
+export(predict_v)
 importFrom(magrittr,"%>%")

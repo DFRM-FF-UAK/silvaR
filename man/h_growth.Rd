@@ -7,13 +7,13 @@
 h_growth(T1, T2, H1, species)
 }
 \arguments{
-\item{T1}{Age with known height}
+\item{T1}{Vector of Age with known height}
 
-\item{T2}{Age when we want predict height}
+\item{T2}{Vector of age when we want predict height}
 
-\item{H1}{Height at age T1 (Top or average)}
+\item{H1}{Vector of Height at age T1 (Top or average)}
 
-\item{species}{Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
+\item{species}{Vector of Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
 'JD', 'SO'}
 }
 \value{
