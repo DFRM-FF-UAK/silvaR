@@ -29,8 +29,11 @@ h_growth = function(T1, T2, H1, species){
 
   df = data.frame(T1, T2, H1, species) %>%
     dplyr::left_join(params) %>%
-    dplyr::mutate(H2 = H1 * (T2^b1 * (T1^b1 * ((H1 - b3) + ((H1 - b3)^2 + (2 *
-                                                                             b2 * H1)/(T1^b1))^0.5) + b2))/(T1^b1 * (T2^b1 * ((H1 - b3) +
-                                                                                                                                ((H1 - b3)^2 + (2 * b2 * H1)/(T1^b1))^0.5) + b2)))
+    dplyr::mutate(H1 * (T2 ^ b1 * (T1 ^ b1 * ((H1 - b3) + ((H1 - b3)^ 2 + (2 * b2 * H1) /
+                                                             (T1 ^ b1)) ^ 0.5) + b2)) /
+                    (T1 ^ b1 * (T2 ^ b1 * ((H1 - b3) + ((H1 - b3)^ 2 + (2 * b2 * H1) /
+                                                          (T1 ^ b1)) ^ 0.5) + b2))
+                  )
+
   return(df$H2)
 }
