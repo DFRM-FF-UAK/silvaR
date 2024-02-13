@@ -35,5 +35,5 @@ V = c(150, 160, 170)
 species = c('SO', 'DB', 'BK')
 region = c('I', 'II', 'GLOB')
 
-predict_v(years, age, H1, V, species, region)
+v_growth(years, age, H1, V, species, region)
 }
