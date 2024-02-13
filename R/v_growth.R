@@ -1,6 +1,6 @@
 #' Volume prediction
 #'
-#' @description Predict tree volume in T2, based on the T1, H1, region, species
+#' @description Predict tree volume growth in specific period of time based on H1, region, species
 #'
 #'
 #' @param years number of years that we want to predict the growth
@@ -27,7 +27,7 @@
 
 
 
-predict_v = function(years, age, H1, V, species, region){
+v_growth = function(years, age, H1, V, species, region){
 
 
   params_si = utils::read.csv2(system.file('params/params_site_index.csv', package = 'growthmodels'))
