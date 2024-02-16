@@ -30,10 +30,10 @@
 v_growth = function(years, age, H1, V, species, region){
 
 
-  params_si = utils::read.csv2(system.file('params/params_site_index.csv', package = 'growthmodels'))
-  params_vt = utils::read.csv2(system.file('params/params_v_tab.csv', package = 'growthmodels'))
-  params_spg = utils::read.csv2(system.file('params/params_spg.csv', package = 'growthmodels'))
-  params_growth = utils::read.csv2(system.file('params/params_growth.csv', package = 'growthmodels'))
+  params_si = readr::read_rds(system.file('params/params_site_index.rds', package = 'growthmodels'))
+  params_vt = readr::read_rds(system.file('params/params_v_tab.rds', package = 'growthmodels'))
+  params_spg = readr::read_rds(system.file('params/params_spg.rds', package = 'growthmodels'))
+  params_growth = readr::read_rds(system.file('params/params_growth.rds', package = 'growthmodels'))
 
   df = data.frame(age, H1, V, species, region) %>%
     dplyr::left_join(params_si) %>%

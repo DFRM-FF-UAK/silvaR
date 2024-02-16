@@ -16,7 +16,7 @@
 
 sp_group = function(species){
   species = data.frame(species)
-  sp_g = utils::read.csv2(system.file('sp_dict/sp_groups.csv', package = 'growthmodels'))
+  sp_g = readr::read_rds(system.file('sp_dict/sp_groups.rds', package = 'growthmodels'))
   #sp_g = utils::read.csv2('inst/sp_dict/sp_groups.csv')
   species = species %>% dplyr::left_join(sp_g, by = c('species' = 'SPECIES_CD'))
 
