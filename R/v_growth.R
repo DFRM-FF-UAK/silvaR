@@ -57,7 +57,8 @@ v_growth = function(years, age, H1, V, species, region){
       H2 = H1 * (T2 ^ b1 * (T1 ^ b1 * ((H1 - b3) + ((H1 - b3)^ 2 + (2 * b2 * H1) / (T1 ^ b1)) ^ 0.5) + b2)) / (T1 ^ b1 * (T2 ^ b1 * ((H1 - b3) + ((H1 - b3)^ 2 + (2 * b2 * H1) / (T1 ^ b1)) ^ 0.5) + b2)),
       spg_1 =  ((psi4*si -psi5)*((1-exp(psi1*T1))/(1-exp(psi1*100)))^(psi2*(psi4*si -psi5)^psi3)+psi6*H1^4),
       spg_2 =  ((psi4*si -psi5)*((1-exp(psi1*T2))/(1-exp(psi1*100)))^(psi2*(psi4*si -psi5)^psi3)+psi6*H2^4),
-      !!growth := (((spg_2) - (spg_1)) / (T2 - T1)) * ni1 * (zd)^ni2 * si^ni3 * T1^ni4
+      !!growth := (((spg_2) - (spg_1)) / (T2 - T1)) * ni1 * (zd)^ni2 * si^ni3 * T1^ni4,
+      V = V + !!dplyr::sym(growth)
     )
 
   }
@@ -67,4 +68,5 @@ v_growth = function(years, age, H1, V, species, region){
   return(df$growth_sum)
 
 }
+
 
