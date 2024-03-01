@@ -4,23 +4,30 @@
 \alias{th_calc}
 \title{Top Height (TH) calculation}
 \usage{
-th_calc(chm)
+th_calc(chm, f = "h_23")
 }
 \arguments{
-\item{chm}{canopy height model (resolution equal or lower than 1 m)}
+\item{chm}{canopy height model (resolution equal or higher than 1 meter).
+SpatRaster or RasterLayer}
+
+\item{f}{function used to calculate top height. Build-in functions: "h_23","h_sd"}
 }
 \value{
 Top Height in the 10x10 m raster
 }
 \description{
-Calculate TH of the tree stand in 10x10 m raster. Using
-1/3 highest cell values
+Calculate TH of the tree stand in 10x10 m raster. Using two optional function
+to obtain top height.
+}
+\details{
+\itemize{
+\item "h_23" - (default) mean of 1/3 highest cells to aggregate
+\item "h_sd" - mean of cells higher than threshold: (percentile of 97 - 6.42)
+}
 }
 \examples{
-r =  terra::rast(ncol=100, nrow=100, nlyr=1, res = 0.5)
-rv = runif(terra::ncell(r), min = 5, max = 36)
-terra::values(r) = rv
-terra::plot(r)
-th = th_calc(r)
+chm = terra::rast(system.file('raster/chm.tif', package = 'growthmodels'))
+terra::plot(chm)
+th = th_calc(chm, f = "h_sd")
 terra::plot(th)
 }
