@@ -2,6 +2,7 @@
 
 export("%>%")
 export(h_growth)
+export(sp_clean)
 export(sp_group)
 export(th_calc)
 export(v_growth)

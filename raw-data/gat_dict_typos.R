@@ -63,4 +63,4 @@ dict_fin = dict %>%
   ungroup()
 
 
-write_csv2(dict, 'inst/sp_dict/dict.csv')
+write_csv2(dict_fin, 'inst/sp_dict/dict.csv')

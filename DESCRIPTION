@@ -15,4 +15,5 @@ Imports:
     dplyr,
     magrittr,
     readr,
-    terra
+    terra,
+    tidyr
