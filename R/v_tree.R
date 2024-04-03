@@ -54,5 +54,3 @@ v_tree = function(dbh, height, species, bark_param = T){
 
 }
 
-
-
