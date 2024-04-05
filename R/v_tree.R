@@ -1,6 +1,6 @@
 #' Single tree volume calculation
 #'
-#' @description Calculate single tree volume using Bruchwald (2000) equation
+#' @description Calculate single tree volume
 #'
 #'
 

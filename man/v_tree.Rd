@@ -19,7 +19,7 @@ v_tree(dbh, height, species, bark_param = T)
 Tree volume
 }
 \description{
-Calculate single tree volume using Bruchwald (2000) equation
+Calculate single tree volume
 }
 \examples{
 dbh = c(32, 33, 34)
