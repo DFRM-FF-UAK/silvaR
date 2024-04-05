@@ -4,7 +4,7 @@
 \alias{av_dbh}
 \title{Calculate average dbh at the sample plot}
 \usage{
-av_dbh(plot_id, species, layer, dbh)
+av_dbh(plot_id, species, age, layer, dbh)
 }
 \arguments{
 \item{plot_id}{Unique plot id}
@@ -19,12 +19,13 @@ av_dbh(plot_id, species, layer, dbh)
 Average tree height
 }
 \description{
-Calculate average dbh of the species at the plot in the layer
+Calculate average dbh of the species at the plot in the layer and age group
 }
 \examples{
 plot_id = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2)
 species = c('SO', 'SO', 'DB', 'JW', 'BK', 'DB', 'DB', 'ŚW', 'ŚW', 'ŚW', 'SO', 'SO', 'SO', 'SO')
+age = c(40, 40, 40, 40, 60, 45, 50, 50, 50, 60, 60, 60, 60, 60)
 layer = c(1, 1, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1)
 dbh = c(33, 32, 31, NA, 28, 47, 12, 22, 41, 48, 27, 42, 25, 33)
-av_dbh(plot_id, species, layer, dbh)
+av_dbh(plot_id, species, age, layer, dbh)
 }

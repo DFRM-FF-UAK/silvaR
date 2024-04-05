@@ -4,12 +4,14 @@
 \alias{av_height}
 \title{Calculate average height at the sample plot}
 \usage{
-av_height(plot_id, species, layer, height)
+av_height(plot_id, species, age, layer, height)
 }
 \arguments{
 \item{plot_id}{Unique plot id}
 
 \item{species}{Tree species}
+
+\item{age}{Tree age}
 
 \item{layer}{Stand structure layer}
 
@@ -19,12 +21,13 @@ av_height(plot_id, species, layer, height)
 Average tree height
 }
 \description{
-Calculate average height of the species at the plot in the layer
+Calculate average height of the species at the plot in the layer and age group
 }
 \examples{
 plot_id = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2)
 species = c('SO', 'SO', 'DB', 'JW', 'BK', 'DB', 'DB', 'ŚW', 'ŚW', 'ŚW', 'SO', 'SO', 'SO', 'SO')
+age = c(40, 40, 40, 40, 60, 45, 50, 50, 50, 60, 60, 60, 60, 60)
 layer = c(1, 1, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1)
 height = c(21, 13, 24, NA, 12, NA, 18, NA, NA, 31, 32, 24, 25, NA)
-av_dbh(plot_id, species, layer, height)
+av_height(plot_id, species, age, layer, height)
 }
