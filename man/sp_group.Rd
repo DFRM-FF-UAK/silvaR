@@ -4,10 +4,12 @@
 \alias{sp_group}
 \title{Group species}
 \usage{
-sp_group(species)
+sp_group(species, type = "GRP_V")
 }
 \arguments{
 \item{species}{vector of species}
+
+\item{type}{Grouping type (3 options): GRP_H (height group), GRP_V (volume group), GRP_P (growth group). Deafult: GRP_V description}
 }
 \value{
 Species group name

@@ -16,4 +16,5 @@ Imports:
     magrittr,
     readr,
     terra,
-    tidyr
+    tidyr,
+    data.table
