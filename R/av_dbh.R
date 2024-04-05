@@ -5,6 +5,7 @@
 #'
 #' @param plot_id Unique plot id
 #' @param species Tree species
+#' @param age Tree age
 #' @param layer Stand structure layer
 #' @param dbh Tree dbh
 #' @param only_measured_h if TRUE only trees, with measured dbh will be used (logical, defult TRUE)
@@ -39,9 +40,9 @@ av_dbh = function(plot_id, species, age, layer, dbh, height, only_measured_h = T
     dplyr::mutate(DBH = mean(dbh)) %>%
       dplyr::ungroup()
 
-   df = df %>% left_join(df_fil)
+   df = df %>% dplyr::left_join(df_fil, by = c('plot_id', 'species', 'age',  'layer'))
 
-   empty_d = df[is.na(df$DBH),]
+   empty_d = df_fil[is.na(df_fil$DBH),]
 
    if(nrow(empty_d) > 0) {
      warning(paste("Sorry, but we couldn't calculate average dbh for these groups:\n",

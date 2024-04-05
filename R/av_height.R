@@ -5,9 +5,9 @@
 #'
 #' @param plot_id Unique plot id
 #' @param species Tree species
+#' @param age Tree age
 #' @param layer Stand structure layer
 #' @param height Tree height
-#' @param age Tree age
 #' @return Average tree height
 #' @export
 #'

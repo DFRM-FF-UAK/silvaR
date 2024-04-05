@@ -16,7 +16,7 @@
 #' av_H = c(27, 28, 29)
 #' av_dbh_h = c(34, 35, 36)
 #' dbh = c(44, 36, 28)
-#' h_tree(species, av_H, av_dbh, dbh)
+#' h_tree(species, av_H, av_dbh_h, dbh)
 
 h_tree = function(species, av_H, av_dbh_h, dbh){
 

@@ -4,14 +4,14 @@
 \alias{h_tree}
 \title{Single tree height calculation}
 \usage{
-h_tree(species, av_H, av_dbh, dbh)
+h_tree(species, av_H, av_dbh_h, dbh)
 }
 \arguments{
 \item{species}{tree species}
 
-\item{av_H}{average height of the species at the plot in the layer}
+\item{av_H}{average height of the species at the plot in the layer and age class}
 
-\item{av_dbh}{average dbh of the species at the plot in the layer}
+\item{av_dbh_h}{average dbh of the species at the plot in the layer and age class, with measured heights}
 
 \item{dbh}{tree dbh}
 }
@@ -24,7 +24,7 @@ Calculate single tree height using Bruchwald (2000) equation
 \examples{
 species = c('SO', 'DB', 'OL SZ')
 av_H = c(27, 28, 29)
-av_dbh = c(34, 35, 36)
+av_dbh_h = c(34, 35, 36)
 dbh = c(44, 36, 28)
-h_tree(species, av_H, av_dbh, dbh)
+h_tree(species, av_H, av_dbh_h, dbh)
 }
