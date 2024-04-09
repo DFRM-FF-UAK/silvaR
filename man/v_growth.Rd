@@ -4,22 +4,35 @@
 \alias{v_growth}
 \title{Volume prediction}
 \usage{
-v_growth(years, age, H1, V, species, region)
+v_growth(
+  years,
+  stand_id,
+  age,
+  height,
+  volume,
+  species,
+  region,
+  output_type = NA
+)
 }
 \arguments{
 \item{years}{number of years that we want to predict the growth}
 
+\item{stand_id}{stand id}
+
 \item{age}{tree stand age}
 
-\item{H1}{Height at age T1 (average)}
+\item{height}{Height at age T1 (average)}
 
-\item{V}{Volume at age T1}
+\item{volume}{Volume at age T1}
 
 \item{species}{Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
 'JD', 'SO'}
 
 \item{region}{Natural region - Abbreviation: 'I, 'II', 'III', 'IV', 'V', 'VI',
 'VII', 'VIII', 'GLOB'}
+
+\item{output_type}{if 'df' the results will be returned as df, else as vector}
 }
 \value{
 Growth sum in specific timeline
@@ -29,11 +42,11 @@ Predict tree volume growth in specific period of time based on H1, region, speci
 }
 \examples{
 years = 10
+stand_id = c(1, 2, 3)
 age = c(100, 101, 102)
-H1 = c(32, 33, 34)
-V = c(150, 160, 170)
+height = c(32, 33, 34)
+volume = c(150, 160, 170)
 species = c('SO', 'DB', 'BK')
 region = c('I', 'II', 'GLOB')
-
-v_growth(years, age, H1, V, species, region)
+v_growth(years, stand_id, age, height, volume, species, region, output_type = 'df')
 }
