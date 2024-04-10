@@ -37,10 +37,12 @@ av_dbh = function(plot_id, species, age, layer, dbh, height, only_measured_h = T
     df_fil = df %>%
       dplyr::group_by(plot_id, species, age,  layer) %>%
       tidyr::drop_na(height) %>%
-    dplyr::mutate(DBH = mean(dbh)) %>%
-      dplyr::ungroup()
+      dplyr::mutate(DBH = mean(dbh)) %>%
+      dplyr::ungroup() %>%
+      dplyr::select(-c('dbh', 'height'))
 
-   df = df %>% dplyr::left_join(df_fil, by = c('plot_id', 'species', 'age',  'layer'))
+   df = df %>% dplyr::left_join(df_fil) %>%
+     dplyr::distinct()
 
    empty_d = df_fil[is.na(df_fil$DBH),]
 
@@ -70,4 +72,5 @@ av_dbh = function(plot_id, species, age, layer, dbh, height, only_measured_h = T
 
   return(df$DBH)
 }
+
 
