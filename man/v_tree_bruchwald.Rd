@@ -4,15 +4,7 @@
 \alias{v_tree_bruchwald}
 \title{Single tree volume calculation}
 \usage{
-v_tree_bruchwald(
-  dbh,
-  height,
-  av_H,
-  av_DBH,
-  species,
-  origin = NA,
-  bark_param = T
-)
+v_tree_bruchwald(dbh, height, av_H, av_DBH, species, origin = NA)
 }
 \arguments{
 \item{dbh}{diameter at the brest height}
@@ -26,8 +18,6 @@ v_tree_bruchwald(
 \item{species}{tree species}
 
 \item{origin}{L (lowland) or M (mountain). This parameter needs to be provided if the species is BK}
-
-\item{bark_param}{Consideration of the bark parameter (logical)}
 }
 \value{
 Tree volume

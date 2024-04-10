@@ -10,7 +10,6 @@
 #' @param av_DBH average DBH
 #' @param species tree species
 #' @param origin L (lowland) or M (mountain). This parameter needs to be provided if the species is BK
-#' @param bark_param Consideration of the bark parameter (logical)
 #' @return Tree volume
 #' @export
 #'
@@ -23,7 +22,7 @@
 #' origin = c(NA, NA, NA, 'M', NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
 
 
-v_tree_bruchwald = function(dbh, height, av_H, av_DBH, species, origin = NA, bark_param = T){
+v_tree_bruchwald = function(dbh, height, av_H, av_DBH, species, origin = NA){
 
   params_bark = readr::read_rds(system.file('/params/bark_param.rds', package = 'growthmodels'))%>%
     #params_bark = readr::read_rds('inst/params/bark_param.rds') %>%
@@ -142,12 +141,6 @@ v_tree_bruchwald = function(dbh, height, av_H, av_DBH, species, origin = NA, bar
                         mapply(V2, species, dbh, height)
       )) %>%
       dplyr::ungroup()
-
-  if (bark_param == T) {
-    df = df %>%
-      dplyr::left_join(params_bark) %>%
-      dplyr::mutate(V = V*t)
-  }
 
 
   empty = df[is.na(df$V),]

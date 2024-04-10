@@ -7,7 +7,6 @@
 #' @param dbh diameter at the brest height
 #' @param height tree height
 #' @param species tree species
-#' @param bark_param Consideration of the bark parameter (logical)
 #' @return Tree volume
 #' @export
 #'
@@ -18,7 +17,7 @@
 #' v_tree(dbh, height, species)
 
 
-v_tree = function(dbh, height, species, bark_param = T){
+v_tree = function(dbh, height, species){
 
   params_v_tree = readr::read_rds(system.file('/params/v_tree.rds', package = 'growthmodels'))%>%
   #params_v_tree = readr::read_rds('inst/params/v_tree.rds')
@@ -35,12 +34,6 @@ v_tree = function(dbh, height, species, bark_param = T){
     dplyr::left_join(params_v_tree) %>%
     dplyr::left_join(params_bark) %>%
     dplyr::mutate(V = beta0 * dbh ^ beta1 * height ^ beta2)
-
-  if (bark_param == T) {
-    df = df %>%
-      dplyr::mutate(V = V*t)
-  }
-
 
   empty = df[is.na(df$V),]
 

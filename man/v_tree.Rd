@@ -4,7 +4,7 @@
 \alias{v_tree}
 \title{Single tree volume calculation}
 \usage{
-v_tree(dbh, height, species, bark_param = T)
+v_tree(dbh, height, species)
 }
 \arguments{
 \item{dbh}{diameter at the brest height}
@@ -12,8 +12,6 @@ v_tree(dbh, height, species, bark_param = T)
 \item{height}{tree height}
 
 \item{species}{tree species}
-
-\item{bark_param}{Consideration of the bark parameter (logical)}
 }
 \value{
 Tree volume
