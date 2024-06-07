@@ -12,7 +12,7 @@ v_growth(
   volume,
   species,
   region,
-  output_type = NA
+  output_type = "list"
 )
 }
 \arguments{

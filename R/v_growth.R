@@ -30,7 +30,7 @@
 
 
 
-v_growth = function (years, stand_id, age, height, volume, species, region, output_type = NA) {
+v_growth = function (years, stand_id, age, height, volume, species, region, output_type = 'list') {
 
 
   params_si = readr::read_rds(system.file("params/params_site_index.rds",
@@ -93,18 +93,19 @@ v_growth = function (years, stand_id, age, height, volume, species, region, outp
       dplyr::mutate(T1 = age, T2 = age + 1,
                     H1 = height,
                     T0 = 100,
-                    z0 = (H1 - b3), r = z0 + (z0^2 + (2 * b2 * H1)/(T1^b1))^0.5,
+                    z0 = (H1 - b3),
+                    r = z0 + (z0^2 + (2 * b2 * H1)/(T1^b1))^0.5,
                     si = H1 * (T0^b1 * (T1^b1 * r + b2))/(T1^b1 * (T0^b1 * r + b2)),
                     vt = (n1 * si - n2) * ((1 - exp(b * T1))/(1 - exp(b * 100)))^(c * (n1 * si - n2)^a),
                     vt_sh = vt * share) |>
       dplyr::group_by(stand_id) |>
-      dplyr::mutate(vt_stand = sum(vt_sh)) |>
+      dplyr::mutate(vt_stand = sum(vt_sh, na.rm = T)) |>
       dplyr::ungroup() |>
       dplyr::mutate(zd = volume_stand / vt_stand) |>
-      dplyr::mutate(H2 = H1 * (T2^b1 * (T1^b1 * ((H1 - b3) + ((H1 - b3)^2 + (2 * b2 * H1)/(T1^b1))^0.5) + b2))/(T1^b1 * (T2^b1 * ((H1 - b3) + ((H1 - b3)^2 + (2 * b2 * H1)/(T1^b1))^0.5) + b2)),
-                    `:=` (!!spg_start, ((psi4 * si - psi5) * ((1 - exp(psi1 * T1))/(1 - exp(psi1 * 100)))^(psi2 * (psi4 * si - psi5)^psi3) + psi6 * H1^4)),
-                    `:=` (!!spg_end, ((psi4 * si - psi5) * ((1 - exp(psi1 * T2))/(1 - exp(psi1 * 100)))^(psi2 * (psi4 * si - psi5)^psi3) + psi6 * H2^4)),
-                    `:=`(!!growth, (((!!rlang::sym(spg_end)) - (!!rlang::sym(spg_start)))/(T2 - T1)) * ni1 * (zd)^ni2 * si^ni3 * T1^ni4),
+      dplyr::mutate(H2 = H1 * (T2 ^ b1 * (T1 ^ b1 * ((H1 - b3) + ((H1 - b3)^ 2 + (2 * b2 * H1) / (T1 ^ b1)) ^ 0.5) + b2)) / (T1 ^ b1 * (T2 ^ b1 * ((H1 - b3) + ((H1 - b3)^ 2 + (2 * b2 * H1) / (T1 ^ b1)) ^ 0.5) + b2)),
+                    `:=` (!!spg_start, ((psi4*si -psi5)*((1-exp(psi1*T1))/(1-exp(psi1*100)))^(psi2*(psi4*si -psi5)^psi3)+psi6*H1^4)),
+                    `:=` (!!spg_end, ((psi4*si -psi5)*((1-exp(psi1*T2))/(1-exp(psi1*100)))^(psi2*(psi4*si -psi5)^psi3)+psi6*H2^4)),
+                    `:=`(!!growth, (((!!rlang::sym(spg_end)) - (!!rlang::sym(spg_start)))/(T2 - T1)) * ni1 * zd^ni2 * si^ni3 * T1^ni4),
                     `:=`(!!growth, !!rlang::sym(growth) * share),
                     `:=` (!!v, volume + !!rlang::sym(growth))
       )
