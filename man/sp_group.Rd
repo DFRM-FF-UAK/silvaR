@@ -4,12 +4,18 @@
 \alias{sp_group}
 \title{Group species}
 \usage{
-sp_group(species, type = "GRP_V")
+sp_group(species, type = "GRP_P")
 }
 \arguments{
 \item{species}{vector of species}
 
-\item{type}{Grouping type (3 options): GRP_H (height group), GRP_V (volume group), GRP_P (growth group). Deafult: GRP_V description}
+\item{type}{Grouping type (5 options):
+GRP_H (height group - Forest Data Bank based),
+GRP_TH (top height group),
+GRP_V (volume group),
+GRP_P (growth group),
+GRP_P_BDL (growth group - Forest Data Bank based).
+Deafult: GRP_P}
 }
 \value{
 Species group name
@@ -20,5 +26,5 @@ necessary for the height and growth prediction
 }
 \examples{
 species_list = c('GŁG', 'DB', 'CZM.P')
-sp_group(species_list)
+sp_group(species_list, 'GRP_TH')
 }
