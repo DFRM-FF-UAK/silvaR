@@ -24,10 +24,10 @@
 
 v_tree_bruchwald = function(dbh, height, av_H, av_DBH, species, origin = NA){
 
-  params_bark = readr::read_rds(system.file('/params/bark_param.rds', package = 'growthmodels'))%>%
+  params_bark = readr::read_rds(system.file('/params/bark_param.rds', package = 'growthmodels'))#%>%
     #params_bark = readr::read_rds('inst/params/bark_param.rds') %>%
-    dplyr::mutate(t = as.numeric(t)
-    )
+    #dplyr::mutate(t = as.numeric(t)
+    #)
 
 
 
