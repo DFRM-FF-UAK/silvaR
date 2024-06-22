@@ -25,7 +25,7 @@ v_tree = function(dbh, height, species){
                   beta1 = as.numeric(beta1),
                   beta2 = as.numeric(beta2)
                   )
-  params_bark = readr::read_rds(system.file('/params/bark_param.rds', package = 'growthmodels'))%>%
+  params_bark = readRDS(system.file('/params/bark_param.rds', package = 'growthmodels'))%>%
   #params_bark = readr::read_rds('inst/params/bark_param.rds')
     dplyr::mutate(t = as.numeric(t)
                   )

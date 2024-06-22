@@ -3,7 +3,6 @@
 #' @description Calculate single tree volume
 #'
 #'
-
 #' @param dbh diameter at the brest height
 #' @param height tree height
 #' @param av_H average height
@@ -24,14 +23,7 @@
 
 v_tree_bruchwald = function(dbh, height, av_H, av_DBH, species, origin = NA){
 
-  params_bark = readr::read_rds(system.file('/params/bark_param.rds', package = 'growthmodels'))#%>%
-    #params_bark = readr::read_rds('inst/params/bark_param.rds') %>%
-    #dplyr::mutate(t = as.numeric(t)
-    #)
-
-
-
-  # funkcja do obliczania V (ŚW, SO, JD, BK, BRZ, OL, DG) -------------------------
+    # funkcja do obliczania V (ŚW, SO, JD, BK, BRZ, OL, DG) -------------------------
 
     V1 = function(species, dbh, height, av_H, av_DBH, origin){
 

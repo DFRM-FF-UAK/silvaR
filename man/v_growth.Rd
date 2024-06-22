@@ -26,7 +26,7 @@ v_growth(
 
 \item{volume}{Volume at age T1}
 
-\item{species}{Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
+\item{species}{Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'SW',
 'JD', 'SO'}
 
 \item{region}{Natural region - Abbreviation: 'I, 'II', 'III', 'IV', 'V', 'VI',

@@ -13,7 +13,7 @@ h_growth(T1, T2, H1, species)
 
 \item{H1}{Vector of Height at age T1 (Top or average)}
 
-\item{species}{Vector of Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
+\item{species}{Vector of Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB',
 'JD', 'SO'}
 }
 \value{

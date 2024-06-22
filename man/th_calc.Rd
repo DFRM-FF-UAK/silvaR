@@ -4,16 +4,19 @@
 \alias{th_calc}
 \title{Top Height (TH) calculation}
 \usage{
-th_calc(chm, f = "h_23")
+th_calc(chm, f = "h_23", fact = 10)
 }
 \arguments{
 \item{chm}{canopy height model (resolution equal or higher than 1 meter).
 SpatRaster or RasterLayer}
 
 \item{f}{function used to calculate top height. Build-in functions: "h_23","h_sd"}
+
+\item{fact}{positive integer. Aggregation factor expressed as number of cells
+in each direction (horizontally and vertically). Or two integers (horizontal and vertical aggregation factor).}
 }
 \value{
-Top Height in the 10x10 m raster
+Top Height in the 10x10 m (default) raster
 }
 \description{
 Calculate TH of the tree stand in 10x10 m raster. Using two optional function

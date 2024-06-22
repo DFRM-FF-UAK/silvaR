@@ -6,12 +6,14 @@
 #' @param chm canopy height model (resolution equal or higher than 1 meter).
 #' SpatRaster or RasterLayer
 #' @param f function used to calculate top height. Build-in functions: "h_23","h_sd"
+#' @param fact positive integer. Aggregation factor expressed as number of cells
+#' in each direction (horizontally and vertically). Or two integers (horizontal and vertical aggregation factor).
 #'
 #' @details
 #' - "h_23" - (default) mean of 1/3 highest cells to aggregate
 #' - "h_sd" - mean of cells higher than threshold: (percentile of 97 - 6.42)
 #'
-#' @return Top Height in the 10x10 m raster
+#' @return Top Height in the 10x10 m (default) raster
 #' @export
 #'
 #' @examples
@@ -20,7 +22,7 @@
 #' th = th_calc(chm, f = "h_sd")
 #' terra::plot(th)
 
-th_calc = function(chm, f="h_23") {
+th_calc = function(chm, f="h_23", fact=10) {
 
   # input check
   if (!inherits(chm, c("SpatRaster","RasterLayer"))) stop("Parameter chm is not a valid datatype")
@@ -43,7 +45,7 @@ th_calc = function(chm, f="h_23") {
   }
 
   th <- terra::aggregate(chm,
-                         fact=10,
+                         fact=fact,
                          fun=eval(parse(text = paste(f_list[f]))))
   return(th)
 }

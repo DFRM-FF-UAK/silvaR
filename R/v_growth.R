@@ -8,7 +8,7 @@
 #' @param age tree stand age
 #' @param height Height at age T1 (average)
 #' @param volume Volume at age T1
-#' @param species Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
+#' @param species Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'SW',
 #'  'JD', 'SO'
 #' @param region Natural region - Abbreviation: 'I, 'II', 'III', 'IV', 'V', 'VI',
 #'  'VII', 'VIII', 'GLOB'
@@ -33,16 +33,16 @@
 v_growth = function (years, stand_id, age, height, volume, species, region, output_type = 'list') {
 
 
-  params_si = readr::read_rds(system.file("params/params_site_index.rds",
+  params_si = readRDS(system.file("params/params_site_index.rds",
                                           package = "growthmodels"))
   #params_si = readr::read_rds("inst/params/params_site_index.rds")
-  params_vt = readr::read_rds(system.file("params/params_v_tab.rds",
+  params_vt = readRDS(system.file("params/params_v_tab.rds",
                                          package = "growthmodels"))
   #params_vt = readr::read_rds("inst/params/params_v_tab.rds")
-  params_spg = readr::read_rds(system.file("params/params_spg.rds",
+  params_spg = readRDS(system.file("params/params_spg.rds",
                                            package = "growthmodels"))
   #params_spg = readr::read_rds("inst/params/params_spg.rds")
-  params_growth = readr::read_rds(system.file("params/params_growth.rds",
+  params_growth = readRDS(system.file("params/params_growth.rds",
                                               package = "growthmodels"))
   #params_growth = readr::read_rds("inst/params/params_growth.rds")
 

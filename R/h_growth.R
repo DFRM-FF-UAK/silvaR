@@ -6,7 +6,7 @@
 #' @param H1 Vector of Height at age T1 (Top or average)
 #' @param T1  Vector of Age with known height
 #' @param T2 Vector of age when we want predict height
-#' @param species Vector of Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
+#' @param species Vector of Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB',
 #'  'JD', 'SO'
 #'
 #' @return H2 - Height at age T2

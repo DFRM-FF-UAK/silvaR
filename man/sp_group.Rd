@@ -9,22 +9,25 @@ sp_group(species, type = "GRP_P")
 \arguments{
 \item{species}{vector of species}
 
-\item{type}{Grouping type (5 options):
-GRP_H (height group - Forest Data Bank based),
-GRP_TH (top height group),
-GRP_V (volume group),
-GRP_P (growth group),
-GRP_P_BDL (growth group - Forest Data Bank based).
-Deafult: GRP_P}
+\item{type}{grouping type (5 options: GRP_P, GRP_TH, GRP_V, GRP_H, GRP_P_BDL)}
 }
 \value{
 Species group name
 }
 \description{
-Group species in eight groups (BK, OL, MD, BRZ, DB, ŚW, JD, SO),
+Group species in eight groups (BK, OL, MD, BRZ, DB, ŚW, JD, SO)
 necessary for the height and growth prediction
 }
+\details{
+\itemize{
+\item GRP_P - (default) growth group
+\item GRP_TH - top height group
+\item GRP_V - volume group
+\item GRP_H - height group; Forest Data Bank based
+\item GRP_P_BDL - growth group; Forest Data Bank based
+}
+}
 \examples{
-species_list = c('GŁG', 'DB', 'CZM.P')
+species_list = c('AK', 'DB', 'CZM.P')
 sp_group(species_list, 'GRP_TH')
 }
