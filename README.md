@@ -42,4 +42,4 @@ terra::plot(th)
 
 **growthmodels** is developed openly at [University of Agriculture in Krakow](https://en.urk.edu.pl/).
 
-<img src="images/ur-herb.svg" width="600" align="center">
+<img src="images/ur-herb.svg" width="250" align="center">
