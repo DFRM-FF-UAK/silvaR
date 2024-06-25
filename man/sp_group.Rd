@@ -4,18 +4,20 @@
 \alias{sp_group}
 \title{Group species}
 \usage{
-sp_group(species, type = "GRP_P")
+sp_group(species, type = "GRP_P", others = "BK")
 }
 \arguments{
 \item{species}{vector of species}
 
 \item{type}{grouping type (5 options: GRP_P, GRP_TH, GRP_V, GRP_H, GRP_P_BDL)}
+
+\item{others}{how to group species without a group (deafult BK)}
 }
 \value{
 Species group name
 }
 \description{
-Group species in eight groups (BK, OL, MD, BRZ, DB, ŚW, JD, SO)
+Group species in eight (BK, OL, MD, BRZ, DB, ŚW, JD, SO) or more groups
 necessary for the height and growth prediction
 }
 \details{
@@ -28,6 +30,6 @@ necessary for the height and growth prediction
 }
 }
 \examples{
-species_list = c('AK', 'DB', 'CZM.P')
+species_list = c('AK', 'DB', 'WZ.G')
 sp_group(species_list, 'GRP_TH')
 }
