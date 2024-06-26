@@ -8,7 +8,7 @@
 #' @param age tree stand age
 #' @param height Height at age T1 (average)
 #' @param volume Volume at age T1
-#' @param species Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'SW',
+#' @param species Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
 #'  'JD', 'SO'
 #' @param region Natural region - Abbreviation: 'I, 'II', 'III', 'IV', 'V', 'VI',
 #'  'VII', 'VIII', 'GLOB'

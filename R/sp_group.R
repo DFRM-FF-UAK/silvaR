@@ -5,7 +5,7 @@
 #'
 #'
 #' @param species vector of species
-#' @param  type grouping type (5 options: GRP_P, GRP_TH, GRP_V, GRP_H, GRP_P_BDL)
+#' @param type grouping type (5 options: GRP_P, GRP_TH, GRP_V, GRP_H, GRP_P_BDL)
 #' @param others how to group species without a group (deafult BK)
 #'
 #' @details
@@ -16,7 +16,7 @@
 #' - GRP_P_BDL - growth group; Forest Data Bank based
 #'
 #'
-#' @return Species group name
+#' @return Vector of species group name
 #'
 #' @export
 #'

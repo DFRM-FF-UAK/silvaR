@@ -14,7 +14,7 @@ sp_group(species, type = "GRP_P", others = "BK")
 \item{others}{how to group species without a group (deafult BK)}
 }
 \value{
-Species group name
+Vector of species group name
 }
 \description{
 Group species in eight (BK, OL, MD, BRZ, DB, ŚW, JD, SO) or more groups

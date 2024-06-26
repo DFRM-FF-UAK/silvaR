@@ -14,13 +14,14 @@ h_growth(T1, T2, H1, species)
 \item{H1}{Vector of Height at age T1 (Top or average)}
 
 \item{species}{Vector of Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB',
-'JD', 'SO'}
+'JD', 'SO', 'ŚW'}
 }
 \value{
 H2 - Height at age T2
 }
 \description{
-Predict tree height in T2, based on the T1, H1 and species
+Predict tree height in T2, based on the T1, H1 and species.
+Function can be used also to calculate Site Index (tree height in base age - usually 50 or 100)
 }
 \examples{
 T1 = 100
@@ -29,4 +30,13 @@ H1 = 32
 species = 'SO'
 
 h_growth(T1, T2, H1, species)
+
+# Calculation of Site Index (SI)
+T1 = c(85, 110)
+T2 = c(100, 100)
+H1 = c(27, 36)
+species = c('DB', 'ŚW')
+
+si <- h_growth(T1, T2, H1, species)
+print(si)
 }
