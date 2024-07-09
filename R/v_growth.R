@@ -2,9 +2,8 @@
 #'
 #' @description Predict tree volume growth in specific period of time based on H1, region, species
 #'
-#'
-#' @param years number of years that we want to predict the growth
 #' @param stand_id stand id
+#' @param years number of years that we want to predict the growth
 #' @param age tree stand age
 #' @param height Height at age T1 (average)
 #' @param volume Volume at age T1
@@ -30,7 +29,7 @@
 
 
 
-v_growth = function (years, stand_id, age, height, volume, species, region, output_type = 'list') {
+v_growth = function (stand_id, years, age, height, volume, species, region, output_type = 'list') {
 
 
   params_si = readRDS(system.file("params/params_site_index.rds",

@@ -4,10 +4,10 @@
 \alias{sp_clean}
 \title{Clean species}
 \usage{
-sp_clean(SPECIES_CD)
+sp_clean(species)
 }
 \arguments{
-\item{SPECIES_CD}{vector of species}
+\item{species}{vector of species}
 }
 \value{
 Clean species vector

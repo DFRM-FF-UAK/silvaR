@@ -5,8 +5,8 @@
 \title{Volume prediction}
 \usage{
 v_growth(
-  years,
   stand_id,
+  years,
   age,
   height,
   volume,
@@ -16,9 +16,9 @@ v_growth(
 )
 }
 \arguments{
-\item{years}{number of years that we want to predict the growth}
-
 \item{stand_id}{stand id}
+
+\item{years}{number of years that we want to predict the growth}
 
 \item{age}{tree stand age}
 

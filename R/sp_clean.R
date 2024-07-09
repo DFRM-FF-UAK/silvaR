@@ -3,7 +3,7 @@
 #' @description Clean species names
 #'
 #'
-#' @param SPECIES_CD vector of species
+#' @param species vector of species
 #' @return Clean species vector
 #' @export
 #'
@@ -12,12 +12,12 @@
 #' sp_clean(species_list)
 
 
-sp_clean = function(SPECIES_CD){
+sp_clean = function(species){
 
-  SPECIES_CD = dplyr::tibble(SPECIES_CD) %>%
-    dplyr::rename(value = SPECIES_CD)
+  SPECIES_CD = dplyr::tibble(species) %>%
+    dplyr::rename(value = species)
 
-  sp_dict = utils::read.csv2(system.file('sp_dict/dict.csv', package = 'growthmodels')) %>%
+  sp_dict = utils::read.csv2(system.file('sp_dict/dict.csv', package = 'growthmodels'), encoding = "UTF-8") %>%
     tidyr::separate_rows(typos, sep = ',') %>%
     tidyr::pivot_longer(cols = c(species_name, latin_name, english_name, typos)) %>%
     dplyr::select(SPECIES_CD, value) %>%
@@ -44,8 +44,7 @@ sp_clean = function(SPECIES_CD){
 
   empty = SPECIES_CD[is.na(SPECIES_CD$SPECIES_CD),]
 
-  if(nrow(empty) > 0)
-    warning(paste0("Not found: ", empty$value, " "))
+  if (nrow(empty) > 0) warning(paste0("Not found: ", empty$value, " "))
 
   return(SPECIES_CD$SPECIES_CD)
 

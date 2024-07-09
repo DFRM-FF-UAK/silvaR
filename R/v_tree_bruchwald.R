@@ -17,7 +17,7 @@
 #' height = c(27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27)
 #' av_H = c(26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26)
 #' av_DBH = c(31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5)
-#' species = c('SO', 'JD', 'DB', 'BK', 'BRZ', 'OL', 'DG', 'MD', 'OS', 'GB', 'TP', 'LP', 'CZR', 'OL CZ')
+#' species = c('SO', 'JD', 'DB', 'BK', 'BRZ', 'OL', 'DG', 'MD', 'OS', 'GB', 'TP', 'LP', 'CZR', 'OL.S')
 #' origin = c(NA, NA, NA, 'M', NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
 
 
