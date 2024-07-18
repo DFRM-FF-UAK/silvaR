@@ -19,6 +19,9 @@
 
 v_tree = function(dbh, height, species){
 
+  stopifnot("dbh must be numeric" = is.numeric(dbh))
+  stopifnot("height must be numeric" = is.numeric(height))
+
   params_v_tree = readRDS(system.file('/params/v_tree.rds', package = 'growthmodels'))%>%
   #params_v_tree = readr::read_rds('inst/params/v_tree.rds')
     dplyr::mutate(beta0 = as.numeric(beta0),

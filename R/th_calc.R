@@ -38,7 +38,10 @@ th_calc = function(chm, f="h_23", fact=10) {
 
   # resolution check
   if (terra::xres(chm) < 1) {
-    chm = terra::aggregate(chm, fact=1, fun=mean, na.rm = T)
+    # resample raster if resolution is higher than 1 m
+    # chm = terra::aggregate(chm, fact=1, fun=mean, na.rm = T)
+    r_ref <- terra::rast(xmin=terra::xmin(chm), ymin=terra::ymin(chm), resolution = 1)
+    chm <- terra::resample(chm, r_ref)
   }
   else if (terra::xres(chm) > 1) {
     stop("Require raster resolution is [1] meter or higher")

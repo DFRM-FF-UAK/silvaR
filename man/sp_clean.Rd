@@ -2,7 +2,7 @@
 % Please edit documentation in R/sp_clean.R
 \name{sp_clean}
 \alias{sp_clean}
-\title{Clean species}
+\title{Clean species names}
 \usage{
 sp_clean(species)
 }
@@ -10,12 +10,12 @@ sp_clean(species)
 \item{species}{vector of species}
 }
 \value{
-Clean species vector
+Cleaned species vector
 }
 \description{
-Clean species names
+Clean species names and convert to short names used in Poland
 }
 \examples{
-species_list = c('GLG ', 'Db', 'CZM P', 'Sosna Zwyczajna', 'Sesna')
+species_list = c('GLG ', 'Db', 'CZM P', 'Sosna Zwyczajna', 'Sesna', 'Abies alba', 'rowan')
 sp_clean(species_list)
 }

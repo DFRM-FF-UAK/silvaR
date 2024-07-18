@@ -1,21 +1,17 @@
-#' Clean species
+#' Clean species names
 #'
-#' @description Clean species names
-#'
+#' @description Clean species names and convert to short names used in Poland
 #'
 #' @param species vector of species
-#' @return Clean species vector
+#' @return Cleaned species vector
 #' @export
 #'
 #' @examples
-#' species_list = c('GLG ', 'Db', 'CZM P', 'Sosna Zwyczajna', 'Sesna')
+#' species_list = c('GLG ', 'Db', 'CZM P', 'Sosna Zwyczajna', 'Sesna', 'Abies alba', 'rowan')
 #' sp_clean(species_list)
 
 
-sp_clean = function(species){
-
-  SPECIES_CD = dplyr::tibble(species) %>%
-    dplyr::rename(value = species)
+sp_clean = function(species) {
 
   sp_dict = utils::read.csv2(system.file('sp_dict/dict.csv', package = 'growthmodels'), encoding = "UTF-8") %>%
     tidyr::separate_rows(typos, sep = ',') %>%
@@ -23,32 +19,36 @@ sp_clean = function(species){
     dplyr::select(SPECIES_CD, value) %>%
     dplyr::distinct(value, .keep_all = T)
 
-  SPECIES_CD_low = SPECIES_CD %>%
-    dplyr::mutate(value_n = tolower(value)) %>%
-    dplyr::left_join(sp_dict, by = c('value_n' = 'value')) %>%
-    tidyr::drop_na()
+  compare_strings <- function(input_string, dictionary, method = "lv") {
+    # Konwersja wszystkich stringów do małych liter
+    input_string <- tolower(input_string)
+    dictionary <- tolower(dictionary)
 
-  SPECIES_CD_upp = SPECIES_CD %>%
-    dplyr::mutate(value_n = toupper(value),
-                  value_n = trimws(value_n),
-                  value_n = gsub(' ', '.', value_n)
-    )%>%
-    dplyr::left_join(sp_dict, by = c('value_n' = 'value'))%>%
-    tidyr::drop_na()
+    # Obliczanie odległości na podstawie wybranej metody
+    distances <- stringdist::stringdist(input_string, dictionary, method = method)
 
-  fin = rbind(SPECIES_CD_low, SPECIES_CD_upp) %>%
-    dplyr::select(-value_n)
+    # Tworzenie data frame z wynikami
+    results <- data.frame(
+      word = dictionary,
+      distance = distances
+    )
 
-  SPECIES_CD = SPECIES_CD %>%
-    dplyr::left_join(fin)
+    return(results)
+  }
 
-  empty = SPECIES_CD[is.na(SPECIES_CD$SPECIES_CD),]
+  # Dopasowanie do słownika dla listy wejściowej. Dopuszczalna różnica w znakach - 10%
+  SPECIES_CD <- sapply(species, function(i) {
+    dd <- compare_strings(i, sp_dict$value)
+    if (min(dd$distance, na.rm = T)<=(ceiling(nchar(i)*0.1))) {
+      return(sp_dict$SPECIES_CD[which.min(dd$distance)])
+    } else {
+      return(NA)
+    }
+  }, USE.NAMES = T)
 
-  if (nrow(empty) > 0) warning(paste0("Not found: ", empty$value, " "))
+  empty = names(SPECIES_CD[is.na(SPECIES_CD)])
 
-  return(SPECIES_CD$SPECIES_CD)
+  if (length(empty) > 0) warning(paste0("Not found: ", empty, " "))
 
+  return(unname(SPECIES_CD))
 }
-
-
-
