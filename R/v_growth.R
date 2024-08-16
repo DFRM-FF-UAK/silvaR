@@ -10,8 +10,8 @@
 #' @param species Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
 #'  'JD', 'SO'
 #' @param region Natural region - Abbreviation: 'I, 'II', 'III', 'IV', 'V', 'VI',
-#'  'VII', 'VIII', 'GLOB'
-#' @param output_type if 'df' the results will be returned as df, else as vector
+#'  'VII', 'VIII', 'GLOB' (default)
+#' @param output_type by default results will be returned as a vector, you can type 'df' to return data frame
 #' @return Growth sum in specific timeline
 #' @export
 #'
@@ -23,28 +23,26 @@
 #' volume = c(150, 160, 170)
 #' species = c('SO', 'DB', 'BK')
 #' region = c('I', 'II', 'GLOB')
-#' v_growth(years, stand_id, age, height, volume, species, region, output_type = 'df')
+#' v_growth(stand_id, years, age, height, volume, species, region, output_type = 'df')
 
 
-
-
-
-v_growth = function (stand_id, years, age, height, volume, species, region, output_type = 'list') {
-
+v_growth = function (stand_id,
+                     years,
+                     age,
+                     height,
+                     volume,
+                     species,
+                     region = 'GLOB',
+                     output_type = NULL) {
 
   params_si = readRDS(system.file("params/params_site_index.rds",
                                           package = "growthmodels"))
-  #params_si = readr::read_rds("inst/params/params_site_index.rds")
   params_vt = readRDS(system.file("params/params_v_tab.rds",
                                          package = "growthmodels"))
-  #params_vt = readr::read_rds("inst/params/params_v_tab.rds")
   params_spg = readRDS(system.file("params/params_spg.rds",
                                            package = "growthmodels"))
-  #params_spg = readr::read_rds("inst/params/params_spg.rds")
   params_growth = readRDS(system.file("params/params_growth.rds",
                                               package = "growthmodels"))
-  #params_growth = readr::read_rds("inst/params/params_growth.rds")
-
 
   df = data.frame(stand_id, species, age, height, volume, region) %>%
     dplyr::mutate(species_cd = species, species = growthmodels::sp_group(species)) |>
@@ -126,10 +124,12 @@ v_growth = function (stand_id, years, age, height, volume, species, region, outp
     dplyr::select(-age) %>%
     dplyr::select(stand_id, species_cd, species:ni4, contains("_0_1"), contains("_1_2"), contains("_2_3"), contains("_3_4"), contains("_4_5")) %>%
     dplyr::mutate(growth_sum = rowSums(dplyr::select(., contains("growth_"))))
-  if (output_type == "df") {
-    return(df)
-  } else {
+
+  if (is.null(output_type)) {
     return(df$growth_sum)
+  }
+  else if (output_type == 'df') {
+    return(df)
   }
 }
 

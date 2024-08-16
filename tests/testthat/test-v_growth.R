@@ -7,18 +7,18 @@ volume = c(150, 160, 170)
 species = c('SO', 'DB', 'BK')
 region = c('I', 'II', 'GLOB')
 
-test_that("v_growth oblicza poprawne wartości wzrostu", {
-  result <- v_growth(stand_id, years, age, height, volume, species, region, output_type = 'df')
+test_that("v_growth oblicza poprawne wartości przyrostu", {
+  result <- v_growth(stand_id = stand_id, years = years, age = age, height = height, volume = volume, species = species, region = region, output_type = 'df')
   expect_true(all(c("stand_id", "species_cd", "species", "growth_sum") %in% colnames(result)))
 })
 
 test_that("v_growth zwraca wynik jako wektor", {
-  result <- v_growth(stand_id, years, age, height, volume, species, region, output_type = 'list')
+  result <- v_growth(stand_id, years, age, height, volume, species, region)
   expect_true(is.vector(result))
 })
 
 test_that("v_growth zwraca poprawny wynik", {
-  result <- v_growth(stand_id, years, age, height, volume, species, region, output_type = 'list')
+  result <- v_growth(stand_id, years, age, height, volume, species, region)
   expect_equal(result, c(20.07202,25.02441,32.74718), tolerance = 1e-5)
 })
 

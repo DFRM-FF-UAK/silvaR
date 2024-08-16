@@ -11,8 +11,8 @@ v_growth(
   height,
   volume,
   species,
-  region,
-  output_type = "list"
+  region = "GLOB",
+  output_type = NULL
 )
 }
 \arguments{
@@ -30,9 +30,9 @@ v_growth(
 'JD', 'SO'}
 
 \item{region}{Natural region - Abbreviation: 'I, 'II', 'III', 'IV', 'V', 'VI',
-'VII', 'VIII', 'GLOB'}
+'VII', 'VIII', 'GLOB' (default)}
 
-\item{output_type}{if 'df' the results will be returned as df, else as vector}
+\item{output_type}{by default results will be returned as a vector, you can type 'df' to return data frame}
 }
 \value{
 Growth sum in specific timeline
@@ -48,5 +48,5 @@ height = c(32, 33, 34)
 volume = c(150, 160, 170)
 species = c('SO', 'DB', 'BK')
 region = c('I', 'II', 'GLOB')
-v_growth(years, stand_id, age, height, volume, species, region, output_type = 'df')
+v_growth(stand_id, years, age, height, volume, species, region, output_type = 'df')
 }
