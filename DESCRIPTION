@@ -18,4 +18,5 @@ Imports:
     terra,
     tidyr,
     data.table,
-    stringdist
+    stringdist,
+    rlang

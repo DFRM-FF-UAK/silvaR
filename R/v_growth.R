@@ -24,7 +24,7 @@
 #' species = c('SO', 'DB', 'BK')
 #' region = c('I', 'II', 'GLOB')
 #' v_growth(stand_id, years, age, height, volume, species, region, output_type = 'df')
-
+#' @importFrom rlang :=
 
 v_growth = function (stand_id,
                      years,
@@ -120,10 +120,10 @@ v_growth = function (stand_id,
     df = df |>
       dplyr::select(-si, -vt, -vt_sh, -vt_stand, -zd, -H2)
   }
+
   df = df %>%
     dplyr::select(-age) %>%
-    dplyr::select(stand_id, species_cd, species:ni4, contains("_0_1"), contains("_1_2"), contains("_2_3"), contains("_3_4"), contains("_4_5")) %>%
-    dplyr::mutate(growth_sum = rowSums(dplyr::select(., contains("growth_"))))
+    dplyr::mutate(growth_sum = rowSums(dplyr::select(., dplyr::contains("growth_"))))
 
   if (is.null(output_type)) {
     return(df$growth_sum)
@@ -132,6 +132,3 @@ v_growth = function (stand_id,
     return(df)
   }
 }
-
-
-

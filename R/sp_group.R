@@ -33,7 +33,7 @@ sp_group = function(species, type = 'GRP_P', others = "BK"){
   species = data.frame(species)
 
   sp_g = data.table::fread(system.file('sp_dict/sp_groups.csv', package = 'growthmodels'), encoding = "UTF-8") %>%
-    dplyr::select('GAT', all_of(type))
+    dplyr::select('GAT', dplyr::all_of(type))
 
   # omit empty group value
   #sp_g = sp_g[!sp_g[[type]] %in% c(NA, "", " "),]
