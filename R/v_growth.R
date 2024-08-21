@@ -35,19 +35,19 @@ v_growth = function (stand_id,
                      region = 'GLOB',
                      output_type = NULL) {
 
-  params_si = readRDS(system.file("params/params_site_index.rds",
-                                          package = "growthmodels"))
-  params_vt = readRDS(system.file("params/params_v_tab.rds",
-                                         package = "growthmodels"))
-  params_spg = readRDS(system.file("params/params_spg.rds",
-                                           package = "growthmodels"))
+  #params_si = readRDS(system.file("params/params_site_index.rds",
+                                         # package = "growthmodels"))
+  #params_vt = readRDS(system.file("params/params_v_tab.rds",
+                                       #  package = "growthmodels"))
+  #params_spg = readRDS(system.file("params/params_spg.rds",
+                                         #  package = "growthmodels"))
   params_growth = readRDS(system.file("params/params_growth.rds",
                                               package = "growthmodels"))
 
   df = data.frame(stand_id, species, age, height, volume, region) %>%
-    dplyr::mutate(species_cd = species, species = growthmodels::sp_group(species)) |>
-    dplyr::left_join(params_si) %>%
-    dplyr::left_join(params_vt) %>% dplyr::left_join(params_spg) %>%
+    dplyr::mutate(species_cd = species, species = growthmodels::sp_group(species))  %>%
+    #dplyr::left_join(params_si) %>%
+    #dplyr::left_join(params_vt) %>% dplyr::left_join(params_spg) %>%
     dplyr::left_join(params_growth)
 
   y = 1
@@ -68,45 +68,46 @@ v_growth = function (stand_id,
     spg_start = paste0("spg_start_", y, "_", y + 1)
     spg_end = paste0("spg_end_", y, "_", y + 1)
     # Calcultate share of species
-    df = df |>
+    df = df %>%
       dplyr::mutate(`:=` (!!a, age),
                     `:=` (!!v, volume),
                     `:=` (!!h_start, height))
-    df = df |>
+    df = df %>%
       dplyr::select(-age, -volume, -height)
-    df = df |>
+    df = df %>%
       dplyr::mutate(age = !!rlang::sym(a),
                     volume = !!rlang::sym(v),
                     height = !!rlang::sym(h_start))
-    df = df |>
-      dplyr::group_by(stand_id) |>
-      dplyr::mutate(`:=` (!!v_stand, sum(volume, na.rm = TRUE))) |>
-      dplyr::mutate(`:=` (!!sh, volume / !!rlang::sym(v_stand))) |>
-      dplyr::mutate(share = !!rlang::sym(sh)) |>
-      dplyr::mutate(volume_stand = !!rlang::sym(v_stand)) |>
+    df = df %>%
+      dplyr::group_by(stand_id) %>%
+      dplyr::mutate(`:=` (!!v_stand, sum(volume, na.rm = TRUE))) %>%
+      dplyr::mutate(`:=` (!!sh, volume / !!rlang::sym(v_stand))) %>%
+      dplyr::mutate(share = !!rlang::sym(sh)) %>%
+      dplyr::mutate(volume_stand = !!rlang::sym(v_stand)) %>%
       dplyr::ungroup()
 
     df = df %>%
-      dplyr::mutate(T1 = age, T2 = age + 1,
+      dplyr::mutate(T1 = age,
+                    T2 = age + 1,
                     H1 = height,
-                    T0 = 100,
-                    z0 = (H1 - b3),
-                    r = z0 + (z0^2 + (2 * b2 * H1)/(T1^b1))^0.5,
-                    si = H1 * (T0^b1 * (T1^b1 * r + b2))/(T1^b1 * (T0^b1 * r + b2)),
-                    vt = (n1 * si - n2) * ((1 - exp(b * T1))/(1 - exp(b * 100)))^(c * (n1 * si - n2)^a),
-                    vt_sh = vt * share) |>
-      dplyr::group_by(stand_id) |>
-      dplyr::mutate(vt_stand = sum(vt_sh, na.rm = T)) |>
-      dplyr::ungroup() |>
-      dplyr::mutate(zd = volume_stand / vt_stand) |>
-      dplyr::mutate(H2 = H1 * (T2 ^ b1 * (T1 ^ b1 * ((H1 - b3) + ((H1 - b3)^ 2 + (2 * b2 * H1) / (T1 ^ b1)) ^ 0.5) + b2)) / (T1 ^ b1 * (T2 ^ b1 * ((H1 - b3) + ((H1 - b3)^ 2 + (2 * b2 * H1) / (T1 ^ b1)) ^ 0.5) + b2)),
-                    `:=` (!!spg_start, ((psi4*si -psi5)*((1-exp(psi1*T1))/(1-exp(psi1*100)))^(psi2*(psi4*si -psi5)^psi3)+psi6*H1^4)),
-                    `:=` (!!spg_end, ((psi4*si -psi5)*((1-exp(psi1*T2))/(1-exp(psi1*100)))^(psi2*(psi4*si -psi5)^psi3)+psi6*H2^4)),
+                    #T0 = 100,
+                    #z0 = (H1 - b3),
+                    #r = z0 + (z0^2 + (2 * b2 * H1)/(T1^b1))^0.5,
+                    si = growthmodels::h_growth(T1, rep(100, nrow(.)), H1, species),
+                    vt = growthmodels::v_tab(T1, H1, species),
+                    vt_sh = vt * share) %>%
+      dplyr::group_by(stand_id) %>%
+      dplyr::mutate(vt_stand = sum(vt_sh, na.rm = T)) %>%
+      dplyr::ungroup() %>%
+      dplyr::mutate(zd = growthmodels::zd(volume_stand, vt_stand)) %>%
+      dplyr::mutate(H2 = growthmodels::h_growth(T1, T2, H1, species),
+                    `:=` (!!spg_start, growthmodels::spg(T1, H1, species, region = 'GLOB')),
+                    `:=` (!!spg_end, growthmodels::spg(T2, H2, species, region = 'GLOB')),
                     `:=`(!!growth, (((!!rlang::sym(spg_end)) - (!!rlang::sym(spg_start)))/(T2 - T1)) * ni1 * zd^ni2 * si^ni3 * T1^ni4),
                     `:=`(!!growth, !!rlang::sym(growth) * share),
                     `:=` (!!v, volume + !!rlang::sym(growth))
       )
-    df = df |>
+    df = df %>%
       dplyr::mutate(`:=` (!!h_end, H2),
                     `:=` (!!si, si),
                     `:=` (!!vt, vt),
@@ -117,7 +118,7 @@ v_growth = function (stand_id,
                     age = T2,
                     height = H2,
                     volume = !!rlang::sym(v))
-    df = df |>
+    df = df %>%
       dplyr::select(-si, -vt, -vt_sh, -vt_stand, -zd, -H2)
   }
 
