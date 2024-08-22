@@ -26,7 +26,16 @@
 #' v_growth(stand_id, years, age, height, volume, species, region, output_type = 'df')
 #' @importFrom rlang :=
 
-v_growth = function (stand_id,
+years = 10
+stand_id = c(1, 2, 3)
+age = c(100, 101, 102)
+height = c(32, 33, 34)
+volume = c(150, 160, 170)
+species = c('SO', 'DB', 'BK')
+region = c('I', 'II', 'GLOB')
+
+
+v_growth_test = function (stand_id,
                      years,
                      age,
                      height,
@@ -36,13 +45,13 @@ v_growth = function (stand_id,
                      output_type = NULL) {
 
   #params_si = readRDS(system.file("params/params_site_index.rds",
-  # package = "growthmodels"))
+                                         # package = "growthmodels"))
   #params_vt = readRDS(system.file("params/params_v_tab.rds",
-  #  package = "growthmodels"))
+                                       #  package = "growthmodels"))
   #params_spg = readRDS(system.file("params/params_spg.rds",
-  #  package = "growthmodels"))
+                                         #  package = "growthmodels"))
   params_growth = readRDS(system.file("params/params_growth.rds",
-                                      package = "growthmodels"))
+                                              package = "growthmodels"))
 
   df = data.frame(stand_id, species, age, height, volume, region) %>%
     dplyr::mutate(species_cd = species, species = growthmodels::sp_group(species))  %>%
@@ -79,12 +88,12 @@ v_growth = function (stand_id,
                     volume = !!rlang::sym(v),
                     height = !!rlang::sym(h_start))
     df = df %>%
-      dplyr::group_by(stand_id) %>%
-      dplyr::mutate(`:=` (!!v_stand, sum(volume, na.rm = TRUE))) %>%
-      dplyr::mutate(`:=` (!!sh, volume / !!rlang::sym(v_stand))) %>%
-      dplyr::mutate(share = !!rlang::sym(sh)) %>%
-      #   dplyr::mutate(volume_stand = !!rlang::sym(v_stand)) %>%
-      dplyr::ungroup()
+       dplyr::group_by(stand_id) %>%
+       dplyr::mutate(`:=` (!!v_stand, sum(volume, na.rm = TRUE))) %>%
+       dplyr::mutate(`:=` (!!sh, volume / !!rlang::sym(v_stand))) %>%
+       dplyr::mutate(share = !!rlang::sym(sh)) %>%
+    #   dplyr::mutate(volume_stand = !!rlang::sym(v_stand)) %>%
+       dplyr::ungroup()
 
     df = df %>%
       dplyr::mutate(T1 = age,
@@ -96,8 +105,8 @@ v_growth = function (stand_id,
                     si = growthmodels::h_growth(T1, T0, H1, species)#,
                     #vt = growthmodels::v_tab(T1, H1, species),
                     #vt_sh = vt * share
-      ) %>%
-      # dplyr::group_by(stand_id) %>%
+                    ) %>%
+     # dplyr::group_by(stand_id) %>%
       #dplyr::mutate(vt_stand = sum(vt_sh, na.rm = T)) %>%
       #dplyr::ungroup() %>%
       dplyr::mutate(zd = growthmodels::zd_share(stand_id, volume, T1, H1, species)) %>%
@@ -139,3 +148,5 @@ v_growth = function (stand_id,
     return(df)
   }
 }
+
+
