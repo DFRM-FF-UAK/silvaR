@@ -102,8 +102,8 @@ v_growth = function (stand_id,
       #dplyr::ungroup() %>%
       dplyr::mutate(zd = growthmodels::zd_share(stand_id, volume, T1, H1, species)) %>%
       dplyr::mutate(H2 = growthmodels::h_growth(T1, T2, H1, species),
-                    `:=` (!!spg_start, growthmodels::spg(T1, H1, species, region = 'GLOB')),
-                    `:=` (!!spg_end, growthmodels::spg(T2, H2, species, region = 'GLOB')),
+                    `:=` (!!spg_start, growthmodels::spg(T1, H1, species, region)),
+                    `:=` (!!spg_end, growthmodels::spg(T2, H2, species, region)),
                     `:=`(!!growth, (((!!rlang::sym(spg_end)) - (!!rlang::sym(spg_start)))/(T2 - T1)) * ni1 * zd^ni2 * si^ni3 * T1^ni4),
                     `:=`(!!growth, !!rlang::sym(growth) * share),
                     `:=` (!!v, volume + !!rlang::sym(growth))
