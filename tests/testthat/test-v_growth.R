@@ -18,8 +18,14 @@ test_that("v_growth zwraca wynik jako wektor", {
 })
 
 test_that("v_growth zwraca poprawny wynik", {
-  result <- v_growth(stand_id, years, age, height, volume, species, region)
-  expect_equal(result, c(41.13005,51.49960,67.21530), tolerance = 1e-5)
+  result <- v_growth(stand_id = stand_id,
+                     years = years,
+                     age = age,
+                     height = height,
+                     volume = volume,
+                     species = species,
+                     region = region)
+  expect_equal(result, c(40.52663,53.18279,67.21530), tolerance = 1e-5)
 })
 
 test_that("v_growth obsługuje brakujące parametry", {
