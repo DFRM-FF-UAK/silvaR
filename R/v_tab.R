@@ -27,7 +27,7 @@ v_tab = function(age, height, species) {
                                   package = "growthmodels"))
 
   df = data.frame(species, age, height) %>%
-    dplyr::mutate(species = growthmodels::sp_group(species, "GRP_V")) %>%
+    dplyr::mutate(species = growthmodels::sp_group(species, 'GRP_V_TAB')) %>%
     dplyr::left_join(params_vt)
 
   df = df %>%
