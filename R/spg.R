@@ -27,7 +27,7 @@ spg = function(age, height, species, region = 'GLOB') {
                                    package = "growthmodels"))
 
   df = data.frame(species, age, height, region) %>%
-    dplyr::mutate(species = growthmodels::sp_group(species, "GRP_V")) %>%
+    dplyr::mutate(species = growthmodels::sp_group(species, "GRP_P")) %>%
     dplyr::left_join(params_spg)
 
   df = df %>%
