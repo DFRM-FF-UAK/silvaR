@@ -14,6 +14,7 @@
 #' - GRP_V - volume group
 #' - GRP_H - height group; Forest Data Bank based
 #' - GRP_P_BDL - growth group; Forest Data Bank based
+#' - GRP_V_TAB - tabular volume group
 #'
 #'
 #' @return Vector of species group name
@@ -28,7 +29,7 @@
 sp_group = function(species, type = 'GRP_P', others = "BK"){
 
   # check type
-  stopifnot("Group type is not valid" = type %in% c('GRP_H','GRP_TH','GRP_V','GRP_P','GRP_P_BDL'))
+  stopifnot("Group type is not valid" = type %in% c('GRP_H','GRP_TH','GRP_V','GRP_P','GRP_P_BDL', 'GRP_V_TAB'))
 
   species = data.frame(species)
 

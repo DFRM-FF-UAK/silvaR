@@ -27,6 +27,7 @@ necessary for the height and growth prediction
 \item GRP_V - volume group
 \item GRP_H - height group; Forest Data Bank based
 \item GRP_P_BDL - growth group; Forest Data Bank based
+\item GRP_V_TAB - tabular volume group
 }
 }
 \examples{
