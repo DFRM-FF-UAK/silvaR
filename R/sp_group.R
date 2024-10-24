@@ -67,6 +67,8 @@ sp_group = function(species, type = 'GRP_P', others = "BK"){
     message('Grouped by heigth - Forest Data Bank based')
   } else if (type == 'GRP_P_BDL') {
     message('Grouped by growth - Forest Data Bank based')
+  }else if (type == 'GRP_V_TAB') {
+    message('Grouped by tabular volume group')
   }
 
   return(species$species_group)
