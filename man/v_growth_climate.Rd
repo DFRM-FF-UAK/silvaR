@@ -30,9 +30,9 @@ v_growth_climate(
 \item{species}{Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
 'JD', 'SO'}
 
-\item{rsum}{precipitation sum #chodzi o sumę opadów z całego roku?}
+\item{rsum}{precipitation sum}
 
-\item{maxtavg}{maxium temperature #chodzi o maksymalną średnią temperaturę miesięczną?}
+\item{maxtavg}{maxium temperature}
 
 \item{output_type}{by default results will be returned as a vector, you can type 'df' to return data frame}
 }
