@@ -10,8 +10,8 @@
 #' @param volume Volume at age T1
 #' @param species Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
 #'  'JD', 'SO'
-#' @param rsum precipitation sum #chodzi o sumę opadów z całego roku?
-#' @param maxtavg maxium temperature #chodzi o maksymalną średnią temperaturę miesięczną?
+#' @param rsum precipitation sum
+#' @param maxtavg maxium temperature
 #' @param output_type by default results will be returned as a vector, you can type 'df' to return data frame
 #' @return Growth sum in specific timeline
 #' @export
