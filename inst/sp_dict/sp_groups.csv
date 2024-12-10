@@ -7,36 +7,36 @@ X;GAT;SPECIES_NUM;GAT_NAZWA;LATIN_NAME;SHRUBTREE_FL;BOT_SPECIES;BOT_GENUS;FOMATR
 6;ABI.PI;43500;jodła sp.;Abies pindrow;D;jodła;;JD;JD;NA;I;NA;306;JD;JD;;NA;30;35;4;JD;JD;JD;JD
 7;ABI.SA.MA;42901;jodła sachalińska;Abies sachalinensis mayriana;D;jodła;odm.Mayra;JD;JD;NA;I;NA;307;JD;JD;;NA;30;35;4;JD;JD;JD;JD
 8;ABI.SA.NE;42902;jodła sachalińska;Abies sachalinensis nemorensis;D;jodła;odm.leśna;JD;JD;NA;I;NA;308;JD;JD;;NA;30;35;4;JD;JD;JD;JD
-9;ACE.NE.AU;320902;klon jesionolistny;Acer negundo Auratum;D;klon;"odm.""""Auratum""""";DB;BK;NA;L;NA;309;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-10;ACE.NE.AV;320904;klon jesionolistny;Acer negundo Aureovariegatum;D;klon;"odm.""""Aureovariegatum""""";DB;BK;NA;L;NA;310;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-11;ACE.NE.OD;320901;klon jesionolistny;Acer negundo Odessanum;D;klon;"odm.""""Odessanum""""";DB;BK;NA;L;NA;311;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-12;ACE.NE.VA;320903;klon jesionolistny;Acer negundo Variegatum;D;klon;"odm.""""Variegatum""""";DB;BK;NA;L;NA;312;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-13;ACE.PA.AT;321001;klon palmowy;Acer palmatum atropurpureum;D;klon;"odm.""""Atropurpureum""""";DB;BK;NA;L;NA;313;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-14;ACE.PL.CK;320107;klon pospolity;Acer platanoides;D;klon;odm. Crimson King;DB;BK;NA;L;NA;314;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-15;ACE.PL.DR;320104;klon pospolity;Acer platanoides Drummondii;D;klon;odm.Drummonda;DB;BK;NA;L;NA;315;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-16;ACE.PL.FB;320103;klon pospolity;Acer platanoides Faassen's Bl.;D;klon;"odm.""""Faassens Black""""";DB;BK;NA;L;NA;316;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-17;ACE.PL.GL;320105;klon pospolity;Acer platanoides Globosum;D;klon;"odm.""""Globosum""""";DB;BK;NA;L;NA;317;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-18;ACE.PL.LO;320106;klon pospolity;Acer platanoides Palmatifidum;D;klon;odm.Lorberga;DB;BK;NA;L;NA;318;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-19;ACE.PL.RE;320102;klon pospolity;Acer platanoides Reitenbacha;D;klon;odm.Reitenbacha;DB;BK;NA;L;NA;319;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-20;ACE.PL.SC;320101;klon pospolity;Acer platanoides Schwedleri;D;klon;odm.Schwedlera;DB;BK;NA;L;NA;320;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-21;ACE.PS.LE;320204;klon jawor;Acer pseudoplatanus Leopoldii;D;klon;"odm.""""Leopoldii""""";DB;BK;NA;L;NA;321;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-22;ACE.PS.PH;320203;klon jawor;Acer pseudoplatanus Pr.Handjer;D;klon;"odm.""""Prinz Handjery""""";DB;BK;NA;L;NA;322;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-23;ACE.PS.PU;320201;klon jawor;Acer pseudoplatanus Purpureum;D;klon;"odm.""""Purpureum""""";DB;BK;NA;L;NA;323;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-24;ACE.PS.SL;320205;klon jawor;Acer pseudoplatanus Sim.Lo.Fr.;D;klon;"odm.""""Simon Luis Freres""""";DB;BK;NA;L;NA;324;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-25;ACE.PS.WO;320202;klon jawor;Acer pseudoplatanus Worleei;D;klon;"odm.Worleei""""";DB;BK;NA;L;NA;325;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-26;ACE.SA.LU;320703;klon srebrzysty;Acer saccharinum Lutescens;D;klon;"odm.""""Lutescens""""";DB;BK;NA;L;NA;326;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-27;ACE.SA.PY;320702;klon srebrzysty;Acer saccharinum Pyramidale;D;klon;"odm.""""Pyramidale""""";DB;BK;NA;L;NA;327;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-28;ACE.SA.WI;320701;klon srebrzysty;Acer saccharinum Lacin.Wieri;D;klon;"odm.""""Wieri""""";DB;BK;NA;L;NA;328;DB;DB;;NA;10;15;4;JW;DB;BK;BK
-29;AES.HI.BA;1100101;kasztanowiec biały;Aesculus hippocastanum Bauman.;D;kasztanowiec;"odm.""""Baumanni""""";OS;BRZ;NA;L;NA;329;BRZ;OS;;NA;10;15;4;OS;BRZ;BRZ;BRZ
-30;AES.HI.PA;1100103;kasztanowiec biały;Aesculus hippocastanum Partyz.;D;kasztanowiec;"odm.""""Partyzant""""";OS;BRZ;NA;L;NA;330;BRZ;OS;;NA;10;15;4;OS;BRZ;BRZ;BRZ
-31;AES.HI.PY;1100102;kasztanowiec biały;Aesculus hippocastanum Pyram.;D;kasztanowiec;"odm.""""Pyramidalis""""";OS;BRZ;NA;L;NA;331;BRZ;OS;;NA;10;15;4;OS;BRZ;BRZ;BRZ
-32;AES.HI.UM;1100104;kasztanowiec biały;Aesculus hippocastanum Umbrac.;D;kasztanowiec;"odm.""""Umbraculifera""""";OS;BRZ;NA;L;NA;332;BRZ;OS;;NA;10;15;4;OS;BRZ;BRZ;BRZ
+9;ACE.NE.AU;320902;klon jesionolistny;Acer negundo Auratum;D;klon;"odm.""""Auratum""""";DB;BK;NA;L;NA;309;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+10;ACE.NE.AV;320904;klon jesionolistny;Acer negundo Aureovariegatum;D;klon;"odm.""""Aureovariegatum""""";DB;BK;NA;L;NA;310;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+11;ACE.NE.OD;320901;klon jesionolistny;Acer negundo Odessanum;D;klon;"odm.""""Odessanum""""";DB;BK;NA;L;NA;311;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+12;ACE.NE.VA;320903;klon jesionolistny;Acer negundo Variegatum;D;klon;"odm.""""Variegatum""""";DB;BK;NA;L;NA;312;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+13;ACE.PA.AT;321001;klon palmowy;Acer palmatum atropurpureum;D;klon;"odm.""""Atropurpureum""""";DB;BK;NA;L;NA;313;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+14;ACE.PL.CK;320107;klon pospolity;Acer platanoides;D;klon;odm. Crimson King;DB;BK;NA;L;NA;314;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+15;ACE.PL.DR;320104;klon pospolity;Acer platanoides Drummondii;D;klon;odm.Drummonda;DB;BK;NA;L;NA;315;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+16;ACE.PL.FB;320103;klon pospolity;Acer platanoides Faassen's Bl.;D;klon;"odm.""""Faassens Black""""";DB;BK;NA;L;NA;316;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+17;ACE.PL.GL;320105;klon pospolity;Acer platanoides Globosum;D;klon;"odm.""""Globosum""""";DB;BK;NA;L;NA;317;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+18;ACE.PL.LO;320106;klon pospolity;Acer platanoides Palmatifidum;D;klon;odm.Lorberga;DB;BK;NA;L;NA;318;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+19;ACE.PL.RE;320102;klon pospolity;Acer platanoides Reitenbacha;D;klon;odm.Reitenbacha;DB;BK;NA;L;NA;319;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+20;ACE.PL.SC;320101;klon pospolity;Acer platanoides Schwedleri;D;klon;odm.Schwedlera;DB;BK;NA;L;NA;320;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+21;ACE.PS.LE;320204;klon jawor;Acer pseudoplatanus Leopoldii;D;klon;"odm.""""Leopoldii""""";DB;BK;NA;L;NA;321;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+22;ACE.PS.PH;320203;klon jawor;Acer pseudoplatanus Pr.Handjer;D;klon;"odm.""""Prinz Handjery""""";DB;BK;NA;L;NA;322;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+23;ACE.PS.PU;320201;klon jawor;Acer pseudoplatanus Purpureum;D;klon;"odm.""""Purpureum""""";DB;BK;NA;L;NA;323;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+24;ACE.PS.SL;320205;klon jawor;Acer pseudoplatanus Sim.Lo.Fr.;D;klon;"odm.""""Simon Luis Freres""""";DB;BK;NA;L;NA;324;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+25;ACE.PS.WO;320202;klon jawor;Acer pseudoplatanus Worleei;D;klon;"odm.Worleei""""";DB;BK;NA;L;NA;325;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+26;ACE.SA.LU;320703;klon srebrzysty;Acer saccharinum Lutescens;D;klon;"odm.""""Lutescens""""";DB;BK;NA;L;NA;326;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+27;ACE.SA.PY;320702;klon srebrzysty;Acer saccharinum Pyramidale;D;klon;"odm.""""Pyramidale""""";DB;BK;NA;L;NA;327;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+28;ACE.SA.WI;320701;klon srebrzysty;Acer saccharinum Lacin.Wieri;D;klon;"odm.""""Wieri""""";DB;BK;NA;L;NA;328;DB;DB;;NA;10;15;4;JW;KL;BK;BK
+29;AES.HI.BA;1100101;kasztanowiec biały;Aesculus hippocastanum Bauman.;D;kasztanowiec;"odm.""""Baumanni""""";OS;BRZ;NA;L;NA;329;BRZ;OS;;NA;10;15;4;OS;BRZ;BRZ;OS
+30;AES.HI.PA;1100103;kasztanowiec biały;Aesculus hippocastanum Partyz.;D;kasztanowiec;"odm.""""Partyzant""""";OS;BRZ;NA;L;NA;330;BRZ;OS;;NA;10;15;4;OS;BRZ;BRZ;OS
+31;AES.HI.PY;1100102;kasztanowiec biały;Aesculus hippocastanum Pyram.;D;kasztanowiec;"odm.""""Pyramidalis""""";OS;BRZ;NA;L;NA;331;BRZ;OS;;NA;10;15;4;OS;BRZ;BRZ;OS
+32;AES.HI.UM;1100104;kasztanowiec biały;Aesculus hippocastanum Umbrac.;D;kasztanowiec;"odm.""""Umbraculifera""""";OS;BRZ;NA;L;NA;332;BRZ;OS;;NA;10;15;4;OS;BRZ;BRZ;OS
 33;AGR;590100;agrest pospolity;Ribes grossularia;K;agrest;;;;NA;L;NA;333;;;;NA;NA;NA;4;;;;
 34;AK;410100;robinia akacjowa;Robinia pseudoacacia;D;robinia;;BRZ;BRZ;NA;L;NA;88;BRZ;BRZ;OL;80;5;10;4;AK;AK;DB;DB
 35;AKT.O;1160100;aktinidia ostrolistna;Actinidia arguta;K;aktinidia;;;;NA;L;NA;334;;;;NA;NA;NA;4;;;;
 36;AKT.P;1160200;aktinidia pstrolistna;Actinidia kolomikta;K;aktinidia;;;;NA;L;NA;335;;;;NA;NA;NA;4;;;;
-37;ALN.IN.LA;370201;olsza szara;"Alnus incana """"Laciniata""""";D;olsza;"odm.""""Laciniata""""";OL;OL;NA;L;NA;336;BK;OL;;NA;0;10;4;OL;BK;OL;OL
-38;ALN.IN.PE;370202;olsza szara;"Alnus incana """"Pendula""""";D;olsza;"odm.""""Pendula""""";OL;OL;NA;L;NA;337;BK;OL;;NA;0;10;4;OL;BK;OL;OL
+37;ALN.IN.LA;370201;olsza szara;"Alnus incana """"Laciniata""""";D;olsza;"odm.""""Laciniata""""";OL;OL;NA;L;NA;336;BK;OL;;NA;0;10;4;OL;OL;OL;OL
+38;ALN.IN.PE;370202;olsza szara;"Alnus incana """"Pendula""""";D;olsza;"odm.""""Pendula""""";OL;OL;NA;L;NA;337;BK;OL;;NA;0;10;4;OL;OL;OL;OL
 39;AMB.A;620100;ambrowiec amerykański;Liquidambar styraciflua;D;ambrowiec;;;;NA;L;NA;338;;;;NA;5;10;4;;;;
 40;AMF.K;920100;amorfa krzewiasta;Amorpha fruticosa;K;amorfa;;;;NA;L;NA;339;;;;NA;NA;NA;4;;;;
 41;ARA.C;70100;araukaria chilijska;Araucaria araucana;D;araukaria;;;;NA;I;NA;340;;;;NA;5;10;4;;;;
@@ -87,7 +87,7 @@ X;GAT;SPECIES_NUM;GAT_NAZWA;LATIN_NAME;SHRUBTREE_FL;BOT_SPECIES;BOT_GENUS;FOMATR
 86;BUX.SE.SU;1020101;bukszpan wieczniezielony;Buxus sempervirens Suffrutic.;K;bukszpan;"odm.""""Suffruticosa""""";;;NA;L;NA;378;;;;NA;NA;NA;4;;;;
 87;CAR.BE.CO;350102;grab pospolity;Carpinus betulus Columnaris;D;grab;odm.kolumnowa;GB;DB;NA;L;NA;379;DB;DB;;NA;20;30;4;GB;DB;BK;BK
 88;CAR.BE.FA;350103;grab pospolity;Carpinus betulus Fastigiata;D;grab;odm.stożkowa;GB;DB;NA;L;NA;380;DB;DB;;NA;20;30;4;GB;DB;BK;BK
-89;CAR.BE.QU;350101;grab pospolity;Carpinus betulus Quercifolia;D;grab;odm.dŕbolistna;GB;DB;NA;L;NA;381;DB;DB;;NA;20;30;4;GB;DB;BK;BK
+89;CAR.BE.QU;350101;grab pospolity;Carpinus betulus Quercifolia;D;grab;odm.dŕbolistna;GB;DB;NA;L;NA;381;DB;DB;;NA;20;30;4;GB;GB;BK;BK
 90;CDR.A;90100;cedr atlaski;Cedrus atlantica;D;cedr;;;;NA;I;NA;382;;;;NA;20;30;4;;;;
 91;CDR.C;90200;cedr cypryjski;Cedrus brevifolia;D;cedr;;;;NA;I;NA;383;;;;NA;20;30;4;;;;
 92;CDR.H;90300;cedr himalajski;Cedrus deodara;D;cedr;;;;NA;I;NA;384;;;;NA;20;30;4;;;;
@@ -195,16 +195,16 @@ X;GAT;SPECIES_NUM;GAT_NAZWA;LATIN_NAME;SHRUBTREE_FL;BOT_SPECIES;BOT_GENUS;FOMATR
 194;FOR.SU.FO;1270102;forsycja zwisająca;Forsythia suspensa fortune'a;K;forsycja;odm.Fortune'a;;;NA;L;NA;472;;;;NA;NA;NA;4;;;;
 195;FOR.SU.SI;1270101;forsycja zwisająca;Forsythia suspensa sieboldii;K;forsycja;odm.Siebolda;;;NA;L;NA;473;;;;NA;NA;NA;4;;;;
 196;FOT.A;610100;fotergilia amerykańska;Fothergilla major;K;fotergilia;;;;NA;L;NA;474;;;;NA;NA;NA;4;;;;
-197;FRA.EX.AP;340105;jesion wyniosły;Fraxinus excelsior Aurea Pend.;D;jesion;odm.złotokora zwisająca;DB;JS;NA;L;NA;475;BK;BK;;NA;15;20;4;JS;BK;DB;DB
-198;FRA.EX.AU;340104;jesion wyniosły;Fraxinus excelsior Aurea;D;jesion;odm.złotokora;DB;JS;NA;L;NA;476;BK;BK;;NA;15;20;4;JS;BK;DB;DB
-199;FRA.EX.DI;340102;jesion wyniosły;Fraxinus excelsior Diversifoli;D;jesion;odm.jednolistna;DB;JS;NA;L;NA;477;BK;BK;;NA;15;20;4;JS;BK;DB;DB
-200;FRA.EX.EL;340107;jesion wyniosły;Fraxinus excelsior Elegantiss.;D;jesion;odm.drobnolistna;DB;JS;NA;L;NA;478;BK;BK;;NA;15;20;4;JS;BK;DB;DB
-201;FRA.EX.HP;340103;jesion wyniosły;Fraxinus excel. Heteroph.Pend.;D;jesion;odm.jednolistna zwisająca;DB;JS;NA;L;NA;479;BK;BK;;NA;15;20;4;JS;BK;DB;DB
-202;FRA.EX.NA;340106;jesion wyniosły;Fraxinus excelsior Nana;D;jesion;odm.kulista;DB;JS;NA;L;NA;480;BK;BK;;NA;15;20;4;JS;BK;DB;DB
-203;FRA.EX.PE;340101;jesion wyniosły;Fraxinus excelsior Pendula;D;jesion;odm.zwisająca;DB;JS;NA;L;NA;481;BK;BK;;NA;15;20;4;JS;BK;DB;DB
-204;FRA.PE.AU;340202;jesion pensylwanski;Fraxinus pennsylva. Aucubae.;D;jesion;odm.pstrolistna;DB;JS;NA;L;NA;482;BK;BK;;NA;15;20;4;JS;BK;DB;DB
-205;FRA.PE.CR;340203;jesion pensylwanski;Fraxinus pennsylvanica Crispa;D;jesion;odm.kulista;DB;JS;NA;L;NA;483;BK;BK;;NA;15;20;4;JS;BK;DB;DB
-206;FRA.PE.LA;340201;jesion pensylwanski;Fraxinus pennsylvanica lanceo.;D;jesion;odm.wąskolistna;DB;JS;NA;L;NA;484;BK;BK;;NA;15;20;4;JS;BK;DB;DB
+197;FRA.EX.AP;340105;jesion wyniosły;Fraxinus excelsior Aurea Pend.;D;jesion;odm.złotokora zwisająca;DB;JS;NA;L;NA;475;BK;BK;;NA;15;20;4;JS;JS;DB;JS
+198;FRA.EX.AU;340104;jesion wyniosły;Fraxinus excelsior Aurea;D;jesion;odm.złotokora;DB;JS;NA;L;NA;476;BK;BK;;NA;15;20;4;JS;JS;DB;JS
+199;FRA.EX.DI;340102;jesion wyniosły;Fraxinus excelsior Diversifoli;D;jesion;odm.jednolistna;DB;JS;NA;L;NA;477;BK;BK;;NA;15;20;4;JS;JS;DB;JS
+200;FRA.EX.EL;340107;jesion wyniosły;Fraxinus excelsior Elegantiss.;D;jesion;odm.drobnolistna;DB;JS;NA;L;NA;478;BK;BK;;NA;15;20;4;JS;JS;DB;JS
+201;FRA.EX.HP;340103;jesion wyniosły;Fraxinus excel. Heteroph.Pend.;D;jesion;odm.jednolistna zwisająca;DB;JS;NA;L;NA;479;BK;BK;;NA;15;20;4;JS;JS;DB;JS
+202;FRA.EX.NA;340106;jesion wyniosły;Fraxinus excelsior Nana;D;jesion;odm.kulista;DB;JS;NA;L;NA;480;BK;BK;;NA;15;20;4;JS;JS;DB;JS
+203;FRA.EX.PE;340101;jesion wyniosły;Fraxinus excelsior Pendula;D;jesion;odm.zwisająca;DB;JS;NA;L;NA;481;BK;BK;;NA;15;20;4;JS;JS;DB;JS
+204;FRA.PE.AU;340202;jesion pensylwanski;Fraxinus pennsylva. Aucubae.;D;jesion;odm.pstrolistna;DB;JS;NA;L;NA;482;BK;BK;;NA;15;20;4;JS;JS;DB;JS
+205;FRA.PE.CR;340203;jesion pensylwanski;Fraxinus pennsylvanica Crispa;D;jesion;odm.kulista;DB;JS;NA;L;NA;483;BK;BK;;NA;15;20;4;JS;JS;DB;JS
+206;FRA.PE.LA;340201;jesion pensylwanski;Fraxinus pennsylvanica lanceo.;D;jesion;odm.wąskolistna;DB;JS;NA;L;NA;484;BK;BK;;NA;15;20;4;JS;JS;DB;JS
 207;FRS.E;1270500;forsycja europejska;Forsythia europaea;K;forsycja;;;;NA;L;NA;485;;;;NA;NA;NA;4;;;;
 208;FRS.K;1270400;forsycja koreańska;Forsythia ovata;K;forsycja;;;;NA;L;NA;486;;;;NA;NA;NA;4;;;;
 209;FRS.KO;1270600;forsycja Kobendzy;Forsythia kobendzae;K;forsycja;;;;NA;L;NA;487;;;;NA;NA;NA;4;;;;
@@ -251,8 +251,8 @@ X;GAT;SPECIES_NUM;GAT_NAZWA;LATIN_NAME;SHRUBTREE_FL;BOT_SPECIES;BOT_GENUS;FOMATR
 250;IRG.W;770200;irga wczesna;Cotoneaster praecox;K;irga;;;;NA;L;NA;525;;;;NA;NA;NA;4;;;;
 251;IRG.WK;771100;irga wielokwiatowa;Cotoneaster multiflora;K;irga;;;;NA;L;NA;526;;;;NA;NA;NA;4;;;;
 252;IRG.WL;770900;irga wielkolistna;Cotoneaster foveolata;K;irga;;;;NA;L;NA;527;;;;NA;NA;NA;4;;;;
-253;IWA;390800;wierzba iwa;Salix caprea;D;wierzba;;OS;OS;NA;L;NA;97;BRZ;BRZ;OS;50;0;10;4;OS;BRZ;BRZ;BRZ
-254;IWA.P;390801;wierzba iwa;Salix caprea;D;wierzba;odm. Pendula;OS;OS;NA;L;NA;528;BRZ;BRZ;;NA;0;10;4;OS;BRZ;BRZ;BRZ
+253;IWA;390800;wierzba iwa;Salix caprea;D;wierzba;;OS;OS;NA;L;NA;97;BRZ;BRZ;OS;50;0;10;4;OS;OS;BRZ;OS
+254;IWA.P;390801;wierzba iwa;Salix caprea;D;wierzba;odm. Pendula;OS;OS;NA;L;NA;528;BRZ;BRZ;;NA;0;10;4;OS;OS;BRZ;OS
 255;JAŁ;60100;jałowiec pospolity;Juniperus communis;K;jałowiec;;;;NA;I;NA;35;;;;NA;NA;NA;4;;;;
 256;JAŁ.C;60200;jałowiec chiński;Juniperus chinensis;K;jałowiec;;;;NA;I;NA;529;;;;NA;NA;NA;4;;;;
 257;JAŁ.C.CG;60201;jałowiec chiński;Juniperus chinensis;K;jałowiec;odm. Columnaris Glauca;;;NA;I;NA;530;;;;NA;NA;NA;4;;;;
@@ -342,7 +342,7 @@ X;GAT;SPECIES_NUM;GAT_NAZWA;LATIN_NAME;SHRUBTREE_FL;BOT_SPECIES;BOT_GENUS;FOMATR
 341;JEM;480100;jemioła pospolita;Viscum album;K;jemioła;;;;NA;L;NA;612;;;;NA;NA;NA;4;;;;
 342;JEM.J;480200;jemioła jodłowa;Viscum abietis;K;jemioła;;;;NA;L;NA;613;;;;NA;NA;NA;4;;;;
 343;JEM.R;480300;jemioła rozpierzchła;Viscum laxum;K;jemioła;;;;NA;L;NA;614;;;;NA;NA;NA;4;;;;
-344;JKL;320900;klon jesionolistny;Acer negundo;D;klon;;OS;BK;NA;L;NA;94;DB;DB;OS;50;10;15;4;JW;DB;BK;BK
+344;JKL;320900;klon jesionolistny;Acer negundo;D;klon;;OS;BK;NA;L;NA;94;DB;DB;OS;50;10;15;4;JW;KL;BK;BK
 345;JRZ;730100;jarząb pospolity;Sorbus aucuparia;D;jarząb;;BRZ;BRZ;NA;L;NA;87;BRZ;BRZ;OS;50;15;20;4;BRZ;BRZ;BRZ;BRZ
 346;JRZ.B;730500;jarząb brekinia;Sorbus torminalis;D;jarząb;;BRZ;BRZ;NA;L;NA;105;BRZ;BRZ;OS;50;15;20;4;BRZ;BRZ;BRZ;BRZ
 347;JRZ.M;730400;jarząb mączny;Sorbus aria;D;jarząb;;BRZ;BRZ;NA;L;NA;615;BRZ;BRZ;;NA;15;20;4;BRZ;BRZ;BRZ;BRZ
@@ -355,7 +355,7 @@ X;GAT;SPECIES_NUM;GAT_NAZWA;LATIN_NAME;SHRUBTREE_FL;BOT_SPECIES;BOT_GENUS;FOMATR
 354;JŚM.N;1300100;jaśmin nagokwiatowy;Jasminum nudiflorum;K;jaśmin;;;;NA;L;NA;620;;;;NA;NA;NA;4;;;;
 355;JUD.K;880200;judaszowiec kanadyjski;Circis canadensis;K;judaszowiec;;;;NA;L;NA;621;;;;NA;NA;NA;4;;;;
 356;JUD.P;880100;judaszowiec południowy;Cercis siliquastrum;K;judaszowiec;;;;NA;L;NA;622;;;;NA;NA;NA;4;;;;
-357;JW;320200;klon jawor;Acer pseudoplatanus;D;klon;;DB;BK;NA;L;NA;45;BK;BK;BK;100;10;15;4;JW;BK;BK;BK
+357;JW;320200;klon jawor;Acer pseudoplatanus;D;klon;;DB;BK;NA;L;NA;45;BK;BK;BK;100;10;15;4;JW;KL;BK;BK
 358;KAL.B;1360500;kalina Burkwooda;Viburnum burkwoodii;K;kalina;;;;NA;L;NA;623;;;;NA;NA;NA;4;;;;
 359;KAL.H;1360200;kalina hordowina;Viburnum lantana;K;kalina;;;;NA;L;NA;624;;;;NA;NA;NA;4;;;;
 360;KAL.J;1360400;kalina Judda;Viburnum juddii;K;kalina;;;;NA;L;NA;625;;;;NA;NA;NA;4;;;;
@@ -371,7 +371,7 @@ X;GAT;SPECIES_NUM;GAT_NAZWA;LATIN_NAME;SHRUBTREE_FL;BOT_SPECIES;BOT_GENUS;FOMATR
 370;KAR.S;940100;karagana syberyjska;Caragana arborescens;K;karagana;;;;NA;L;NA;634;;;;NA;NA;NA;4;;;;
 371;KER.JA.PL;800101;złotlin japoński;Kerria japonica Pleniflora;K;złotlin;"odm.""""Pleniflora""""";;;NA;L;NA;635;;;;NA;NA;NA;4;;;;
 372;KET.S;1150100;ketmia syryjska;Hibiscus syriacus;K;ketmia;;;;NA;L;NA;636;;;;NA;10;15;4;;;;
-373;KL;320100;klon pospolity;Acer platanoides;D;klon;;DB;BK;NA;L;NA;44;BK;BK;BK;100;10;15;4;JW;BK;BK;BK
+373;KL;320100;klon pospolity;Acer platanoides;D;klon;;DB;BK;NA;L;NA;44;BK;BK;BK;100;10;15;4;JW;KL;BK;BK
 374;KL.C;320600;klon cukrowy;Acer saccharum;D;klon;;DB;BK;NA;L;NA;637;BK;BK;;NA;10;15;4;JW;KL;BK;BK
 375;KL.CZ;320800;klon czerwony;Acer rubrum;D;klon;;DB;BK;NA;L;NA;638;;;;NA;10;15;4;;KL;;
 376;KL.CZ.CO;320801;klon czerwony;Acer rubrum;D;klon;odm. Columnare;DB;BK;NA;L;NA;639;;;;NA;10;15;4;;KL;;
@@ -582,9 +582,9 @@ X;GAT;SPECIES_NUM;GAT_NAZWA;LATIN_NAME;SHRUBTREE_FL;BOT_SPECIES;BOT_GENUS;FOMATR
 581;PRZ.K.KE;580301;porzeczka krwista;Ribes sanguineum;K;porzeczka;odm. King Edward VII;;;NA;L;NA;824;;;;NA;NA;NA;4;;;;
 582;PRZ.S;580700;porzeczka skalna;Ribes petraeum;K;porzeczka;;;;NA;L;NA;825;;;;NA;NA;NA;4;;;;
 583;PRZ.Z;580200;porzeczka złota;Ribes aureum;K;porzeczka;;;;NA;L;NA;826;;;;NA;NA;NA;4;;;;
-584;PSE.DO.AR;50101;daglezja zielona;Pseudotsuga menziesii Argentea;D;daglezja;"odm.""""Argentea""""";JD;JD;NA;I;NA;827;JD;JD;;NA;10;15;4;DG;JD;JD;JD
-585;PSE.DO.FA;50102;daglezja zielona;Pseudotsuga menziesii Fastig.;D;daglezja;"odm.""""Fastigiata""""";JD;JD;NA;I;NA;828;JD;JD;;NA;10;15;4;DG;JD;JD;JD
-586;PSE.DO.GL;50103;daglezja zielona;Pseudotsuga menziesii glauca;D;daglezja;odm.sina;JD;JD;NA;I;NA;829;JD;JD;;NA;10;15;4;DG;JD;JD;JD
+584;PSE.DO.AR;50101;daglezja zielona;Pseudotsuga menziesii Argentea;D;daglezja;"odm.""""Argentea""""";JD;JD;NA;I;NA;827;JD;JD;;NA;10;15;4;DG;DG;JD;JD
+585;PSE.DO.FA;50102;daglezja zielona;Pseudotsuga menziesii Fastig.;D;daglezja;"odm.""""Fastigiata""""";JD;JD;NA;I;NA;828;JD;JD;;NA;10;15;4;DG;DG;JD;JD
+586;PSE.DO.GL;50103;daglezja zielona;Pseudotsuga menziesii glauca;D;daglezja;odm.sina;JD;JD;NA;I;NA;829;JD;JD;;NA;10;15;4;DG;DG;JD;JD
 587;PYR.CO.LA;1410101;ognik szkarłatny;Pyracantha coccinea Lalandei;K;ognik;"odm.""""Lalandei""""";;;NA;L;NA;830;;;;NA;NA;NA;4;;;;
 588;QUE.PE.ME;310301;dąb bezszypułkowy;Quercus petraea Mespilifolia;D;dąb;"odm.""""Mespifolia""""";DB;DB;NA;L;NA;831;DB;DB;;NA;20;30;4;DB;DB;DB;DB
 589;QUE.RO.CO;310201;dąb szypułkowy;Quercus robur Concordia;D;dąb;"odm.""""Concordia""""";DB;DB;NA;L;NA;832;DB;DB;;NA;20;30;4;DB;DB;DB;DB
@@ -601,16 +601,16 @@ X;GAT;SPECIES_NUM;GAT_NAZWA;LATIN_NAME;SHRUBTREE_FL;BOT_SPECIES;BOT_GENUS;FOMATR
 600;RNK.B;1230200;różanecznik Biały Cunninghama;Rhododendron Cunnigham's White;K;różanecznik;;;;NA;L;NA;843;;;;NA;NA;NA;4;;;;
 601;RNK.K;1230100;różanecznik katawbijski;Rhododendron catawbiense;K;różanecznik;;;;NA;L;NA;844;;;;NA;NA;NA;4;;;;
 602;RNK.S;1230300;różanecznik Smirnowa;Rhododendron smirnowii;K;różanecznik;;;;NA;L;NA;845;;;;NA;NA;NA;4;;;;
-603;ROB.AM.DE;410301;robinia pośrednia;Robinia ambigua Decaisneana;D;robinia;"odm.""""Decaisneana""""";BRZ;BRZ;NA;L;NA;846;BRZ;BRZ;;NA;5;10;4;AK;BRZ;DB;DB
-604;ROB.HI.MA;410501;robinia szczeciniasta;Robinia hispida Macrophylla;D;robinia;odm.wielkolistna;BRZ;BRZ;NA;L;NA;847;BRZ;BRZ;;NA;5;10;4;AK;BRZ;DB;DB
-605;ROB.L;410200;robinia lepka;Robinia viscosa;D;robinia;;BRZ;BRZ;NA;L;NA;848;BRZ;BRZ;;NA;5;10;4;AK;BRZ;DB;DB
-606;ROB.N;410400;robinia nowomeksykańska;Robinia neomexicana;D;robinia;;BRZ;BRZ;NA;L;NA;849;BRZ;BRZ;;NA;5;10;4;AK;BRZ;DB;DB
-607;ROB.NE.LU;410401;robinia nowomeksykańska;Robinia neomexicana luxurians;D;robinia;odm.bujna;BRZ;BRZ;NA;L;NA;850;BRZ;BRZ;;NA;5;10;4;AK;BRZ;DB;DB
-608;ROB.P;410300;robinia pośrednia;Robinia ambigua;D;robinia;;BRZ;BRZ;NA;L;NA;851;BRZ;BRZ;;NA;5;10;4;AK;BRZ;DB;DB
-609;ROB.PS.BE;410102;robinia akacjowa;Robinia pseudoacacia Bessonia.;D;robinia;"odm.""""Bessoniana""""";BRZ;BRZ;NA;L;NA;852;BRZ;BRZ;;NA;5;10;4;AK;BRZ;DB;DB
-610;ROB.PS.RO;410103;robinia akacjowa;Robinia pseudoacacia Rozynsk.;D;robinia;"odm.""""Rozynskiana""""";BRZ;BRZ;NA;L;NA;853;BRZ;BRZ;;NA;5;10;4;AK;BRZ;DB;DB
-611;ROB.PS.UM;410101;robinia akacjowa;Robinia pseudoacacia Umbracu.;D;robinia;odm.kulista;BRZ;BRZ;NA;L;NA;854;BRZ;BRZ;;NA;5;10;4;AK;BRZ;DB;DB
-612;ROB.S;410500;robinia szczeciniasta;Robinia hispida;D;robinia;;BRZ;BRZ;NA;L;NA;855;BRZ;BRZ;;NA;5;10;4;AK;BRZ;DB;DB
+603;ROB.AM.DE;410301;robinia pośrednia;Robinia ambigua Decaisneana;D;robinia;"odm.""""Decaisneana""""";BRZ;BRZ;NA;L;NA;846;BRZ;BRZ;;NA;5;10;4;AK;AK;DB;DB
+604;ROB.HI.MA;410501;robinia szczeciniasta;Robinia hispida Macrophylla;D;robinia;odm.wielkolistna;BRZ;BRZ;NA;L;NA;847;BRZ;BRZ;;NA;5;10;4;AK;AK;DB;DB
+605;ROB.L;410200;robinia lepka;Robinia viscosa;D;robinia;;BRZ;BRZ;NA;L;NA;848;BRZ;BRZ;;NA;5;10;4;AK;AK;DB;DB
+606;ROB.N;410400;robinia nowomeksykańska;Robinia neomexicana;D;robinia;;BRZ;BRZ;NA;L;NA;849;BRZ;BRZ;;NA;5;10;4;AK;AK;DB;DB
+607;ROB.NE.LU;410401;robinia nowomeksykańska;Robinia neomexicana luxurians;D;robinia;odm.bujna;BRZ;BRZ;NA;L;NA;850;BRZ;BRZ;;NA;5;10;4;AK;AK;DB;DB
+608;ROB.P;410300;robinia pośrednia;Robinia ambigua;D;robinia;;BRZ;BRZ;NA;L;NA;851;BRZ;BRZ;;NA;5;10;4;AK;AK;DB;DB
+609;ROB.PS.BE;410102;robinia akacjowa;Robinia pseudoacacia Bessonia.;D;robinia;"odm.""""Bessoniana""""";BRZ;BRZ;NA;L;NA;852;BRZ;BRZ;;NA;5;10;4;AK;AK;DB;DB
+610;ROB.PS.RO;410103;robinia akacjowa;Robinia pseudoacacia Rozynsk.;D;robinia;"odm.""""Rozynskiana""""";BRZ;BRZ;NA;L;NA;853;BRZ;BRZ;;NA;5;10;4;AK;AK;DB;DB
+611;ROB.PS.UM;410101;robinia akacjowa;Robinia pseudoacacia Umbracu.;D;robinia;odm.kulista;BRZ;BRZ;NA;L;NA;854;BRZ;BRZ;;NA;5;10;4;AK;AK;DB;DB
+612;ROB.S;410500;robinia szczeciniasta;Robinia hispida;D;robinia;;BRZ;BRZ;NA;L;NA;855;BRZ;BRZ;;NA;5;10;4;AK;AK;DB;DB
 613;ROK;1200100;rokitnik pospolity;Hippophae rhamnoides;K;rokitnik;;;;NA;L;NA;856;;;;NA;NA;NA;4;;;;
 614;ROS.OM.PT;790301;róża czteropłatkowa;Rosa omeiensis pteracantha;K;róża;odm.oskrzydlona;;;NA;L;NA;857;;;;NA;NA;NA;4;;;;
 615;RÓŻ.AL;791400;róża alpejska;Rosa pendulina;K;róża;;;;NA;L;NA;858;;;;NA;NA;NA;4;;;;
@@ -631,15 +631,15 @@ X;GAT;SPECIES_NUM;GAT_NAZWA;LATIN_NAME;SHRUBTREE_FL;BOT_SPECIES;BOT_GENUS;FOMATR
 630;RÓŻ.W;791000;róża wielokwiatowa;Rosa multiflora;K;róża;;;;NA;L;NA;873;;;;NA;NA;NA;4;;;;
 631;RÓŻ.Z;790200;róża żółta;Rosa foetida;K;róża;;;;NA;L;NA;874;;;;NA;NA;NA;4;;;;
 632;RUN.J;1030100;runianka japońska;Pachysandra terminalis;K;runianka;;;;NA;L;NA;875;;;;NA;NA;NA;4;;;;
-633;SAL.AL.CH;390103;wierzba biała;Salix alba Chermesina;D;wierzba;odm.czerwonopŕdowa;OS;OS;NA;L;NA;876;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-634;SAL.AL.SE;390104;wierzba biała;Salix alba Sericea;D;wierzba;odm.srebrzysta;OS;OS;NA;L;NA;877;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-635;SAL.AL.TR;390101;wierzba biała;Salix alba Tristis;D;wierzba;odm.płacząca;OS;OS;NA;L;NA;878;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-636;SAL.AL.VI;390102;wierzba biała;Salix alba Vittelina;D;wierzba;odm.złocista;OS;OS;NA;L;NA;879;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-637;SAL.EL.AN;391001;wierzba siwa;Salix elaeagnos Angustifolia;D;wierzba;"odm.""""Angustifolia""""";OS;OS;NA;L;NA;880;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-638;SAL.FR.BU;390201;wierzba krucha;Salix fragilis Bullata;D;wierzba;"odm.""""Bullata""""";OS;OS;NA;L;NA;881;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-639;SAL.LA;392100;wierzba lapońska;Salix lapponum;D;wierzba;;OS;OS;NA;L;NA;882;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-640;SAL.MA.TO;390301;wierzba mandżurska;Salix matsudana Tortuosa;D;wierzba;"odm.""""Tortuosa""""";OS;OS;NA;L;NA;883;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-641;SAL.PU.GR;390501;wiklina;Salix purpurea Gracilis;K;wierzba;"odm.""""Gracilis""""";OS;OS;NA;L;NA;884;BRZ;OS;;NA;NA;NA;4;OS;BRZ;BRZ;BRZ
+633;SAL.AL.CH;390103;wierzba biała;Salix alba Chermesina;D;wierzba;odm.czerwonopŕdowa;OS;OS;NA;L;NA;876;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;BRZ
+634;SAL.AL.SE;390104;wierzba biała;Salix alba Sericea;D;wierzba;odm.srebrzysta;OS;OS;NA;L;NA;877;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;BRZ
+635;SAL.AL.TR;390101;wierzba biała;Salix alba Tristis;D;wierzba;odm.płacząca;OS;OS;NA;L;NA;878;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;BRZ
+636;SAL.AL.VI;390102;wierzba biała;Salix alba Vittelina;D;wierzba;odm.złocista;OS;OS;NA;L;NA;879;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;BRZ
+637;SAL.EL.AN;391001;wierzba siwa;Salix elaeagnos Angustifolia;D;wierzba;"odm.""""Angustifolia""""";OS;OS;NA;L;NA;880;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;BRZ
+638;SAL.FR.BU;390201;wierzba krucha;Salix fragilis Bullata;D;wierzba;"odm.""""Bullata""""";OS;OS;NA;L;NA;881;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;BRZ
+639;SAL.LA;392100;wierzba lapońska;Salix lapponum;D;wierzba;;OS;OS;NA;L;NA;882;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;BRZ
+640;SAL.MA.TO;390301;wierzba mandżurska;Salix matsudana Tortuosa;D;wierzba;"odm.""""Tortuosa""""";OS;OS;NA;L;NA;883;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;BRZ
+641;SAL.PU.GR;390501;wiklina;Salix purpurea Gracilis;K;wierzba;"odm.""""Gracilis""""";OS;OS;NA;L;NA;884;BRZ;OS;;NA;NA;NA;4;OS;OS;BRZ;BRZ
 642;SAM.NI.AU;1350101;bez czarny;Sambucus nigra Aurea;K;bez;odm.złocista;;;NA;L;NA;885;;;;NA;NA;NA;4;;;;
 643;SAM.NI.LA;1350102;bez czarny;Sambucus nigra Laciniata;K;bez;odm.strzępolistna;;;NA;L;NA;886;;;;NA;NA;NA;4;;;;
 644;SAM.RA.PA;1350202;bez koralowy;Sambucus racemosa Plumosa Aur.;K;bez;odm.pierzasta złocista;;;NA;L;NA;887;;;;NA;NA;NA;4;;;;
@@ -747,25 +747,25 @@ X;GAT;SPECIES_NUM;GAT_NAZWA;LATIN_NAME;SHRUBTREE_FL;BOT_SPECIES;BOT_GENUS;FOMATR
 746;TAW.T;640200;tawuła Thunberga;Spiraea thunbergii;K;tawuła;;;;NA;L;NA;974;;;;NA;NA;NA;4;;;;
 747;TAW.W;640300;tawuła wczesna;Spiraea arguta;K;tawuła;;;;NA;L;NA;975;;;;NA;NA;NA;4;;;;
 748;TAW.WB;641200;tawuła wierzbolistna;Spiraea salicifolia;K;tawuła;;;;NA;L;NA;976;;;;NA;NA;NA;4;;;;
-749;TIL.AM.AM;400602;lipa amerykańska;Tilia americana Ampelophylla;D;lipa;"odm.""""Ampelophylla""""";OS;BK;NA;L;NA;977;BRZ;OS;;NA;10;15;4;LP;BRZ;BK;BK
-750;TIL.AM.FA;400603;lipa amerykańska;Tilia americana Fastigiata;D;lipa;"odm.""""Fastigiata""""";OS;BK;NA;L;NA;978;BRZ;OS;;NA;10;15;4;LP;BRZ;BK;BK
-751;TIL.AM.MA;400601;lipa amerykańska;Tilia americana Macrophylla;D;lipa;"odm.""""Macrophylla""""";OS;BK;NA;L;NA;979;BRZ;OS;;NA;10;15;4;LP;BRZ;BK;BK
-752;TIL.PL.LA;400204;lipa szerokolistna;Tilia platyphyllos Laciniata;D;lipa;"odm.""""Laciniata""""";OS;BK;NA;L;NA;980;BRZ;OS;;NA;10;15;4;LP;BRZ;BK;BK
-753;TIL.PL.PA;400201;lipa szerokolistna;Tilia platyphyllos Pyram.Aurea;D;lipa;"odm.""""Pyramidalis Aurea""""";OS;BK;NA;L;NA;981;BRZ;OS;;NA;10;15;4;LP;BRZ;BK;BK
-754;TIL.PL.RU;400202;lipa szerokolistna;Tilia platyphyllos Rubra;D;lipa;"odm.""""Rubra""""";OS;BK;NA;L;NA;982;BRZ;OS;;NA;10;15;4;LP;BRZ;BK;BK
-755;TIL.PL.VI;400203;lipa szerokolistna;Tilia platyphyllos Vitifolia;D;lipa;"odm.""""Vitifolia""""";OS;BK;NA;L;NA;983;BRZ;OS;;NA;10;15;4;LP;BRZ;BK;BK
+749;TIL.AM.AM;400602;lipa amerykańska;Tilia americana Ampelophylla;D;lipa;"odm.""""Ampelophylla""""";OS;BK;NA;L;NA;977;BRZ;OS;;NA;10;15;4;LP;LP;BK;BK
+750;TIL.AM.FA;400603;lipa amerykańska;Tilia americana Fastigiata;D;lipa;"odm.""""Fastigiata""""";OS;BK;NA;L;NA;978;BRZ;OS;;NA;10;15;4;LP;LP;BK;BK
+751;TIL.AM.MA;400601;lipa amerykańska;Tilia americana Macrophylla;D;lipa;"odm.""""Macrophylla""""";OS;BK;NA;L;NA;979;BRZ;OS;;NA;10;15;4;LP;LP;BK;BK
+752;TIL.PL.LA;400204;lipa szerokolistna;Tilia platyphyllos Laciniata;D;lipa;"odm.""""Laciniata""""";OS;BK;NA;L;NA;980;BRZ;OS;;NA;10;15;4;LP;LP;BK;BK
+753;TIL.PL.PA;400201;lipa szerokolistna;Tilia platyphyllos Pyram.Aurea;D;lipa;"odm.""""Pyramidalis Aurea""""";OS;BK;NA;L;NA;981;BRZ;OS;;NA;10;15;4;LP;LP;BK;BK
+754;TIL.PL.RU;400202;lipa szerokolistna;Tilia platyphyllos Rubra;D;lipa;"odm.""""Rubra""""";OS;BK;NA;L;NA;982;BRZ;OS;;NA;10;15;4;LP;LP;BK;BK
+755;TIL.PL.VI;400203;lipa szerokolistna;Tilia platyphyllos Vitifolia;D;lipa;"odm.""""Vitifolia""""";OS;BK;NA;L;NA;983;BRZ;OS;;NA;10;15;4;LP;LP;BK;BK
 756;TOR.K;220100;torreja kalifornijska;Torreya californica;D;torreja;;;;NA;I;NA;984;;;;NA;0;10;4;;;;
 757;TOR.O;220200;torreja orzechowa;Torreya nucifera;D;torreja;;;;NA;I;NA;985;;;;NA;0;10;4;;;;
-758;TP;380100;topola biała;Populus alba;D;topola;;OS;OS;NA;L;NA;90;BRZ;OS;OL;40;0;10;4;TP;BRZ;BRZ;BRZ
-759;TP.B;381000;topola berlińska;Populus berolinensis;D;topola;;OS;OS;NA;L;NA;986;BRZ;OS;;NA;0;10;4;TP;BRZ;BRZ;BRZ
-760;TP.C;380400;topola czarna;Populus nigra;D;topola;;OS;OS;NA;L;NA;100;BRZ;OS;OL;40;0;10;4;TP;BRZ;BRZ;BRZ
-761;TP.CH;380600;topola chińska;Populus simonii;D;topola;;OS;OS;NA;L;NA;987;BRZ;OS;;NA;0;10;4;TP;BRZ;BRZ;BRZ
-762;TP.K;380500;topola kanadyjska;Populus canadensis;D;topola;;OS;OS;NA;L;NA;988;BRZ;OS;;NA;0;10;4;TP;BRZ;BRZ;BRZ
-763;TP.KO;380900;topola koreańska;Populus koreana;D;topola;;OS;OS;NA;L;NA;989;BRZ;OS;;NA;0;10;4;TP;BRZ;BRZ;BRZ
-764;TP.M;380800;topola Maksymowicza;Populus maximowiczii;D;topola;;OS;OS;NA;L;NA;990;BRZ;OS;;NA;0;10;4;TP;BRZ;BRZ;BRZ
-765;TP.NO;381200;topola nieokreślona;Populus species;D;topola;;OS;OS;NA;L;NA;991;BRZ;OS;;NA;0;10;4;TP;BRZ;BRZ;BRZ
-766;TP.P;381100;topola petrowska;Populus petrowskyana;D;topola;;OS;OS;NA;L;NA;992;BRZ;OS;;NA;0;10;4;TP;BRZ;BRZ;BRZ
-767;TP.S;380300;topola szara;Populus canescens;D;topola;;OS;OS;NA;L;NA;993;BRZ;OS;;NA;0;10;4;TP;BRZ;BRZ;BRZ
+758;TP;380100;topola biała;Populus alba;D;topola;;OS;OS;NA;L;NA;90;BRZ;OS;OL;40;0;10;4;TP;OS;BRZ;OS
+759;TP.B;381000;topola berlińska;Populus berolinensis;D;topola;;OS;OS;NA;L;NA;986;BRZ;OS;;NA;0;10;4;TP;OS;BRZ;OS
+760;TP.C;380400;topola czarna;Populus nigra;D;topola;;OS;OS;NA;L;NA;100;BRZ;OS;OL;40;0;10;4;TP;OS;BRZ;OS
+761;TP.CH;380600;topola chińska;Populus simonii;D;topola;;OS;OS;NA;L;NA;987;BRZ;OS;;NA;0;10;4;TP;OS;BRZ;OS
+762;TP.K;380500;topola kanadyjska;Populus canadensis;D;topola;;OS;OS;NA;L;NA;988;BRZ;OS;;NA;0;10;4;TP;OS;BRZ;OS
+763;TP.KO;380900;topola koreańska;Populus koreana;D;topola;;OS;OS;NA;L;NA;989;BRZ;OS;;NA;0;10;4;TP;OS;BRZ;OS
+764;TP.M;380800;topola Maksymowicza;Populus maximowiczii;D;topola;;OS;OS;NA;L;NA;990;BRZ;OS;;NA;0;10;4;TP;OS;BRZ;OS
+765;TP.NO;381200;topola nieokreślona;Populus species;D;topola;;OS;OS;NA;L;NA;991;BRZ;OS;;NA;0;10;4;TP;OS;BRZ;OS
+766;TP.P;381100;topola petrowska;Populus petrowskyana;D;topola;;OS;OS;NA;L;NA;992;BRZ;OS;;NA;0;10;4;TP;OS;BRZ;OS
+767;TP.S;380300;topola szara;Populus canescens;D;topola;;OS;OS;NA;L;NA;993;BRZ;OS;;NA;0;10;4;TP;OS;BRZ;OS
 768;TRZ;1070100;trzmielina pospolita;Euonymus europaea;K;trzmielina;;;;NA;L;NA;59;;;;NA;NA;NA;4;;;;
 769;TRZ.B;1070200;trzmielina brodawkowata;Euonymus verrucosa;K;trzmielina;;;;NA;L;NA;58;;;;NA;NA;NA;4;;;;
 770;TRZ.F;1070400;trzmielina Fortune'a;Euonymus fortunei;K;trzmielina;;;;NA;L;NA;994;;;;NA;NA;NA;4;;;;
@@ -791,22 +791,22 @@ X;GAT;SPECIES_NUM;GAT_NAZWA;LATIN_NAME;SHRUBTREE_FL;BOT_SPECIES;BOT_GENUS;FOMATR
 790;VIB.OP.RO;1360101;kalina koralowa;Viburnum opulus Roseum;K;kalina;odm.płonna;;;NA;L;NA;1013;;;;NA;NA;NA;4;;;;
 791;WAJ.C;1380100;wajgela cudowna;Weigela florida;K;wajgela;;;;NA;L;NA;1014;;;;NA;NA;NA;4;;;;
 792;WAW.WIL;NA;wawrzynek wilczełyko;;K;;;;;NA;L;NA;NA;;;;0;NA;NA;4;;;;
-793;WB;390100;wierzba biała;Salix alba;D;wierzba;;OS;OS;NA;L;NA;92;BRZ;OS;OS;50;0;10;4;OS;BRZ;BRZ;BRZ
-794;WB.K;390200;wierzba krucha;Salix fragilis;D;wierzba;;OS;OS;NA;L;NA;1015;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-795;WB.L;390400;wierzba laurowa;Salix pentandra;D;wierzba;;OS;OS;NA;L;NA;1016;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-796;WB.M;390300;wierzba mandżurska;Salix matsudana;D;wierzba;;OS;OS;NA;L;NA;1017;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-797;WB.NO;391100;wierzba nieokreślona;Salix species;D;wierzba;;OS;OS;NA;L;NA;1018;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-798;WB.O;390700;wierzba ostrolistna;Salix acutifolia;D;wierzba;;OS;OS;NA;L;NA;1019;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-799;WB.P;392200;wierzba pięciopręcikowa;Salix pentandra;D;wierzba;;OS;OS;NA;L;NA;1020;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-800;WB.PZ;392300;wierzba płożąca;Salix repens;K;wierzba;;OS;OS;NA;L;NA;1021;BRZ;OS;;NA;NA;NA;4;OS;BRZ;BRZ;BRZ
-801;WB.RO;392400;wierzba rokita;Salix rosmarinifolia;D;wierzba;;OS;OS;NA;L;NA;1022;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-802;WB.S;391000;wierzba siwa;Salix elaeagnos;D;wierzba;;OS;OS;NA;L;NA;1023;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-803;WB.SL;392500;wierzba śląska;Salix silesiaca;D;wierzba;;OS;OS;NA;L;NA;1024;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-804;WB.SZ.H;392700;wierzba szczepiona;Salix integra;D;wierzba;odm. Hacuro Nishiki;OS;OS;NA;L;NA;1025;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-805;WB.TR;392600;wierzba trójpręcikowa;Salix triandra;D;wierzba;;OS;OS;NA;L;NA;1026;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-806;WB.W;390600;wierzba wawrzynkowa;Salix daphnoides;D;wierzba;;OS;OS;NA;L;NA;1027;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-807;WB.WI;390900;wierzba wiciowa;Salix viminalis;D;wierzba;;OS;OS;NA;L;NA;1028;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
-808;WB.Z;392000;wierzba zielna;Salix herbacea;D;wierzba;;OS;OS;NA;L;NA;1029;BRZ;OS;;NA;0;10;4;OS;BRZ;BRZ;BRZ
+793;WB;390100;wierzba biała;Salix alba;D;wierzba;;OS;OS;NA;L;NA;92;BRZ;OS;OS;50;0;10;4;OS;OS;BRZ;OS
+794;WB.K;390200;wierzba krucha;Salix fragilis;D;wierzba;;OS;OS;NA;L;NA;1015;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;OS
+795;WB.L;390400;wierzba laurowa;Salix pentandra;D;wierzba;;OS;OS;NA;L;NA;1016;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;OS
+796;WB.M;390300;wierzba mandżurska;Salix matsudana;D;wierzba;;OS;OS;NA;L;NA;1017;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;OS
+797;WB.NO;391100;wierzba nieokreślona;Salix species;D;wierzba;;OS;OS;NA;L;NA;1018;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;OS
+798;WB.O;390700;wierzba ostrolistna;Salix acutifolia;D;wierzba;;OS;OS;NA;L;NA;1019;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;OS
+799;WB.P;392200;wierzba pięciopręcikowa;Salix pentandra;D;wierzba;;OS;OS;NA;L;NA;1020;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;OS
+800;WB.PZ;392300;wierzba płożąca;Salix repens;K;wierzba;;OS;OS;NA;L;NA;1021;BRZ;OS;;NA;NA;NA;4;OS;OS;BRZ;OS
+801;WB.RO;392400;wierzba rokita;Salix rosmarinifolia;D;wierzba;;OS;OS;NA;L;NA;1022;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;OS
+802;WB.S;391000;wierzba siwa;Salix elaeagnos;D;wierzba;;OS;OS;NA;L;NA;1023;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;OS
+803;WB.SL;392500;wierzba śląska;Salix silesiaca;D;wierzba;;OS;OS;NA;L;NA;1024;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;OS
+804;WB.SZ.H;392700;wierzba szczepiona;Salix integra;D;wierzba;odm. Hacuro Nishiki;OS;OS;NA;L;NA;1025;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;OS
+805;WB.TR;392600;wierzba trójpręcikowa;Salix triandra;D;wierzba;;OS;OS;NA;L;NA;1026;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;OS
+806;WB.W;390600;wierzba wawrzynkowa;Salix daphnoides;D;wierzba;;OS;OS;NA;L;NA;1027;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;OS
+807;WB.WI;390900;wierzba wiciowa;Salix viminalis;D;wierzba;;OS;OS;NA;L;NA;1028;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;OS
+808;WB.Z;392000;wierzba zielna;Salix herbacea;D;wierzba;;OS;OS;NA;L;NA;1029;BRZ;OS;;NA;0;10;4;OS;OS;BRZ;OS
 809;WCK.H;1400400;wiciokrzew Heckrotta;Lonicera hecrottii;K;wiciokrzew;;;;NA;L;NA;1030;;;;NA;NA;NA;4;;;;
 810;WCK.P;1400100;wiciokrzew pomorski;Lonicera periclymenum;K;wiciokrzew;;;;NA;L;NA;1031;;;;NA;NA;NA;4;;;;
 811;WCK.PR;1400200;wiciokrzew przewiercien;Lonicera caprifolium;K;wiciokrzew;;;;NA;L;NA;1032;;;;NA;NA;NA;4;;;;
@@ -815,8 +815,8 @@ X;GAT;SPECIES_NUM;GAT_NAZWA;LATIN_NAME;SHRUBTREE_FL;BOT_SPECIES;BOT_GENUS;FOMATR
 814;WEI.FL.PU;1380103;wajgela cudowna;Weigela florida Purpurea;K;wajgela;odm.purpurowa;;;NA;L;NA;1035;;;;NA;NA;NA;4;;;;
 815;WEI.FL.VA;1380104;wajgela cudowna;Weigela florida Variegata;K;wajgela;odm.pstrolistna;;;NA;L;NA;1036;;;;NA;NA;NA;4;;;;
 816;WEI.FL.VE;1380101;wajgela cudowna;Weigela florida Venusta;K;wajgela;odm.koreanska;;;NA;L;NA;1037;;;;NA;NA;NA;4;;;;
-817;WIK;390500;wiklina (wba purpurowa);Salix purpurea;K;wierzba;;OS;OS;NA;L;NA;69;BRZ;OS;;NA;NA;NA;4;OS;BRZ;BRZ;BRZ
-818;WIK.N;390502;wierzba purpurowa;Salix purpurea;K;wierzba;odm. Nana;OS;OS;NA;L;NA;1038;BRZ;OS;;NA;NA;NA;4;OS;BRZ;BRZ;BRZ
+817;WIK;390500;wiklina (wba purpurowa);Salix purpurea;K;wierzba;;OS;OS;NA;L;NA;69;BRZ;OS;;NA;NA;NA;4;OS;OS;BRZ;OS
+818;WIK.N;390502;wierzba purpurowa;Salix purpurea;K;wierzba;odm. Nana;OS;OS;NA;L;NA;1038;BRZ;OS;;NA;NA;NA;4;OS;OS;BRZ;OS
 819;WIN.P;1140100;winobluszcz pięciolistkowy;Parthenocissus quinquefolia;K;winobluszcz;;;;NA;L;NA;1039;;;;NA;NA;NA;4;;;;
 820;WIN.T;1140300;winobluszcz trójklapowy;Parthenocissus tricuspidata;K;winobluszcz;;;;NA;L;NA;1040;;;;NA;NA;NA;4;;;;
 821;WIN.Z;1140200;winobluszcz zaroślowy;Parthenocissus vitacea;K;winobluszcz;;;;NA;L;NA;1041;;;;NA;NA;NA;4;;;;
