@@ -93,17 +93,17 @@ v_growth = function (stand_id,
                     T0 = 100,
                     #z0 = (H1 - b3),
                     #r = z0 + (z0^2 + (2 * b2 * H1)/(T1^b1))^0.5,
-                    si = growthmodels::h_growth(T1, T0, H1, species)#,
+                    si = growthmodels::h_growth(T1, T0, H1, species_cd)#,
                     #vt = growthmodels::v_tab(T1, H1, species),
                     #vt_sh = vt * share
       ) %>%
       # dplyr::group_by(stand_id) %>%
       #dplyr::mutate(vt_stand = sum(vt_sh, na.rm = T)) %>%
       #dplyr::ungroup() %>%
-      dplyr::mutate(zd = growthmodels::zd_share(stand_id, volume, T1, H1, species)) %>%
-      dplyr::mutate(H2 = growthmodels::h_growth(T1, T2, H1, species),
-                    `:=` (!!spg_start, growthmodels::spg(T1, H1, species, region)),
-                    `:=` (!!spg_end, growthmodels::spg(T2, H2, species, region)),
+      dplyr::mutate(zd = growthmodels::zd_share(stand_id, volume, T1, H1, species_cd)) %>%
+      dplyr::mutate(H2 = growthmodels::h_growth(T1, T2, H1, species_cd),
+                    `:=` (!!spg_start, growthmodels::spg(T1, H1, species_cd, region)),
+                    `:=` (!!spg_end, growthmodels::spg(T2, H2, species_cd, region)),
                     `:=`(!!growth, (((!!rlang::sym(spg_end)) - (!!rlang::sym(spg_start)))/(T2 - T1)) * ni1 * zd^ni2 * si^ni3 * T1^ni4),
                     `:=`(!!growth, !!rlang::sym(growth) * share),
                     `:=` (!!v, volume + !!rlang::sym(growth))
