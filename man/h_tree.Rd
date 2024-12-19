@@ -22,7 +22,7 @@ Tree height (Bruchwald)
 Calculate single tree height using Bruchwald (2000) equation
 }
 \examples{
-species = c('SO', 'DB', 'OL SZ')
+species = c('SO', 'DB', 'OL.S')
 av_H = c(27, 28, 29)
 av_dbh_h = c(34, 35, 36)
 dbh = c(44, 36, 28)

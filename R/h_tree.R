@@ -11,7 +11,7 @@
 #' @export
 #'
 #' @examples
-#' species = c('SO', 'DB', 'OL SZ')
+#' species = c('SO', 'DB', 'OL.S')
 #' av_H = c(27, 28, 29)
 #' av_dbh_h = c(34, 35, 36)
 #' dbh = c(44, 36, 28)
@@ -26,6 +26,7 @@ h_tree = function(species, av_H, av_dbh_h, dbh){
            )
 
   df = data.frame(species, av_H, av_dbh_h, dbh) %>%
+    dplyr::mutate(species = dplyr::if_else(species %in% params_h_tree$species, species, growthmodels::sp_group(species, 'GRP_TH'))) %>%
     dplyr::left_join(params_h_tree) %>%
     dplyr::mutate(b = dplyr::if_else(species == 'BRZ',
                                      0.364043 - 0.0375941 * sqrt(av_H),

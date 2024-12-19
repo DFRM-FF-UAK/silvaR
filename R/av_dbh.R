@@ -56,7 +56,7 @@ av_dbh = function(plot_id, tree_id, species, age, layer, dbh, height, only_measu
 
   }else{
     df = data.frame(plot_id, species, age, layer, dbh) %>%
-      dplyr::group_by(plot_id, species, layer) %>%
+      dplyr::group_by(plot_id, species, age, layer) %>%
       dplyr::mutate(DBH = mean(dbh)) %>%
       dplyr::ungroup()
 
