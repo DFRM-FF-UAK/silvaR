@@ -3,25 +3,29 @@
 #' @description Calculate single tree volume
 #'
 #'
-#' @param dbh diameter at the brest height
-#' @param height tree height
-#' @param av_H average height
-#' @param av_DBH average DBH
-#' @param species tree species
+#' @param plot_id Unique plot id
+#' @param tree_id Unique tree id at the plot
+#' @param species Tree species
+#' @param age Tree age
+#' @param layer Stand structure layer
+#' @param dbh Tree dbh
+#' @param height Tree heighs
 #' @param origin L (lowland) or M (mountain). This parameter needs to be provided if the species is BK
 #' @return Tree volume
 #' @export
 #'
 #' @examples
-#' dbh = c(31, 31, 31, NA, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31)
-#' height = c(27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27)
-#' av_H = c(26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26)
-#' av_DBH = c(31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5)
-#' species = c('SO', 'JD', 'DB', 'BK', 'BRZ', 'OL', 'DG', 'MD', 'OS', 'GB', 'TP', 'LP', 'CZR', 'OL.S')
-#' origin = c(NA, NA, NA, 'M', NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+#' plot_id = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2)
+#' tree_id = c(1, 2 ,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
+#' species = c('SO', 'SO', 'DB', 'JW', 'BK', 'DB', 'DB', 'ŚW', 'ŚW', 'ŚW', 'SO', 'SO', 'SO', 'SO')
+#' age = c(40, 40, 40, 40, 60, 45, 50, 50, 50, 60, 60, 60, 60, 60)
+#' layer = c(1, 1, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1)
+#' height = c(21, 13, 24, NA, 12, NA, 18, NA, NA, 31, 32, 24, 25, NA)
+#' dbh = c(33, 32, 31, NA, 28, 47, 12, 22, 41, 48, 27, 42, 25, 33)
+#' origin = c(NA, NA, NA, NA, 'M', NA, NA, NA, NA, NA, NA, NA, NA, NA)
+#' v_tree_bruchwald(plot_id, tree_id, species, age, layer, dbh, height, origin)
 
-
-v_tree_bruchwald = function(dbh, height, av_H, av_DBH, species, origin = NA){
+v_tree_bruchwald = function(plot_id, tree_id, species, age, layer, dbh, height, origin = NA){
 
     # funkcja do obliczania V (ŚW, SO, JD, BK, BRZ, OL, DG) -------------------------
 
@@ -126,7 +130,9 @@ v_tree_bruchwald = function(dbh, height, av_H, av_DBH, species, origin = NA){
 
 
 
-    df = data.frame(dbh, height, av_H, av_DBH, species, origin) %>%
+    df = data.frame(plot_id, tree_id, species, age, layer, dbh, height, origin) %>%
+      dplyr::mutate(av_DBH = rms_dbh(plot_id, tree_id, species, age, layer, dbh, height, only_measured_h = T),
+                    av_H = lorey_height(plot_id, species, age, layer, height, dbh)) %>%
       dplyr::rowwise() %>%
       dplyr::mutate(V = ifelse(species %in% c('ŚW', 'SO', 'JD', 'DB', 'BK', 'BRZ', 'OL', 'DG'),
                         mapply(V1, species, dbh, height, av_H, av_DBH, origin),

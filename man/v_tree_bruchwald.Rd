@@ -4,18 +4,31 @@
 \alias{v_tree_bruchwald}
 \title{Single tree volume calculation}
 \usage{
-v_tree_bruchwald(dbh, height, av_H, av_DBH, species, origin = NA)
+v_tree_bruchwald(
+  plot_id,
+  tree_id,
+  species,
+  age,
+  layer,
+  dbh,
+  height,
+  origin = NA
+)
 }
 \arguments{
-\item{dbh}{diameter at the brest height}
+\item{plot_id}{Unique plot id}
 
-\item{height}{tree height}
+\item{tree_id}{Unique tree id at the plot}
 
-\item{av_H}{average height}
+\item{species}{Tree species}
 
-\item{av_DBH}{average DBH}
+\item{age}{Tree age}
 
-\item{species}{tree species}
+\item{layer}{Stand structure layer}
+
+\item{dbh}{Tree dbh}
+
+\item{height}{Tree heighs}
 
 \item{origin}{L (lowland) or M (mountain). This parameter needs to be provided if the species is BK}
 }
@@ -26,10 +39,13 @@ Tree volume
 Calculate single tree volume
 }
 \examples{
-dbh = c(31, 31, 31, NA, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31)
-height = c(27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27)
-av_H = c(26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26)
-av_DBH = c(31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5, 31.5)
-species = c('SO', 'JD', 'DB', 'BK', 'BRZ', 'OL', 'DG', 'MD', 'OS', 'GB', 'TP', 'LP', 'CZR', 'OL.S')
-origin = c(NA, NA, NA, 'M', NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+plot_id = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2)
+tree_id = c(1, 2 ,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
+species = c('SO', 'SO', 'DB', 'JW', 'BK', 'DB', 'DB', 'ŚW', 'ŚW', 'ŚW', 'SO', 'SO', 'SO', 'SO')
+age = c(40, 40, 40, 40, 60, 45, 50, 50, 50, 60, 60, 60, 60, 60)
+layer = c(1, 1, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1)
+height = c(21, 13, 24, NA, 12, NA, 18, NA, NA, 31, 32, 24, 25, NA)
+dbh = c(33, 32, 31, NA, 28, 47, 12, 22, 41, 48, 27, 42, 25, 33)
+origin = c(NA, NA, NA, NA, 'M', NA, NA, NA, NA, NA, NA, NA, NA, NA)
+v_tree_bruchwald(plot_id, tree_id, species, age, layer, dbh, height, origin)
 }
