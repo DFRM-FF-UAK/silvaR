@@ -4,16 +4,22 @@
 \alias{h_tree}
 \title{Single tree height calculation}
 \usage{
-h_tree(species, av_H, av_dbh_h, dbh)
+h_tree(plot_id, tree_id, species, age, layer, dbh, height)
 }
 \arguments{
-\item{species}{tree species}
+\item{plot_id}{Unique plot id}
 
-\item{av_H}{average height of the species at the plot in the layer and age class}
+\item{tree_id}{Unique tree id at the plot}
 
-\item{av_dbh_h}{average dbh of the species at the plot in the layer and age class, with measured heights}
+\item{species}{Tree species}
 
-\item{dbh}{tree dbh}
+\item{age}{Tree age}
+
+\item{layer}{Stand structure layer}
+
+\item{dbh}{Tree dbh}
+
+\item{height}{Tree heighs}
 }
 \value{
 Tree height (Bruchwald)
@@ -22,9 +28,12 @@ Tree height (Bruchwald)
 Calculate single tree height using Bruchwald (2000) equation
 }
 \examples{
-species = c('SO', 'DB', 'OL.S')
-av_H = c(27, 28, 29)
-av_dbh_h = c(34, 35, 36)
-dbh = c(44, 36, 28)
-h_tree(species, av_H, av_dbh_h, dbh)
+plot_id = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2)
+tree_id = c(1, 2 ,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
+species = c('SO', 'SO', 'DB', 'JW', 'BK', 'DB', 'DB', 'ŚW', 'ŚW', 'ŚW', 'SO', 'SO', 'SO', 'SO')
+age = c(40, 40, 40, 40, 60, 45, 50, 50, 50, 60, 60, 60, 60, 60)
+layer = c(1, 1, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1)
+height = c(21, 13, 24, NA, 12, NA, 18, NA, NA, 31, 32, 24, 25, NA)
+dbh = c(33, 32, 31, NA, 28, 47, 12, 22, 41, 48, 27, 42, 25, 33)
+h_tree(plot_id, tree_id, species, age, layer, dbh, height)
 }
