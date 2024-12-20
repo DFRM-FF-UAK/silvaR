@@ -1,6 +1,6 @@
-#' Calculate average dbh at the sample plot
+#' Calculate RMS dbh at the sample plot
 #'
-#' @description Calculate average dbh of the species at the plot in the layer and age group
+#' @description Calculate RMS dbh of the species at the plot in the layer and age group
 #'
 #'
 #' @param plot_id Unique plot id
@@ -26,7 +26,7 @@
 
 
 
-av_dbh = function(plot_id, tree_id, species, age, layer, dbh, height, only_measured_h = T){
+rms_dbh = function(plot_id, tree_id, species, age, layer, dbh, height, only_measured_h = T){
 
   if (only_measured_h == T) {
 
@@ -38,7 +38,7 @@ av_dbh = function(plot_id, tree_id, species, age, layer, dbh, height, only_measu
 
     df_fil = df %>% dplyr::group_by(plot_id, species, age, layer) %>%
       tidyr::drop_na(height) %>%
-      dplyr::mutate(DBH = mean(dbh)) %>%
+      dplyr::mutate(DBH = sqrt(mean(dbh^2))) %>%
       dplyr::ungroup() %>%
       dplyr::select(-c("tree_id",  "dbh", "height"))
 
