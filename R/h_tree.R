@@ -25,7 +25,7 @@
 
 h_tree = function(plot_id, tree_id, species, age, layer, dbh, height){
 
-  params_h_tree = readRDS(system.file('/params/height_curves.rds', package = 'growthmodels')) %>%
+  params_h_tree = readRDS(system.file('/params/height_curves.rds', package = 'SilvaR')) %>%
   #params_h_tree = readr::read_rds('inst/params/height_curves.rds')
     dplyr::mutate(r = as.numeric(r),
            o = as.numeric(o)
@@ -34,7 +34,7 @@ h_tree = function(plot_id, tree_id, species, age, layer, dbh, height){
   df = data.frame(plot_id, tree_id, species, age, layer, dbh, height) %>%
     dplyr::mutate(av_dbh = rms_dbh(plot_id, tree_id, species, age, layer, dbh, height, only_measured_h = T),
                   av_h = lorey_height(plot_id, species, age, layer, height, dbh)) %>%
-    dplyr::mutate(species = dplyr::if_else(species %in% params_h_tree$species, species, growthmodels::sp_group(species, 'GRP_TH'))) %>%
+    dplyr::mutate(species = dplyr::if_else(species %in% params_h_tree$species, species, SilvaR::sp_group(species, 'GRP_TH'))) %>%
     dplyr::left_join(params_h_tree) %>%
     dplyr::mutate(b = dplyr::if_else(species == 'BRZ',
                                      0.364043 - 0.0375941 * sqrt(av_h),
