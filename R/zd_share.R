@@ -27,7 +27,7 @@ zd_share = function(stand_id, volume, age, height, species) {
     dplyr::mutate(volume_stand = sum(volume, na.rm = TRUE)) %>%
     dplyr::mutate(share = volume/volume_stand) %>%
     dplyr::ungroup() %>%
-    dplyr::mutate(vt = growthmodels::v_tab(age, height, species),
+    dplyr::mutate(vt = SilvaR::v_tab(age, height, species),
            vt_sh = vt * share,
            ) %>%
     dplyr::group_by(stand_id) %>%
