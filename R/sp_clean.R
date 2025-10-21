@@ -13,7 +13,7 @@
 
 sp_clean = function(species) {
 
-  sp_dict = utils::read.csv2(system.file('sp_dict/dict.csv', package = 'growthmodels'), encoding = "UTF-8") %>%
+  sp_dict = utils::read.csv2(system.file('sp_dict/dict.csv', package = 'SilvaR'), encoding = "UTF-8") %>%
     tidyr::separate_rows(typos, sep = ',') %>%
     tidyr::pivot_longer(cols = c(species_name, latin_name, english_name, typos)) %>%
     dplyr::select(SPECIES_CD, value) %>%
