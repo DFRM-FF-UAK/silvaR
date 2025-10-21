@@ -24,14 +24,14 @@ v_tab = function(age, height, species) {
   stopifnot("age must be numeric" = is.numeric(age))
   stopifnot("height must be numeric" = is.numeric(height))
   params_vt = readRDS(system.file("params/params_v_tab.rds",
-                                  package = "growthmodels"))
+                                  package = "SilvaR"))
 
   df = data.frame(species, age, height) %>%
-    dplyr::mutate(species = growthmodels::sp_group(species, 'GRP_V_TAB')) %>%
+    dplyr::mutate(species = SilvaR::sp_group(species, 'GRP_V_TAB')) %>%
     dplyr::left_join(params_vt)
 
   df = df %>%
-    dplyr::mutate(si = growthmodels::h_growth(T1 = age, T2 = rep(100, nrow(.)), H1 = height, species = species),
+    dplyr::mutate(si = SilvaR::h_growth(T1 = age, T2 = rep(100, nrow(.)), H1 = height, species = species),
                   vt = (n1 * si - n2) * ((1 - exp(b * age))/(1 - exp(b * 100)))^(c * (n1 * si - n2)^a))
 
   return(df$vt)
