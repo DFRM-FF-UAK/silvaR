@@ -32,12 +32,12 @@
 
 h_growth = function(T1, T2, H1, species){
 
-  params = readRDS(system.file("params/params_site_index.rds", package = 'growthmodels'))
+  params = readRDS(system.file("params/params_site_index.rds", package = 'SilvaR'))
   #params = read.csv2("inst/params/params_site_index.csv") %>%
    # tidyverse::filter(gatunek == species)
 
   df = data.frame(T1, T2, H1, species) %>%
-    dplyr::mutate(species = growthmodels::sp_group(species, 'GRP_TH')) %>%
+    dplyr::mutate(species = SilvaR::sp_group(species, 'GRP_TH')) %>%
     dplyr::left_join(params) %>%
     dplyr::mutate(H2 = H1 * (T2 ^ b1 * (T1 ^ b1 * ((H1 - b3) + ((H1 - b3)^ 2 + (2 * b2 * H1) /
                                                              (T1 ^ b1)) ^ 0.5) + b2)) /
