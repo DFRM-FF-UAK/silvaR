@@ -17,7 +17,7 @@
 #' @export
 #'
 #' @examples
-#' chm = terra::rast(system.file('raster/chm.tif', package = 'growthmodels'))
+#' chm = terra::rast(system.file('raster/chm.tif', package = 'SilvaR'))
 #' terra::plot(chm)
 #' th = th_calc(chm, f = "h_sd")
 #' terra::plot(th)
