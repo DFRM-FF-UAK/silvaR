@@ -19,7 +19,7 @@ set_origin = function(value){
   value = data.frame(value) %>%
     dplyr::mutate(value = as.character(value))
 
-  origin_dict = read.csv2(system.file('sp_dict/origin_dict.csv', package = 'growthmodels'))
+  origin_dict = read.csv2(system.file('sp_dict/origin_dict.csv', package = 'SilvaR'))
   #origin_dict = read.csv2('inst/sp_dict/origin_dict.csv')
 
   value = value %>% dplyr::left_join(origin_dict)
