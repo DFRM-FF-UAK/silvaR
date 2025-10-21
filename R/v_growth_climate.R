@@ -39,16 +39,16 @@ v_growth_climate = function (stand_id,
                      output_type = NULL) {
 
   #params_si = readRDS(system.file("params/params_site_index.rds",
-  # package = "growthmodels"))
+  # package = "SilvaR"))
   #params_vt = readRDS(system.file("params/params_v_tab.rds",
-  #  package = "growthmodels"))
+  #  package = "SilvaR"))
   #params_spg = readRDS(system.file("params/params_spg.rds",
-  #  package = "growthmodels"))
+  #  package = "SilvaR"))
   params_growth = readRDS(system.file("params/params_growth_clim.rds",
-                                      package = "growthmodels"))
+                                      package = "SilvaR"))
 
   df = data.frame(stand_id, species, age, height, volume) %>%
-    dplyr::mutate(species_cd = species, species = growthmodels::sp_group(species))  %>%
+    dplyr::mutate(species_cd = species, species = SilvaR::sp_group(species))  %>%
     #dplyr::left_join(params_si) %>%
     #dplyr::left_join(params_vt) %>% dplyr::left_join(params_spg) %>%
     dplyr::left_join(params_growth)
@@ -96,17 +96,17 @@ v_growth_climate = function (stand_id,
                     T0 = 100,
                     #z0 = (H1 - b3),
                     #r = z0 + (z0^2 + (2 * b2 * H1)/(T1^b1))^0.5,
-                    si = growthmodels::h_growth(T1, T0, H1, species)#,
-                    #vt = growthmodels::v_tab(T1, H1, species),
+                    si = SilvaR::h_growth(T1, T0, H1, species)#,
+                    #vt = SilvaR::v_tab(T1, H1, species),
                     #vt_sh = vt * share
       ) %>%
       # dplyr::group_by(stand_id) %>%
       #dplyr::mutate(vt_stand = sum(vt_sh, na.rm = T)) %>%
       #dplyr::ungroup() %>%
-      dplyr::mutate(zd = growthmodels::zd_share(stand_id, volume, T1, H1, species)) %>%
-      dplyr::mutate(H2 = growthmodels::h_growth(T1, T2, H1, species),
-                    `:=` (!!spg_start, growthmodels::spg(T1, H1, species, region)),
-                    `:=` (!!spg_end, growthmodels::spg(T2, H2, species, region)),
+      dplyr::mutate(zd = SilvaR::zd_share(stand_id, volume, T1, H1, species)) %>%
+      dplyr::mutate(H2 = SilvaR::h_growth(T1, T2, H1, species),
+                    `:=` (!!spg_start, SilvaR::spg(T1, H1, species, region)),
+                    `:=` (!!spg_end, SilvaR::spg(T2, H2, species, region)),
                     `:=`(!!growth, (((!!rlang::sym(spg_end)) - (!!rlang::sym(spg_start)))/(T2 - T1)) *
                            ni1 * zd ^ (ni2 + ni2_opad * rsum + ni2_temp * maxtavg) * si ^ ni3 * age ^ ni4),
                     `:=`(!!growth, !!rlang::sym(growth) * share),
