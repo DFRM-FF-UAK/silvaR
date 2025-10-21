@@ -24,14 +24,14 @@ spg = function(age, height, species, region = 'GLOB') {
 
 
   params_spg = readRDS(system.file("params/params_spg.rds",
-                                   package = "growthmodels"))
+                                   package = "SilvaR"))
 
   df = data.frame(species, age, height, region) %>%
-    dplyr::mutate(species = growthmodels::sp_group(species, "GRP_P")) %>%
+    dplyr::mutate(species = SilvaR::sp_group(species, "GRP_P")) %>%
     dplyr::left_join(params_spg)
 
   df = df %>%
-    dplyr::mutate(si = growthmodels::h_growth(T1 = age, T2 = rep(100, nrow(.)), H1 = height, species = species),
+    dplyr::mutate(si = SilvaR::h_growth(T1 = age, T2 = rep(100, nrow(.)), H1 = height, species = species),
                   spg = (psi4*si -psi5)*((1-exp(psi1*age))/(1-exp(psi1*100)))^(psi2*(psi4*si -psi5)^psi3)+psi6*height^4)
 
   return(df$spg)
