@@ -3,8 +3,7 @@
 #' @description Calculate single tree volume
 #'
 #'
-
-#' @param dbh diameter at the brest height
+#' @param dbh diameter at the breast height
 #' @param height tree height
 #' @param species tree species
 #' @return Tree volume

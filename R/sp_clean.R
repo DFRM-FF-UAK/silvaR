@@ -36,6 +36,9 @@ sp_clean = function(species) {
     return(results)
   }
 
+  ## Wstępne czyszczenie nazw z WS
+  species <- gsub(" ", "", species)
+
   # Dopasowanie do słownika dla listy wejściowej. Dopuszczalna różnica w znakach - 10%
   SPECIES_CD <- sapply(species, function(i) {
     dd <- compare_strings(i, sp_dict$value)

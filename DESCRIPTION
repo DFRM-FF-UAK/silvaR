@@ -1,15 +1,28 @@
 Package: SilvaR
 Title: Tools for Managing and Analyzing Data from Polish Forests
 Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Authors@R: c(
+    person("Paweł", "Hawryło", email = "", role = c("aut", "cre", "cph")),
+    person("Piotr", "Janiec", email = "", role = c("aut", "cre", "cph")),
+    person("Michał", "Woda", email = "", role = c("aut", "cre", "cph")))
+Description: Tools for processing, cleaning, and analysing forest data commonly 
+    used in Polish forestry. The package provides functions for standardizing 
+    species names, preparing tree and stand attributes, and calculating 
+    height and volume based on widely applied empirical models, including 
+    Bruchwald equations. It also includes methods for estimating top height 
+    from airborne laser scanning (ALS) canopy height models (CHM) and for 
+    modelling tree and stand growth over time. The tools are designed to support 
+    foresters, forest managers, ecologists, and environmental scientists working 
+    with tree-, plot-, and stand-level data. Development of the package is 
+    carried out at the Faculty of Forestry, University of Agriculture in Krakow, 
+    in collaboration with the Forest Management and Forest Geodesy Bureau (BULiGL), 
+    Krakow Regional Office.
+URL: https://github.com/DFRM-FF-UAK/silvaR
+BugReports: https://github.com/DFRM-FF-UAK/silvaR/issues
+License: GPL-3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Imports:
     utils,
     dplyr,

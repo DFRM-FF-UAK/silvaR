@@ -7,7 +7,7 @@
 v_tree(dbh, height, species)
 }
 \arguments{
-\item{dbh}{diameter at the brest height}
+\item{dbh}{diameter at the breast height}
 
 \item{height}{tree height}
 
