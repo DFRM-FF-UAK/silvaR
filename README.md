@@ -1,4 +1,4 @@
-silvaR <img src="man/figures/silvaR_logo.svg" align="right" width="160"/>
+silvaR <img src="man/figures/silvaR_logo_v1.png" align="right" width="160"/>
 ---
 ![license](https://img.shields.io/badge/Licence-GPL--3-blue.svg)
 ![R-CMD-check](https://github.com/DFRM-FF-UAK/silvaR/actions/workflows/R-CMD-check.yaml/badge.svg?branch=main)
@@ -183,6 +183,4 @@ in collaboration with the [Bureau for Forest Management and Geodesy (BULiGL)](ht
 
 ---
 
-<img src="man/figures/ur-herb.svg" width="140" align="center">
-<img src="man/figures/wl.webp" width="160" align="center">
-<img src="man/figures/BULiGL-logo.png" width="160" align="center">
+<img src="man/figures/collab_logos.png" width = 250 align="left">
