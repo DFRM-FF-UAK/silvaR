@@ -15,13 +15,12 @@ The package supports data cleaning, standardization, attribute calculation and h
 
 ## 📜 Citation
 
-If you use **silvaR** in your scientific work, please cite:
-
-Section will be updated soon
+If you use **silvaR** in your scientific work, please cite the package as follows.
+The reference will be updated once the associated article is published.
 
 > Author(s). (2024). *silvaR: Tools for processing and analyzing forest data from Polish forests*.  
 > R package version X.X.X.  
-> https://github.com/DFRM-FF-UAK/silvaR
+> Available at: https://github.com/DFRM-FF-UAK/silvaR
 
 ---
 
@@ -34,7 +33,7 @@ Section will be updated soon
 - Classifies plot/stand origin (upland vs lowland).  
 - Prepares inputs required for calculating tree volume with Bruchwald equations.
 
-### **✔ Tree-level attribute calculation**
+### **🌲 Tree-level attribute calculation**
 Estimate tree height and stem volume using empirical Polish forestry models:
 
 > Bruchwald, A.; Rymer-Dudzińska, T.; Dudek, A.;  
@@ -42,7 +41,7 @@ Estimate tree height and stem volume using empirical Polish forestry models:
 > *Wzory empiryczne do określania wysokości i pierśnicowej liczby kształtu grubizny drzewa.*  
 > **Sylwan**, 144, 5–12.
 
-### **✔ Plot and stand evel metrics**
+### **📐 Plot and stand evel metrics**
 Calculate stand top height (TH) based on:
 
 > Socha, J., Hawryło, P., Stereńczak, K., Miścicki, S.,  
@@ -61,7 +60,6 @@ and
 **silvaR** includes algorithms for top height estimation at any spatial resolution,
 useful in calculating stand parameters, segmentation or ALS-based inventory workflows.
 
-<img align="right" src="man/figures/th_calc.png">
 
 **Example:**
 
@@ -71,13 +69,15 @@ library(silvaR)
 chm <- terra::rast(system.file("inst/raster/chm.tif", 
                                package = "silvaR"))
 
-terra::plot(chm)
-
 th <- th_calc(chm, f = "h_sd")
 
-terra::plot(th)
+par(mfrow = c(1, 2))
+terra::plot(chm, main = "Canopy Height Model")
+terra::plot(th, main = "Top Height 20x20m")
 
 ```
+<img align="center" src="man/figures/th_calc_example.png">
+
 ---
 
 ## 🔧 Installation
@@ -120,7 +120,6 @@ olkusz_v2$h_at_100 <- h_growth(T1 = olkusz_v2$age,
                                
 head(olkusz_v2)
 
-
 ```
 
 ### Plot level calculations
@@ -150,7 +149,17 @@ rybnikPP$TREE_VOLUME <- v_tree(dbh = rybnikPP$BREAST_HEIGHT,
                           species = rybnikPP$SPECIES_CD)
                           
 head(rybnikPP)
+
+## Plot single sample plot 
+singlePP <- rybnikPP[rybnikPP$SAMPLE_NR == 72,]
+
+plot_sample_plot(data = singlePP, plot_radius = 11.28)
+
 ```
+<img align="left" src="man/figures/plot_sample_plot_example.png" width = 300>
+<img align="center" src="man/figures/plot_sample_plot_example2.png" width = 300>
+<img align="right" src="man/figures/plot_sample_plot_example3.png" width = 300>
+
 ---
 
 ## 📂 Package structure
@@ -173,7 +182,7 @@ Please open an Issue or submit a Pull Request.
 ---
 
 ## 📄 License
-This package is released under the MIT License.
+This package is licensed under the GPL-3 license.
 
 ---
 

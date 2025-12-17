@@ -25,7 +25,7 @@
 
 h_tree = function(plot_id, tree_id, species, age, layer, dbh, height){
 
-  params_h_tree = readRDS(system.file('/params/height_curves.rds', package = 'SilvaR')) %>%
+  params_h_tree = readRDS(system.file('/params/height_curves.rds', package = 'silvaR')) %>%
   #params_h_tree = readr::read_rds('inst/params/height_curves.rds')
     dplyr::mutate(r = as.numeric(r),
            o = as.numeric(o)

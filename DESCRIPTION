@@ -1,4 +1,4 @@
-Package: SilvaR
+Package: silvaR
 Title: Tools for Managing and Analyzing Data from Polish Forests
 Version: 0.0.0.9000
 Authors@R: c(
@@ -33,3 +33,5 @@ Imports:
     data.table,
     stringdist,
     rlang
+Depends: 
+    R (>= 3.5)

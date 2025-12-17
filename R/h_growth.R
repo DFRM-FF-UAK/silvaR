@@ -32,7 +32,7 @@
 
 h_growth = function(T1, T2, H1, species){
 
-  params = readRDS(system.file("params/params_site_index.rds", package = 'SilvaR'))
+  params = readRDS(system.file("params/params_site_index.rds", package = 'silvaR'))
   #params = read.csv2("inst/params/params_site_index.csv") %>%
    # tidyverse::filter(gatunek == species)
 

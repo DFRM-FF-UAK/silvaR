@@ -42,10 +42,10 @@ v_growth = function (stand_id,
   #params_spg = readRDS(system.file("params/params_spg.rds",
   #  package = "SilvaR"))
   params_growth = readRDS(system.file("params/params_growth.rds",
-                                      package = "SilvaR"))
+                                      package = "silvaR"))
 
   df = data.frame(stand_id, species, age, height, volume, region) %>%
-    dplyr::mutate(species_cd = species, species = SilvaR::sp_group(species))  %>%
+    dplyr::mutate(species_cd = species, species = silvaR::sp_group(species))  %>%
     #dplyr::left_join(params_si) %>%
     #dplyr::left_join(params_vt) %>% dplyr::left_join(params_spg) %>%
     dplyr::left_join(params_growth)

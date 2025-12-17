@@ -24,7 +24,7 @@ v_tab = function(age, height, species) {
   stopifnot("age must be numeric" = is.numeric(age))
   stopifnot("height must be numeric" = is.numeric(height))
   params_vt = readRDS(system.file("params/params_v_tab.rds",
-                                  package = "SilvaR"))
+                                  package = "silvaR"))
 
   df = data.frame(species, age, height) %>%
     dplyr::mutate(species = SilvaR::sp_group(species, 'GRP_V_TAB')) %>%
