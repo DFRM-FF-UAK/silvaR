@@ -2,9 +2,9 @@ Package: SilvaR
 Title: Tools for Managing and Analyzing Data from Polish Forests
 Version: 0.0.0.9000
 Authors@R: c(
-    person("Paweł", "Hawryło", email = "", role = c("aut", "cre", "cph")),
-    person("Piotr", "Janiec", email = "", role = c("aut", "cre", "cph")),
-    person("Michał", "Woda", email = "", role = c("ctb")))
+    person("Paweł", "Hawryło", email = "pawel.hawrylo@urk.edu.pl", role = c("aut", "cre", "cph")),
+    person("Piotr", "Janiec", email = "piotr.janiec@urk.edu.pl", role = c("aut", "cph")),
+    person("Michał", "Woda", email = "michal.woda@buligl.pl", role = c("ctb")))
 Description: Tools for processing, cleaning, and analysing forest data commonly 
     used in Polish forestry. The package provides functions for standardizing 
     species names, preparing tree and stand attributes, and calculating 
