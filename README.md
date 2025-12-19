@@ -18,9 +18,10 @@ The package supports data cleaning, standardization, attribute calculation and h
 If you use **silvaR** in your scientific work, please cite the package as follows.
 The reference will be updated once the associated article is published.
 
-> Author(s). (2024). *silvaR: Tools for processing and analyzing forest data from Polish forests*.  
-> R package version X.X.X.  
-> Available at: https://github.com/DFRM-FF-UAK/silvaR
+>Socha, J., Hawryło, P., Tymińska-Czabańska, L., Woda, M., & Janiec, P. (2026).
+>Development of regionalised stand level volume increment models for the main forest forming tree species in Poland using GAM and artificial chronosequences of forest growth.
+>Forest Ecology and Management, 603, 123433.
+>https://doi.org/10.1016/j.foreco.2025.123433
 
 ---
 
