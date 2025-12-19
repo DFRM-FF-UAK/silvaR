@@ -4,7 +4,16 @@
 \alias{h_tree}
 \title{Single tree height calculation}
 \usage{
-h_tree(plot_id, tree_id, species, age, layer, dbh, height)
+h_tree(
+  plot_id,
+  tree_id,
+  species,
+  age,
+  layer,
+  dbh,
+  height,
+  use_measured_height = FALSE
+)
 }
 \arguments{
 \item{plot_id}{Unique plot id}
@@ -19,21 +28,38 @@ h_tree(plot_id, tree_id, species, age, layer, dbh, height)
 
 \item{dbh}{Tree dbh}
 
-\item{height}{Tree heighs}
+\item{height}{Tree height (measured). If \code{use_measured_height = TRUE},
+measured values are kept and the model is used only for missing heights.}
+
+\item{use_measured_height}{Logical. If \code{FALSE} (default), tree height is
+always calculated using the Bruchwald (2000) equation.
+If \code{TRUE}, measured heights are used when available and the model is
+applied only to trees with missing height.}
 }
 \value{
-Tree height (Bruchwald)
+Tree height (Bruchwald or measured, depending on
+\code{use_measured_height})
 }
 \description{
-Calculate single tree height using Bruchwald (2000) equation
+Calculate single tree height using Bruchwald (2000) equation.
+The user can choose whether tree height should always be calculated
+from the model or whether measured heights should be preserved and
+the model used only for missing values.
 }
 \examples{
 plot_id = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2)
 tree_id = c(1, 2 ,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
-species = c('SO', 'SO', 'DB', 'JW', 'BK', 'DB', 'DB', 'ŚW', 'ŚW', 'ŚW', 'SO', 'SO', 'SO', 'SO')
+species = c('SO', 'SO', 'DB', 'JW', 'BK', 'DB', 'DB',
+            'ŚW', 'ŚW', 'ŚW', 'SO', 'SO', 'SO', 'SO')
 age = c(40, 40, 40, 40, 60, 45, 50, 50, 50, 60, 60, 60, 60, 60)
 layer = c(1, 1, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1)
 height = c(21, 13, 24, NA, 12, NA, 18, NA, NA, 31, 32, 24, 25, NA)
 dbh = c(33, 32, 31, NA, 28, 47, 12, 22, 41, 48, 27, 42, 25, 33)
+
+# Always calculate height from the model (default)
 h_tree(plot_id, tree_id, species, age, layer, dbh, height)
+
+# Keep measured heights and calculate only missing values
+h_tree(plot_id, tree_id, species, age, layer, dbh, height,
+       use_measured_height = TRUE)
 }

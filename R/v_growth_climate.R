@@ -48,7 +48,7 @@ v_growth_climate = function (stand_id,
                                       package = "silvaR"))
 
   df = data.frame(stand_id, species, age, height, volume) %>%
-    dplyr::mutate(species_cd = species, species = silvaR::sp_group(species))  %>%
+    dplyr::mutate(species_cd = species, species = sp_group(species))  %>%
     #dplyr::left_join(params_si) %>%
     #dplyr::left_join(params_vt) %>% dplyr::left_join(params_spg) %>%
     dplyr::left_join(params_growth)
@@ -96,17 +96,17 @@ v_growth_climate = function (stand_id,
                     T0 = 100,
                     #z0 = (H1 - b3),
                     #r = z0 + (z0^2 + (2 * b2 * H1)/(T1^b1))^0.5,
-                    si = SilvaR::h_growth(T1, T0, H1, species)#,
-                    #vt = SilvaR::v_tab(T1, H1, species),
+                    si = h_growth(T1, T0, H1, species)#,
+                    #vt = v_tab(T1, H1, species),
                     #vt_sh = vt * share
       ) %>%
       # dplyr::group_by(stand_id) %>%
       #dplyr::mutate(vt_stand = sum(vt_sh, na.rm = T)) %>%
       #dplyr::ungroup() %>%
-      dplyr::mutate(zd = SilvaR::zd_share(stand_id, volume, T1, H1, species)) %>%
-      dplyr::mutate(H2 = SilvaR::h_growth(T1, T2, H1, species),
-                    `:=` (!!spg_start, SilvaR::spg(T1, H1, species, region)),
-                    `:=` (!!spg_end, SilvaR::spg(T2, H2, species, region)),
+      dplyr::mutate(zd = zd_share(stand_id, volume, T1, H1, species)) %>%
+      dplyr::mutate(H2 = h_growth(T1, T2, H1, species),
+                    `:=` (!!spg_start, spg(T1, H1, species, region)),
+                    `:=` (!!spg_end, spg(T2, H2, species, region)),
                     `:=`(!!growth, (((!!rlang::sym(spg_end)) - (!!rlang::sym(spg_start)))/(T2 - T1)) *
                            ni1 * zd ^ (ni2 + ni2_opad * rsum + ni2_temp * maxtavg) * si ^ ni3 * age ^ ni4),
                     `:=`(!!growth, !!rlang::sym(growth) * share),

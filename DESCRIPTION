@@ -32,6 +32,8 @@ Imports:
     tidyr,
     data.table,
     stringdist,
-    rlang
+    rlang,
+    ggplot2,
+    ggforce
 Depends: 
     R (>= 3.5)

@@ -27,11 +27,11 @@ v_tab = function(age, height, species) {
                                   package = "silvaR"))
 
   df = data.frame(species, age, height) %>%
-    dplyr::mutate(species = SilvaR::sp_group(species, 'GRP_V_TAB')) %>%
+    dplyr::mutate(species = sp_group(species, 'GRP_V_TAB')) %>%
     dplyr::left_join(params_vt)
 
   df = df %>%
-    dplyr::mutate(si = SilvaR::h_growth(T1 = age, T2 = rep(100, nrow(.)), H1 = height, species = species),
+    dplyr::mutate(si = h_growth(T1 = age, T2 = rep(100, nrow(.)), H1 = height, species = species),
                   vt = (n1 * si - n2) * ((1 - exp(b * age))/(1 - exp(b * 100)))^(c * (n1 * si - n2)^a))
 
   return(df$vt)

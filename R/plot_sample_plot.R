@@ -93,7 +93,7 @@ plot_sample_plot <- function(data,
   }
 
   if (is.null(species_colors)) {
-    species_colors <- silvaR:::species_colors
+    species_colors <- species_colors
   }
 
   # ---- clean species names ----
