@@ -16,35 +16,39 @@ rms_dbh(
 )
 }
 \arguments{
-\item{plot_id}{Unique plot id}
+\item{plot_id}{Integer or factor. Unique plot identifier.}
 
-\item{tree_id}{Unique tree id at the plot}
+\item{tree_id}{Integer or factor. Unique tree identifier within plot.}
 
-\item{species}{Tree species}
+\item{species}{Character. Tree species code.}
 
-\item{age}{Tree age}
+\item{age}{Integer. Tree age.}
 
-\item{layer}{Stand structure layer}
+\item{layer}{Integer. Stand structure layer.}
 
-\item{dbh}{Tree dbh}
+\item{dbh}{Numeric. Diameter at breast height (cm).}
 
-\item{height}{Tree heighs (you have to provide tree heights if only_measured_h = T)}
+\item{height}{Numeric. Tree height (m). Required if \code{only_measured_h = TRUE}.}
 
-\item{only_measured_h}{if TRUE only trees, with measured dbh will be used (logical, defult TRUE)}
+\item{only_measured_h}{Logical. If TRUE, only trees with measured height
+are used. Default is TRUE.}
 }
 \value{
-Average tree dbh
+Numeric vector of RMS DBH values corresponding to input rows.
 }
 \description{
-Calculate RMS dbh of the species at the plot in the layer and age group
+Calculate root mean square (RMS) diameter at breast height (DBH)
+of the species at the plot in the layer and age group.
 }
 \examples{
 plot_id = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2)
-tree_id = c(1, 2 ,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
-species = c('SO', 'SO', 'DB', 'JW', 'BK', 'DB', 'DB', 'ŚW', 'ŚW', 'ŚW', 'SO', 'SO', 'SO', 'SO')
+tree_id = c(1, 2 ,3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 7, 8)
+species = c('SO', 'SO', 'DB', 'JW', 'BK', 'DB',
+            'DB', 'ŚW', 'ŚW', 'ŚW', 'SO', 'SO', 'SO', 'SO')
 age = c(40, 40, 40, 40, 60, 45, 50, 50, 50, 60, 60, 60, 60, 60)
 layer = c(1, 1, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1)
 height = c(21, 13, 24, NA, 12, NA, 18, NA, NA, 31, 32, 24, 25, NA)
 dbh = c(33, 32, 31, NA, 28, 47, 12, 22, 41, 48, 27, 42, 25, 33)
-av_dbh(plot_id, tree_id, species, age, layer, dbh, height)
+
+rms_dbh(plot_id, tree_id, species, age, layer, dbh, height)
 }

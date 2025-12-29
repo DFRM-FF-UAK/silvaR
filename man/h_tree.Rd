@@ -48,7 +48,7 @@ the model used only for missing values.
 }
 \examples{
 plot_id = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2)
-tree_id = c(1, 2 ,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
+tree_id = c(1, 2 ,3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 7, 8)
 species = c('SO', 'SO', 'DB', 'JW', 'BK', 'DB', 'DB',
             'ŚW', 'ŚW', 'ŚW', 'SO', 'SO', 'SO', 'SO')
 age = c(40, 40, 40, 40, 60, 45, 50, 50, 50, 60, 60, 60, 60, 60)
