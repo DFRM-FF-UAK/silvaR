@@ -16,7 +16,6 @@ The package supports data cleaning, standardization, attribute calculation and h
 ## 📜 Citation
 
 If you use **silvaR** in your scientific work, please cite the package as follows.
-The reference will be updated once the associated article is published.
 
 >Socha, J., Hawryło, P., Tymińska-Czabańska, L., Woda, M., & Janiec, P. (2026).
 >Development of regionalised stand level volume increment models for the main forest forming tree species in Poland using GAM and artificial chronosequences of forest growth.
