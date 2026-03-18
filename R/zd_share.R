@@ -1,16 +1,17 @@
 #' Stocking index
 #'
-#' @description Calculation of the stocking index of the stand on the basis of
-#'  the calculated volume and the tabular volume (see v_tab() function) by age-species group.
+#' @description Calculate the stocking index (relative density) of the stand
+#' as the ratio of actual stand volume to species-share-weighted tabular volume
+#' (see v_tab()). Values above 1.0 indicate overstocking, below 1.0 understocking.
 #'
 #' @param stand_id stand id
-#' @param volume volume in the stand by age-species group
-#' @param age tree stand age by age-species group
-#' @param height tree stand height by age-species group
+#' @param volume stand volume by age-species group (m3/ha)
+#' @param age tree stand age by age-species group (years)
+#' @param height tree stand height by age-species group (m)
 #' @param species species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
 #'  'JD', 'SO'
 #'
-#' @return Stock index as a ratio of actual stock to tabular volume
+#' @return Numeric vector of stocking index values (dimensionless ratio of actual stock to tabular volume)
 #' @export
 #'
 #' @examples

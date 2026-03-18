@@ -2,7 +2,7 @@
 % Please edit documentation in R/v_growth_climate.R
 \name{v_growth_climate}
 \alias{v_growth_climate}
-\title{Volume prediction}
+\title{Climate-adjusted stand volume growth prediction}
 \usage{
 v_growth_climate(
   stand_id,
@@ -21,27 +21,31 @@ v_growth_climate(
 
 \item{years}{number of years that we want to predict the growth}
 
-\item{age}{tree stand age}
+\item{age}{tree stand age (years)}
 
-\item{height}{Height at age T1 (average)}
+\item{height}{Height at age T1 (m) (average)}
 
-\item{volume}{Volume at age T1}
+\item{volume}{Volume at age T1 (m3/ha)}
 
 \item{species}{Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
 'JD', 'SO'}
 
-\item{rsum}{precipitation sum}
+\item{rsum}{precipitation sum (mm)}
 
-\item{maxtavg}{maxium temperature}
+\item{maxtavg}{maximum temperature average (degrees C)}
 
 \item{output_type}{by default results will be returned as a vector, you can type 'df' to return data frame}
 }
 \value{
-Growth sum in specific timeline
+Numeric vector of cumulative volume growth over the prediction period (m3/ha),
+or a data frame if output_type = 'df'
 }
 \description{
-Predict tree volume growth in specific period of time based on H1,
-and species with regard to climatic conditions
+Predict stand volume increment over a specified number of years,
+accounting for climatic conditions (precipitation and temperature).
+Works like v_growth() but modifies the stocking index exponent with
+climate-dependent terms: zd^(ni2 + ni2_opad * rsum + ni2_temp * maxtavg),
+allowing species-specific climate sensitivity.
 }
 \examples{
 years = 10
@@ -53,4 +57,7 @@ species = c('SO', 'DB', 'BK')
 rsum = c(800, 700, 600)
 maxtavg = c(23, 17, 21.8)
 v_growth_climate(stand_id, years, age, height, volume, species, rsum, maxtavg, output_type = 'df')
+}
+\seealso{
+\code{\link[=v_growth]{v_growth()}}
 }

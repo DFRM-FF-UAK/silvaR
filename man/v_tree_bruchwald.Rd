@@ -2,7 +2,7 @@
 % Please edit documentation in R/v_tree_bruchwald.R
 \name{v_tree_bruchwald}
 \alias{v_tree_bruchwald}
-\title{Single tree volume calculation}
+\title{Single tree volume calculation (Bruchwald method)}
 \usage{
 v_tree_bruchwald(
   plot_id,
@@ -22,21 +22,26 @@ v_tree_bruchwald(
 
 \item{species}{Tree species}
 
-\item{age}{Tree age}
+\item{age}{Tree age (years)}
 
 \item{layer}{Stand structure layer}
 
-\item{dbh}{Tree dbh}
+\item{dbh}{Tree DBH (cm)}
 
-\item{height}{Tree heighs}
+\item{height}{Tree height (m)}
 
 \item{origin}{L (lowland) or M (mountain). This parameter needs to be provided if the species is BK}
 }
 \value{
-Tree volume
+Numeric vector of tree stem volumes (m3)
 }
 \description{
-Calculate single tree volume
+Calculate individual tree stem volume using species-specific
+Bruchwald (2000) equations with form factors and bark coefficients.
+Unlike v_tree(), this method uses plot-level auxiliary variables
+(RMS DBH, Lorey's height) and applies distinct equation sets depending on
+species group: form-factor equations for SO, SW, JD, DB, BK, BRZ, OL, DG, and
+linear/power-law equations for MD, OS, GB, TP, LP, CZR.
 }
 \examples{
 plot_id = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2)
@@ -48,4 +53,9 @@ height = c(21, 13, 24, NA, 12, NA, 18, NA, NA, 31, 32, 24, 25, NA)
 dbh = c(33, 32, 31, NA, 28, 47, 12, 22, 41, 48, 27, 42, 25, 33)
 origin = c(NA, NA, NA, NA, 'M', NA, NA, NA, NA, NA, NA, NA, NA, NA)
 v_tree_bruchwald(plot_id, tree_id, species, age, layer, dbh, height, origin)
+}
+\references{
+Bruchwald et all. (2000).
+\emph{Wzory empiryczne do określania wysokości i pierśnicowej liczby kształtu grubizny drzewa.}.
+Sylwan, 144, 5–12
 }

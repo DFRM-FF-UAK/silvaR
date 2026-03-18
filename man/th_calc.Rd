@@ -16,11 +16,13 @@ SpatRaster or RasterLayer}
 in each direction (horizontally and vertically). Or two integers (horizontal and vertical aggregation factor).}
 }
 \value{
-Top Height in the 10x10 m (default) raster
+SpatRaster of top height values (m) at the aggregated resolution (default 10x10 m)
 }
 \description{
-Calculate TH of the tree stand in 10x10 m raster. Using two optional function
-to obtain top height.
+Calculate top height (TH) of the tree stand from a
+raster canopy height model (CHM) by aggregating pixel values into coarser grid cells
+(default 10x10 m). Supports two aggregation methods for selecting dominant canopy
+heights within each cell.
 }
 \details{
 \itemize{

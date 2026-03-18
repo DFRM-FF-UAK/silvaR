@@ -13,21 +13,22 @@ av_dbh(plot_id, tree_id, species, age, layer, dbh, height, only_measured_h = T)
 
 \item{species}{Tree species}
 
-\item{age}{Tree age}
+\item{age}{Tree age (years)}
 
 \item{layer}{Stand structure layer}
 
-\item{dbh}{Tree dbh}
+\item{dbh}{Tree DBH (cm)}
 
-\item{height}{Tree heighs (you have to provide tree heights if only_measured_h = T)}
+\item{height}{Tree height (m) (you have to provide tree heights if only_measured_h = T)}
 
-\item{only_measured_h}{if TRUE only trees, with measured dbh will be used (logical, defult TRUE)}
+\item{only_measured_h}{if TRUE only trees, with measured height will be used (logical, default TRUE)}
 }
 \value{
-Average tree dbh
+Numeric vector of average DBH values (cm)
 }
 \description{
-Calculate average dbh of the species at the plot in the layer and age group
+Calculate arithmetic mean diameter at breast height (DBH) per species,
+age and layer group within each plot.
 }
 \examples{
 plot_id = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2)

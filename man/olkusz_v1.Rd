@@ -3,7 +3,7 @@
 \docType{data}
 \name{olkusz_v1}
 \alias{olkusz_v1}
-\title{Example dataset: Sample forest plots}
+\title{Example dataset: Stand-level data for volume growth modelling}
 \format{
 A data frame with 100 rows and 6 variables:
 \describe{
@@ -19,7 +19,7 @@ A data frame with 100 rows and 6 variables:
 data(olkusz_v1)
 }
 \description{
-This dataset contains example plot-level data used to demonstrate
-the functionality of the silvaR package.
+Stand-level forest data from the Olkusz area used to demonstrate
+volume growth prediction with v_growth() and related stand-level functions
 }
 \keyword{datasets}

@@ -7,23 +7,23 @@
 spg(age, height, species, region = "GLOB")
 }
 \arguments{
-\item{age}{tree stand age}
+\item{age}{tree stand age (years)}
 
-\item{height}{tree stand top height}
+\item{height}{tree stand top height (m)}
 
 \item{species}{species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
 'JD', 'SO'}
 
 \item{region}{Natural region - Abbreviation: 'I, 'II', 'III', 'IV', 'V', 'VI',
-'VII', 'VIII', 'GLOB' (deafult GLOBAL)}
+'VII', 'VIII', 'GLOB' (default, global parameters)}
 }
 \value{
-Total coarse wood production at input age in cubic meters per hectare
+Numeric vector of total coarse wood production (m3/ha)
 }
 \description{
-Predict total coarse wood production in the stand
-based on the stand age, height and species. You cand calculate the production
-based on the global and local parameters (forest regions).
+Predict total coarse wood production in the stand based on
+the stand age, height and species. You can calculate the production using
+global or region-specific parameters (Polish natural forest regions I-VIII).
 }
 \examples{
 age = c(100, 101, 102)

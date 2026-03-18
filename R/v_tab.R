@@ -1,15 +1,22 @@
 #' Tabular volume prediction
 #'
-#' @description Predict stand volume based on height, age and species.
-#' Function is using tabular reference data from
-#' Szymkiewicz B. "Tablice zasobności i przyrostu drzewostanów"
+#' @description Predict stand volume based on height,
+#' age and species using tabular reference data from
+#' Szymkiewicz B. "Tablice zasobnosci i przyrostu drzewostanow".
+#' Internally calculates Site Index (height at age 100) via h_growth() and
+#' applies species-specific yield table parameters.
 #'
-#' @param age tree stand age
-#' @param height tree stand top height
+#' @references
+#' Szymkiewicz T. (1952).
+#' *Tablice zasobności i przyrostu drzewostanów*.
+#' Warszawa: Państwowe Wydawnictwo Rolnicze i Leśne.
+#'
+#' @param age tree stand age (years)
+#' @param height tree stand top height (m)
 #' @param species species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
 #'  'JD', 'SO'
 #'
-#' @return Tabular volume for species at input age in cubic meters per hectare
+#' @return Numeric vector of tabular volumes (m3/ha)
 #' @export
 #'
 #' @examples

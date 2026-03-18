@@ -11,17 +11,19 @@ av_height(plot_id, species, age, layer, height)
 
 \item{species}{Tree species}
 
-\item{age}{Tree age}
+\item{age}{Tree age (years)}
 
 \item{layer}{Stand structure layer}
 
-\item{height}{Tree height}
+\item{height}{Tree height (m)}
 }
 \value{
-Average tree height
+Numeric vector of average tree heights (m)
 }
 \description{
-Calculate average height of the species at the plot in the layer and age group
+Calculate arithmetic mean tree height per species,
+age and layer group within each plot.
+Missing heights (NA) are excluded from the calculation.
 }
 \examples{
 plot_id = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2)

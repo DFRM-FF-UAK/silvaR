@@ -1,6 +1,10 @@
-#' Volume prediction
+#' Stand volume growth prediction
 #'
-#' @description Predict tree volume growth in specific period of time based on H1, region, species
+#' @description Predict stand volume increment over a specified number of years
+#' using iterative year-by-year simulation. Each annual step calculates
+#' height growth (h_growth()), site index, stocking index (zd_share()),
+#' total production (spg()) and species share to derive the volume increment.
+#' Growth is modified by region-specific parameters (ni1-ni4).
 #'
 #' @param stand_id stand id
 #' @param years number of years that we want to predict the growth
@@ -12,7 +16,9 @@
 #' @param region Natural region - Abbreviation: 'I, 'II', 'III', 'IV', 'V', 'VI',
 #'  'VII', 'VIII', 'GLOB' (default)
 #' @param output_type by default results will be returned as a vector, you can type 'df' to return data frame
-#' @return Growth sum in specific timeline
+#' @return Numeric vector of cumulative volume growth over the prediction period (m3/ha),
+#' or a data frame if output_type = 'df'
+#' @seealso [v_growth_climate()], [h_growth()], [spg()], [zd_share()]
 #' @export
 #'
 #' @examples

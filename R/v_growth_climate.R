@@ -1,19 +1,24 @@
-#' Volume prediction
+#' Climate-adjusted stand volume growth prediction
 #'
-#' @description Predict tree volume growth in specific period of time based on H1,
-#'  and species with regard to climatic conditions
+#' @description Predict stand volume increment over a specified number of years,
+#' accounting for climatic conditions (precipitation and temperature).
+#' Works like v_growth() but modifies the stocking index exponent with
+#' climate-dependent terms: zd^(ni2 + ni2_opad * rsum + ni2_temp * maxtavg),
+#' allowing species-specific climate sensitivity.
 #'
 #' @param stand_id stand id
 #' @param years number of years that we want to predict the growth
-#' @param age tree stand age
-#' @param height Height at age T1 (average)
-#' @param volume Volume at age T1
+#' @param age tree stand age (years)
+#' @param height Height at age T1 (m) (average)
+#' @param volume Volume at age T1 (m3/ha)
 #' @param species Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
 #'  'JD', 'SO'
-#' @param rsum precipitation sum
-#' @param maxtavg maxium temperature
+#' @param rsum precipitation sum (mm)
+#' @param maxtavg maximum temperature average (degrees C)
 #' @param output_type by default results will be returned as a vector, you can type 'df' to return data frame
-#' @return Growth sum in specific timeline
+#' @return Numeric vector of cumulative volume growth over the prediction period (m3/ha),
+#' or a data frame if output_type = 'df'
+#' @seealso [v_growth()]
 #' @export
 #'
 #' @examples

@@ -2,7 +2,7 @@
 % Please edit documentation in R/v_growth.R
 \name{v_growth}
 \alias{v_growth}
-\title{Volume prediction}
+\title{Stand volume growth prediction}
 \usage{
 v_growth(
   stand_id,
@@ -35,10 +35,15 @@ v_growth(
 \item{output_type}{by default results will be returned as a vector, you can type 'df' to return data frame}
 }
 \value{
-Growth sum in specific timeline
+Numeric vector of cumulative volume growth over the prediction period (m3/ha),
+or a data frame if output_type = 'df'
 }
 \description{
-Predict tree volume growth in specific period of time based on H1, region, species
+Predict stand volume increment over a specified number of years
+using iterative year-by-year simulation. Each annual step calculates
+height growth (h_growth()), site index, stocking index (zd_share()),
+total production (spg()) and species share to derive the volume increment.
+Growth is modified by region-specific parameters (ni1-ni4).
 }
 \examples{
 years = 10
@@ -49,4 +54,7 @@ volume = c(150, 160, 170)
 species = c('SO', 'DB', 'BK')
 region = c('I', 'II', 'GLOB')
 v_growth(stand_id, years, age, height, volume, species, region, output_type = 'df')
+}
+\seealso{
+\code{\link[=v_growth_climate]{v_growth_climate()}}, \code{\link[=h_growth]{h_growth()}}, \code{\link[=spg]{spg()}}, \code{\link[=zd_share]{zd_share()}}
 }

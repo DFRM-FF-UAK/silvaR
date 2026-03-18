@@ -7,24 +7,31 @@
 v_tab(age, height, species)
 }
 \arguments{
-\item{age}{tree stand age}
+\item{age}{tree stand age (years)}
 
-\item{height}{tree stand top height}
+\item{height}{tree stand top height (m)}
 
 \item{species}{species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
 'JD', 'SO'}
 }
 \value{
-Tabular volume for species at input age in cubic meters per hectare
+Numeric vector of tabular volumes (m3/ha)
 }
 \description{
-Predict stand volume based on height, age and species.
-Function is using tabular reference data from
-Szymkiewicz B. "Tablice zasobności i przyrostu drzewostanów"
+Predict stand volume based on height,
+age and species using tabular reference data from
+Szymkiewicz B. "Tablice zasobnosci i przyrostu drzewostanow".
+Internally calculates Site Index (height at age 100) via h_growth() and
+applies species-specific yield table parameters.
 }
 \examples{
 age = c(100, 101, 102)
 height = c(32, 33, 34)
 species = c('SO', 'DB', 'BK')
 v_tab(age, height, species)
+}
+\references{
+Szymkiewicz T. (1952).
+\emph{Tablice zasobności i przyrostu drzewostanów}.
+Warszawa: Państwowe Wydawnictwo Rolnicze i Leśne.
 }

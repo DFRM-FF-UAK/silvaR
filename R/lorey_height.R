@@ -1,15 +1,18 @@
 #' Calculate Lorey's height at the sample plot
 #'
-#' @description Calculate dbh weighted average height of the species at the plot in the layer and age group
+#' @description Calculate Lorey's height (basal-area-weighted mean height) per species,
+#' age and layer group within each plot. Lorey's height gives more weight to larger trees
+#' by using cross-sectional area (g = pi * (dbh/2)^2) as weights,
+#' making it more representative of stand volume than the arithmetic mean.
 #'
 #'
 #' @param plot_id Unique plot id
 #' @param species Tree species
-#' @param age Tree age
+#' @param age Tree age (years)
 #' @param layer Stand structure layer
-#' @param height Tree height
-#' @param dbh Tree dbh
-#' @return Average tree height
+#' @param height Tree height (m)
+#' @param dbh Tree DBH (cm)
+#' @return Numeric vector of Lorey's height values (m)
 #' @export
 #'
 #' @examples

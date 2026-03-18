@@ -25,7 +25,7 @@ test_that("v_growth zwraca poprawny wynik", {
                      volume = volume,
                      species = species,
                      region = region)
-  expect_equal(result, c(40.52663,53.18279,67.21530), tolerance = 1e-5)
+  expect_equal(result, c(41.13005,51.49960,67.21530), tolerance = 1e-5)
 })
 
 test_that("v_growth obsługuje brakujące parametry", {

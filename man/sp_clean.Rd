@@ -10,10 +10,14 @@ sp_clean(species)
 \item{species}{vector of species}
 }
 \value{
-Cleaned species vector
+Character vector of standardized Polish forestry species abbreviations.
+Returns NA for species that could not be matched, with a warning.
 }
 \description{
-Clean species names and convert to short names used in Poland
+Standardize tree species names from various input formats
+(Polish abbreviations, Polish common names, Latin names, English names, and common typos)
+to official Polish forestry abbreviations (e.g. 'SO', 'DB', 'BK').
+Uses fuzzy string matching (Levenshtein distance) with 10\% tolerance to handle misspellings and formatting inconsistencies.
 }
 \examples{
 species_list = c('GLG ', 'Db', 'CZM P', 'Sosna Zwyczajna', 'Sesna', 'Abies alba', 'rowan')

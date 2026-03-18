@@ -11,7 +11,7 @@ sp_group(species, type = "GRP_P", others = "BK")
 
 \item{type}{grouping type (5 options: GRP_P, GRP_TH, GRP_V, GRP_H, GRP_P_BDL)}
 
-\item{others}{how to group species without a group (deafult BK)}
+\item{others}{how to group species without a group (default BK)}
 }
 \value{
 Vector of species group name

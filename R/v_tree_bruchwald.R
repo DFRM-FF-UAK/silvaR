@@ -1,17 +1,25 @@
-#' Single tree volume calculation
+#' Single tree volume calculation (Bruchwald method)
 #'
-#' @description Calculate single tree volume
+#' @description Calculate individual tree stem volume using species-specific
+#' Bruchwald (2000) equations with form factors and bark coefficients.
+#' Unlike v_tree(), this method uses plot-level auxiliary variables
+#' (RMS DBH, Lorey's height) and applies distinct equation sets depending on
+#' species group: form-factor equations for SO, SW, JD, DB, BK, BRZ, OL, DG, and
+#' linear/power-law equations for MD, OS, GB, TP, LP, CZR.
 #'
+#' @references Bruchwald et all. (2000).
+#' *Wzory empiryczne do określania wysokości i pierśnicowej liczby kształtu grubizny drzewa.*.
+#' Sylwan, 144, 5–12
 #'
 #' @param plot_id Unique plot id
 #' @param tree_id Unique tree id at the plot
 #' @param species Tree species
-#' @param age Tree age
+#' @param age Tree age (years)
 #' @param layer Stand structure layer
-#' @param dbh Tree dbh
-#' @param height Tree heighs
+#' @param dbh Tree DBH (cm)
+#' @param height Tree height (m)
 #' @param origin L (lowland) or M (mountain). This parameter needs to be provided if the species is BK
-#' @return Tree volume
+#' @return Numeric vector of tree stem volumes (m3)
 #' @export
 #'
 #' @examples

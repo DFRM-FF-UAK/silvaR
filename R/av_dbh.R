@@ -1,17 +1,17 @@
 #' Calculate average dbh at the sample plot
 #'
-#' @description Calculate average dbh of the species at the plot in the layer and age group
-#'
+#' @description Calculate arithmetic mean diameter at breast height (DBH) per species,
+#' age and layer group within each plot.
 #'
 #' @param plot_id Unique plot id
 #' @param tree_id Unique tree id at the plot
 #' @param species Tree species
-#' @param age Tree age
+#' @param age Tree age (years)
 #' @param layer Stand structure layer
-#' @param dbh Tree dbh
-#' @param only_measured_h if TRUE only trees, with measured dbh will be used (logical, defult TRUE)
-#' @param height Tree heighs (you have to provide tree heights if only_measured_h = T)
-#' @return Average tree dbh
+#' @param dbh Tree DBH (cm)
+#' @param only_measured_h if TRUE only trees, with measured height will be used (logical, default TRUE)
+#' @param height Tree height (m) (you have to provide tree heights if only_measured_h = T)
+#' @return Numeric vector of average DBH values (cm)
 #' @export
 #'
 #' @examples
@@ -54,7 +54,8 @@ av_dbh = function(plot_id, tree_id, species, age, layer, dbh, height, only_measu
     }
 
 
-  }else{
+  } else {
+
     df = data.frame(plot_id, species, age, layer, dbh) %>%
       dplyr::group_by(plot_id, species, age, layer) %>%
       dplyr::mutate(DBH = mean(dbh)) %>%

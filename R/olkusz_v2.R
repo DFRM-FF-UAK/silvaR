@@ -1,7 +1,7 @@
-#' Example dataset: Sample forest plots
+#' Example dataset: Stand-level data for height growth modelling
 #'
-#' This dataset contains example plot-level data used to demonstrate
-#' the functionality of the silvaR package.
+#' Stand-level forest data from the Olkusz area used to demonstrate
+#' height growth prediction and Site Index calculation with h_growth().
 #'
 #' @format A data frame with 100 rows and 6 variables:
 #' \describe{

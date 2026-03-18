@@ -11,19 +11,22 @@ lorey_height(plot_id, species, age, layer, height, dbh)
 
 \item{species}{Tree species}
 
-\item{age}{Tree age}
+\item{age}{Tree age (years)}
 
 \item{layer}{Stand structure layer}
 
-\item{height}{Tree height}
+\item{height}{Tree height (m)}
 
-\item{dbh}{Tree dbh}
+\item{dbh}{Tree DBH (cm)}
 }
 \value{
-Average tree height
+Numeric vector of Lorey's height values (m)
 }
 \description{
-Calculate dbh weighted average height of the species at the plot in the layer and age group
+Calculate Lorey's height (basal-area-weighted mean height) per species,
+age and layer group within each plot. Lorey's height gives more weight to larger trees
+by using cross-sectional area (g = pi * (dbh/2)^2) as weights,
+making it more representative of stand volume than the arithmetic mean.
 }
 \examples{
 plot_id = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2)

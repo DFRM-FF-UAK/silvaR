@@ -9,21 +9,22 @@ zd_share(stand_id, volume, age, height, species)
 \arguments{
 \item{stand_id}{stand id}
 
-\item{volume}{volume in the stand by age-species group}
+\item{volume}{stand volume by age-species group (m3/ha)}
 
-\item{age}{tree stand age by age-species group}
+\item{age}{tree stand age by age-species group (years)}
 
-\item{height}{tree stand height by age-species group}
+\item{height}{tree stand height by age-species group (m)}
 
 \item{species}{species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB', 'ŚW',
 'JD', 'SO'}
 }
 \value{
-Stock index as a ratio of actual stock to tabular volume
+Numeric vector of stocking index values (dimensionless ratio of actual stock to tabular volume)
 }
 \description{
-Calculation of the stocking index of the stand on the basis of
-the calculated volume and the tabular volume (see v_tab() function) by age-species group.
+Calculate the stocking index (relative density) of the stand
+as the ratio of actual stand volume to species-share-weighted tabular volume
+(see v_tab()). Values above 1.0 indicate overstocking, below 1.0 understocking.
 }
 \examples{
 stand_id = c(1, 2, 3)

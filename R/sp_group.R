@@ -6,7 +6,7 @@
 #'
 #' @param species vector of species
 #' @param type grouping type (5 options: GRP_P, GRP_TH, GRP_V, GRP_H, GRP_P_BDL)
-#' @param others how to group species without a group (deafult BK)
+#' @param others how to group species without a group (default BK)
 #'
 #' @details
 #' - GRP_P - (default) growth group

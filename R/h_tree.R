@@ -9,18 +9,18 @@
 #' @param plot_id Unique plot id
 #' @param tree_id Unique tree id at the plot
 #' @param species Tree species
-#' @param age Tree age
+#' @param age Tree age (years)
 #' @param layer Stand structure layer
-#' @param dbh Tree dbh
-#' @param height Tree height (measured). If `use_measured_height = TRUE`,
+#' @param dbh Tree DBH (cm)
+#' @param height Tree height (m) (measured). If `use_measured_height = TRUE`,
 #'   measured values are kept and the model is used only for missing heights.
 #' @param use_measured_height Logical. If `FALSE` (default), tree height is
 #'   always calculated using the Bruchwald (2000) equation.
 #'   If `TRUE`, measured heights are used when available and the model is
 #'   applied only to trees with missing height.
 #'
-#' @return Tree height (Bruchwald or measured, depending on
-#'   `use_measured_height`)
+#' @return Numeric vector of tree heights in meters (Bruchwald-modelled or measured, depending on
+#'   `use_measured_height` parameter)
 #' @export
 #'
 #' @examples

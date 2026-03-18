@@ -2,22 +2,24 @@
 % Please edit documentation in R/v_tree.R
 \name{v_tree}
 \alias{v_tree}
-\title{Single tree volume calculation}
+\title{Single tree volume calculation (power model)}
 \usage{
 v_tree(dbh, height, species)
 }
 \arguments{
-\item{dbh}{diameter at the breast height}
+\item{dbh}{diameter at the breast height (cm)}
 
-\item{height}{tree height}
+\item{height}{tree height (m)}
 
 \item{species}{tree species}
 }
 \value{
-Tree volume
+Numeric vector of tree stem volumes (m3)
 }
 \description{
-Calculate single tree volume
+Calculate individual tree stem volume using a power-law allometric equation:
+V = beta0 * dbh^beta1 * height^beta2, where species-specific coefficients are applied
+together with bark thickness parameters.
 }
 \examples{
 dbh = c(32, 33, 34)

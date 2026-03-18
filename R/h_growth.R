@@ -1,15 +1,16 @@
 #' Height growth prediction
 #'
-#' @description Predict tree height in T2, based on the T1, H1 and species.
-#' Function can be used also to calculate Site Index (tree height in base age - usually 50 or 100)
+#' @description Predict tree height at a target age (T2) based on current age (T1),
+#' current height (H1) and species. Can also be used to calculate Site Index (SI)
+#' by setting T2 as base age (usually 50 or 100).
 #'
-#' @param H1 Vector of Height at age T1 (Top or average)
-#' @param T1  Vector of Age with known height
-#' @param T2 Vector of age when we want predict height
+#' @param H1 Vector of Height at age T1 - top or average (m)
+#' @param T1  Vector of Age with known height (years)
+#' @param T2 Vector of age when we want predict height (years)
 #' @param species Vector of Species - Abbreviation: 'BK', 'OL', 'MD', 'BRZ', 'DB',
 #'  'JD', 'SO', 'ŚW'
 #'
-#' @return H2 - Height at age T2
+#' @return Numeric vector of predicted heights at age T2 (m)
 #' @export
 #'
 #' @examples

@@ -1,12 +1,14 @@
-#' Single tree volume calculation
+#' Single tree volume calculation (power model)
 #'
-#' @description Calculate single tree volume
+#' @description Calculate individual tree stem volume using a power-law allometric equation:
+#' V = beta0 * dbh^beta1 * height^beta2, where species-specific coefficients are applied
+#' together with bark thickness parameters.
 #'
 #'
-#' @param dbh diameter at the breast height
-#' @param height tree height
+#' @param dbh diameter at the breast height (cm)
+#' @param height tree height (m)
 #' @param species tree species
-#' @return Tree volume
+#' @return Numeric vector of tree stem volumes (m3)
 #' @export
 #'
 #' @examples

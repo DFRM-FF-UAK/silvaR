@@ -1,7 +1,9 @@
 #' Top Height (TH) calculation
 #'
-#' @description Calculate TH of the tree stand in 10x10 m raster. Using two optional function
-#' to obtain top height.
+#' @description Calculate top height (TH) of the tree stand from a
+#' raster canopy height model (CHM) by aggregating pixel values into coarser grid cells
+#' (default 10x10 m). Supports two aggregation methods for selecting dominant canopy
+#' heights within each cell.
 #'
 #' @param chm canopy height model (resolution equal or higher than 1 meter).
 #' SpatRaster or RasterLayer
@@ -13,7 +15,7 @@
 #' - "h_23" - (default) mean of 1/3 highest cells to aggregate
 #' - "h_sd" - mean of cells higher than threshold: (percentile of 97 - 6.42)
 #'
-#' @return Top Height in the 10x10 m (default) raster
+#' @return SpatRaster of top height values (m) at the aggregated resolution (default 10x10 m)
 #' @export
 #'
 #' @examples

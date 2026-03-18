@@ -1,11 +1,14 @@
 #' Set lowland or mountainous origin
 #'
-#' @description Set lowland or mountainous origin
-#' Based on the forest habitat or forest region
+#' @description Classify plot or stand origin as lowland ("L") or mountainous ("M")
+#' based on a forest habitat type code, habitat name, or forest region identifier.
+#' Accepts numeric codes (e.g. "1", "14"), Roman numeral region codes (e.g. "II", "VIII"),
+#' region names (e.g. "Karpacka"), and habitat type abbreviations or names (e.g. "BMB", "Bor gorski wilgotny").
 #'
 #'
 #' @param value forest habitat or region
-#' @return Species group name
+#' @return Character vector of origin classification: "L" (lowland) or "M" (mountainous).
+#' Returns NA for values not found in the dictionary, with a warning.
 #'
 #' @export
 #'

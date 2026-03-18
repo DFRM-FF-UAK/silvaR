@@ -1,14 +1,16 @@
 #' Calculate average height at the sample plot
 #'
-#' @description Calculate average height of the species at the plot in the layer and age group
+#' @description Calculate arithmetic mean tree height per species,
+#' age and layer group within each plot.
+#' Missing heights (NA) are excluded from the calculation.
 #'
 #'
 #' @param plot_id Unique plot id
 #' @param species Tree species
-#' @param age Tree age
+#' @param age Tree age (years)
 #' @param layer Stand structure layer
-#' @param height Tree height
-#' @return Average tree height
+#' @param height Tree height (m)
+#' @return Numeric vector of average tree heights (m)
 #' @export
 #'
 #' @examples

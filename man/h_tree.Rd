@@ -22,13 +22,13 @@ h_tree(
 
 \item{species}{Tree species}
 
-\item{age}{Tree age}
+\item{age}{Tree age (years)}
 
 \item{layer}{Stand structure layer}
 
-\item{dbh}{Tree dbh}
+\item{dbh}{Tree DBH (cm)}
 
-\item{height}{Tree height (measured). If \code{use_measured_height = TRUE},
+\item{height}{Tree height (m) (measured). If \code{use_measured_height = TRUE},
 measured values are kept and the model is used only for missing heights.}
 
 \item{use_measured_height}{Logical. If \code{FALSE} (default), tree height is
@@ -37,8 +37,8 @@ If \code{TRUE}, measured heights are used when available and the model is
 applied only to trees with missing height.}
 }
 \value{
-Tree height (Bruchwald or measured, depending on
-\code{use_measured_height})
+Numeric vector of tree heights in meters (Bruchwald-modelled or measured, depending on
+\code{use_measured_height} parameter)
 }
 \description{
 Calculate single tree height using Bruchwald (2000) equation.

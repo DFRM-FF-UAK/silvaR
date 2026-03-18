@@ -1,9 +1,13 @@
 #' Clean species names
 #'
-#' @description Clean species names and convert to short names used in Poland
+#' @description Standardize tree species names from various input formats
+#' (Polish abbreviations, Polish common names, Latin names, English names, and common typos)
+#' to official Polish forestry abbreviations (e.g. 'SO', 'DB', 'BK').
+#' Uses fuzzy string matching (Levenshtein distance) with 10% tolerance to handle misspellings and formatting inconsistencies.
 #'
 #' @param species vector of species
-#' @return Cleaned species vector
+#' @return Character vector of standardized Polish forestry species abbreviations.
+#' Returns NA for species that could not be matched, with a warning.
 #' @export
 #'
 #' @examples
