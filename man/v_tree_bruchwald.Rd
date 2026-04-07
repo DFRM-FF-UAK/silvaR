@@ -56,6 +56,6 @@ v_tree_bruchwald(plot_id, tree_id, species, age, layer, dbh, height, origin)
 }
 \references{
 Bruchwald et all. (2000).
-\emph{Wzory empiryczne do określania wysokości i pierśnicowej liczby kształtu grubizny drzewa.}.
+\emph{Wzory empiryczne do okreslania wysokosci i piersnicowej liczby ksztaltu grubizny drzewa.}.
 Sylwan, 144, 5–12
 }

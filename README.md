@@ -128,30 +128,30 @@ head(olkusz_v2)
 library(silvaR)
 
 # Load example data
-data(rybnikPP)
-head(rybnikPP)
+data(PPdemo)
+head(PPdemo)
 
 # Clean species name
-rybnikPP$SPECIES_CD <- sp_clean(rybnikPP$SPECIES_CD)
+PPdemo$SPECIES_CD <- sp_clean(PPdemo$SPECIES_CD)
 
 # Estimate tree height
-rybnikPP$TREE_HEIGHT <- h_tree(plot_id = rybnikPP$SAMPLE_NR, 
-                               tree_id = rybnikPP$SAMPLE_RECORD_NR, 
-                               species = rybnikPP$SPECIES_CD, 
-                               age = rybnikPP$TREE_AGE, 
-                               layer = rybnikPP$STOREY_NR, 
-                               dbh = rybnikPP$BREAST_HEIGHT, 
-                               height = rybnikPP$TREE_HEIGHT)
+PPdemo$TREE_HEIGHT <- h_tree(plot_id = PPdemo$SAMPLE_NR, 
+                               tree_id = PPdemo$SAMPLE_RECORD_NR, 
+                               species = PPdemo$SPECIES_CD, 
+                               age = PPdemo$TREE_AGE, 
+                               layer = PPdemo$STOREY_NR, 
+                               dbh = PPdemo$BREAST_HEIGHT, 
+                               height = PPdemo$TREE_HEIGHT)
 
 # Estimate single tree volume
-rybnikPP$TREE_VOLUME <- v_tree(dbh = rybnikPP$BREAST_HEIGHT, 
-                          height = rybnikPP$TREE_HEIGHT, 
-                          species = rybnikPP$SPECIES_CD)
+PPdemo$TREE_VOLUME <- v_tree(dbh = PPdemo$BREAST_HEIGHT, 
+                          height = PPdemo$TREE_HEIGHT, 
+                          species = PPdemo$SPECIES_CD)
                           
-head(rybnikPP)
+head(PPdemo)
 
 ## Plot single sample plot 
-singlePP <- rybnikPP[rybnikPP$SAMPLE_NR == 72,]
+singlePP <- PPdemo[PPdemo$SAMPLE_NR == 72,]
 
 plot_sample_plot(data = singlePP, plot_radius = 11.28)
 

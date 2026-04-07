@@ -16,7 +16,7 @@
 #'   \item{DISTANCE}{Horizontal distance of the tree from the plot center (meters)}
 #' }
 #'
-#' @usage data(rybnikPP)
+#' @usage data(PPdemo)
 #' @keywords datasets
 #'
-"rybnikPP"
+"PPdemo"

@@ -8,7 +8,7 @@
 #' linear/power-law equations for MD, OS, GB, TP, LP, CZR.
 #'
 #' @references Bruchwald et all. (2000).
-#' *Wzory empiryczne do określania wysokości i pierśnicowej liczby kształtu grubizny drzewa.*.
+#' *Wzory empiryczne do okreslania wysokosci i piersnicowej liczby ksztaltu grubizny drzewa.*.
 #' Sylwan, 144, 5–12
 #'
 #' @param plot_id Unique plot id

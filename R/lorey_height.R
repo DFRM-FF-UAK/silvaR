@@ -31,7 +31,7 @@ lorey_height = function(plot_id, species, age, layer, height, dbh){
   df = data.frame(plot_id, species, age, layer, height, dbh) %>%
     dplyr::mutate(g =3.14*(dbh/2)^2) %>%
     dplyr::group_by(plot_id, species, age, layer) %>%
-    dplyr::mutate(H = weighted.mean(height, g, na.rm=T)
+    dplyr::mutate(H = stats::weighted.mean(height, g, na.rm=T)
                 ) %>%
     dplyr::ungroup()
 

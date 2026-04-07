@@ -135,8 +135,8 @@ plot_sample_plot <- function(data,
     ggplot2::labs(
       x = "X [m]",
       y = "Y [m]",
-      color = "Gatunek",
-      size = "Pierśnica [cm]"
+      color = "Species",
+      size = "DBH [cm]"
     ) +
     ggplot2::theme_minimal()
 
