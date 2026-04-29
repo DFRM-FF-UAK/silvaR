@@ -27,7 +27,8 @@ plot_sample_plot(
 
 \item{species}{Optional name of species column.}
 
-\item{species_colors}{Optional named vector of colors for species.}
+\item{species_colors}{Optional named vector of colors for species.
+If NULL, looks for internal package dictionary.}
 }
 \value{
 A ggplot object.
@@ -36,4 +37,11 @@ A ggplot object.
 Creates a schematic (top-down) visualization of a forest plot with trees
 positioned using azimuth and distance measurements from the plot center.
 Column names are detected automatically using silvaR conventions.
+}
+\examples{
+library(dplyr)
+data("PPdemo")
+singlePP <- PPdemo[PPdemo$SAMPLE_NR == 72, ]
+
+plot_sample_plot(data = singlePP, plot_radius = 11.28)
 }

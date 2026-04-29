@@ -42,6 +42,7 @@ calculate_rel_coordinates <- function(azimuth_deg, distance_cm) {
 #' @param dbh Optional name of diameter at breast height column (cm).
 #' @param species Optional name of species column.
 #' @param species_colors Optional named vector of colors for species.
+#' If NULL, looks for internal package dictionary.
 #'
 #' @return A ggplot object.
 #'
@@ -49,6 +50,13 @@ calculate_rel_coordinates <- function(azimuth_deg, distance_cm) {
 #' @importFrom ggforce geom_circle
 #'
 #' @export
+#'
+#' @examples
+#' library(dplyr)
+#' data("PPdemo")
+#' singlePP <- PPdemo[PPdemo$SAMPLE_NR == 72, ]
+#'
+#' plot_sample_plot(data = singlePP, plot_radius = 11.28)
 plot_sample_plot <- function(data,
                        plot_radius,
                        azimuth = NULL,
@@ -92,57 +100,57 @@ plot_sample_plot <- function(data,
     )
   }
 
+  # 2. Kopia danych i czyszczenie (konwersja na character!)
+  df_plot <- data
+  df_plot[[species]] <- as.character(sp_clean(df_plot[[species]]))
+
+  # 3. Pobranie słownika z sysdata
   if (is.null(species_colors)) {
-    species_colors <- species_colors
+    species_colors <- get0("species_colors", envir = asNamespace("silvaR"), ifnotfound = NULL)
   }
 
-  # ---- clean species names ----
-  data[[species]] <- sp_clean(data[[species]])
+  # 4. Budowa mapy kolorów tylko dla gatunków obecnych w tej próbie
+  present_species <- unique(df_plot[[species]])
 
-  # ---- calculate local coordinates ----
-  coords <- calculate_rel_coordinates(
-    azimuth_deg = data[[azimuth]],
-    distance_cm = data[[distance]]
-  )
+  # Tworzymy wektor kolorów: jeśli jest w słowniku - weź go, jeśli nie - daj szary (lub losowy)
+  my_palette <- sapply(present_species, function(s) {
+    if (!is.null(species_colors) && s %in% names(species_colors)) {
+      return(unname(species_colors[s]))
+    } else {
+      return("gray70") # Kolor dla gatunków spoza Twojej listy
+    }
+  })
 
-  data$x <- coords$x
-  data$y <- coords$y
+  # 5. Współrzędne
+  coords <- calculate_rel_coordinates(df_plot[[azimuth]], df_plot[[distance]])
+  df_plot$x <- coords$x
+  df_plot$y <- coords$y
 
-  # ---- plot ----
+  # 6. Plot
   p <- ggplot2::ggplot() +
     ggforce::geom_circle(
       ggplot2::aes(x0 = 0, y0 = 0, r = plot_radius),
-      color = "gray40",
-      linetype = "dashed"
+      color = "gray40", linetype = "dashed"
     ) +
     ggplot2::geom_point(
-      data = data,
+      data = df_plot,
       ggplot2::aes(
-        x = x,
-        y = y,
+        x = x, y = y,
         size = .data[[dbh]],
         color = .data[[species]]
-      )
+      ),
+      alpha = 0.8
     ) +
-    ggplot2::geom_point(
-      ggplot2::aes(x = 0, y = 0),
-      shape = 4,
-      size = 1,
-      color = "black",
-      stroke = 1.2
-    ) +
+    ggplot2::geom_point(ggplot2::aes(x = 0, y = 0), shape = 4, color = "black") +
     ggplot2::coord_fixed() +
     ggplot2::labs(
-      x = "X [m]",
-      y = "Y [m]",
-      color = "Species",
-      size = "DBH [cm]"
+      x = "X [m]", y = "Y [m]",
+      color = "Gatunek", size = "DBH [cm]"
     ) +
     ggplot2::theme_minimal()
 
-  if (!is.null(species_colors)) {
-    p <- p + ggplot2::scale_color_manual(values = species_colors)
-  }
+  # 7. Ręczne przypisanie palety - tutaj naprawiamy błąd "No shared levels"
+  p <- p + ggplot2::scale_color_manual(values = my_palette)
 
-  p
+  return(p)
 }
