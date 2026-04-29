@@ -1,10 +1,6 @@
-silvaR <img src="man/figures/silvaR_logo_v1.png" align="right" width="160"/>
+# silvaR <img src="man/figures/silvaR_logo_v1.png" align="right" width="160"/>
 ---
 ![license](https://img.shields.io/badge/Licence-GPL--3-blue.svg)
-![R-CMD-check](https://github.com/DFRM-FF-UAK/silvaR/actions/workflows/R-CMD-check.yaml/badge.svg?branch=main)
-[![codecov](https://codecov.io/gh/DFRM-FF-UAK/silvaR/branch/main/graph/badge.svg)](https://codecov.io/gh/DFRM-FF-UAK/silvaR)
-[![CRAN status](https://www.r-pkg.org/badges/version/silvaR)](https://CRAN.R-project.org/package=silvaR)
-![Downloads](https://cranlogs.r-pkg.org/badges/silvaR)
 
 **Tools for processing and analyzing forest data from Polish forests**
 
@@ -41,7 +37,7 @@ Estimate tree height and stem volume using empirical Polish forestry models:
 > *Wzory empiryczne do określania wysokości i pierśnicowej liczby kształtu grubizny drzewa.*  
 > **Sylwan**, 144, 5–12.
 
-### **📐 Plot and stand evel metrics**
+### **📐 Plot and stand level metrics**
 Calculate stand top height (TH) based on:
 
 > Socha, J., Hawryło, P., Stereńczak, K., Miścicki, S.,  
@@ -160,6 +156,12 @@ plot_sample_plot(data = singlePP, plot_radius = 11.28)
 <img align="center" src="man/figures/plot_sample_plot_example2.png" width = 300>
 <img align="right" src="man/figures/plot_sample_plot_example3.png" width = 300>
 
+<p align="center">
+  <img src="man/figures/plot_sample_plot_example.png" width="250">
+  <img src="man/figures/plot_sample_plot_example2.png" width="250">
+  <img src="man/figures/plot_sample_plot_example3.png" width="250">
+</p>
+
 ---
 
 ## 📂 Package structure
@@ -168,7 +170,7 @@ silvaR/
 ├── R/                     # Package functions
 ├── man/                   # Documentation
 │   └── figures/           # Logo, images for README/pkgdown
-├── raw_data/              # Dictionares
+├── raw-data/              # Dictionares
 ├── data/                  # Example datasets
 ├── inst/                  # Additional resources
 └── tests/                 # Unit tests (testthat)
@@ -187,7 +189,7 @@ This package is licensed under the GPL-3 license.
 ---
 
 ## 🏫 About
-The **silvaR** package is developed at the [Faculty of Forestry](https://wl.urk.edu.pl/), University of Agriculture in Kraków, 
+The package is developed at the [Faculty of Forestry](https://wl.urk.edu.pl/), University of Agriculture in Kraków, 
 in collaboration with the [Bureau for Forest Management and Geodesy (BULiGL)](https://www.buligl.pl/), Kraków Regional Office.
 
 ---

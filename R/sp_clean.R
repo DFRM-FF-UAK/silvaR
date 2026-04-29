@@ -17,7 +17,14 @@
 
 sp_clean = function(species) {
 
-  sp_dict = utils::read.csv2(system.file('sp_dict/dict.csv', package = 'silvaR'), encoding = "UTF-8") %>%
+  # sp_dict = utils::read.csv2(system.file('sp_dict/dict.csv', package = 'silvaR'), encoding = "UTF-8") %>%
+  #   tidyr::separate_rows(typos, sep = ',') %>%
+  #   tidyr::pivot_longer(cols = c(species_name, latin_name, english_name, typos)) %>%
+  #   dplyr::select(SPECIES_CD, value) %>%
+  #   dplyr::distinct(value, .keep_all = T)
+
+  data("sp_dict")
+  sp_dict = sp_dict %>%
     tidyr::separate_rows(typos, sep = ',') %>%
     tidyr::pivot_longer(cols = c(species_name, latin_name, english_name, typos)) %>%
     dplyr::select(SPECIES_CD, value) %>%
