@@ -152,9 +152,6 @@ singlePP <- PPdemo[PPdemo$SAMPLE_NR == 72,]
 plot_sample_plot(data = singlePP, plot_radius = 11.28)
 
 ```
-<img align="left" src="man/figures/plot_sample_plot_example.png" width = 300>
-<img align="center" src="man/figures/plot_sample_plot_example2.png" width = 300>
-<img align="right" src="man/figures/plot_sample_plot_example3.png" width = 300>
 
 <p align="center">
   <img src="man/figures/plot_sample_plot_example.png" width="250">
