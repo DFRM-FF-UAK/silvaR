@@ -139,7 +139,7 @@ v_tree_bruchwald = function(plot_id, tree_id, species, age, layer, dbh, height, 
 
 
     df = data.frame(plot_id, tree_id, species, age, layer, dbh, height, origin) %>%
-      dplyr::mutate(av_DBH = rms_dbh(plot_id, tree_id, species, age, layer, dbh, height, only_measured_h = T),
+      dplyr::mutate(av_DBH = quad_dbh(plot_id, tree_id, species, age, layer, dbh, height, only_measured_h = T),
                     av_H = lorey_height(plot_id, species, age, layer, height, dbh)) %>%
       dplyr::rowwise() %>%
       dplyr::mutate(V = ifelse(species %in% c('ŚW', 'SO', 'JD', 'DB', 'BK', 'BRZ', 'OL', 'DG'),

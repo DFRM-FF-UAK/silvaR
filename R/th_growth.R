@@ -19,7 +19,7 @@
 #' H1 = 32
 #' species = 'SO'
 #'
-#' h_growth(T1, T2, H1, species)
+#' th_growth(T1, T2, H1, species)
 #'
 #' # Calculation of Site Index (SI)
 #' T1 = c(85, 110)
@@ -27,11 +27,11 @@
 #' H1 = c(27, 36)
 #' species = c('DB', 'ŚW')
 #'
-#' si <- h_growth(T1, T2, H1, species)
+#' si <- th_growth(T1, T2, H1, species)
 #' print(si)
 
 
-h_growth = function(T1, T2, H1, species){
+th_growth = function(T1, T2, H1, species){
 
   params = readRDS(system.file("params/params_site_index.rds", package = 'silvaR'))
   #params = read.csv2("inst/params/params_site_index.csv") %>%

@@ -21,7 +21,7 @@ Numeric vector of tabular volumes (m3/ha)
 Predict stand volume based on height,
 age and species using tabular reference data from
 Szymkiewicz B. "Tablice zasobnosci i przyrostu drzewostanow".
-Internally calculates Site Index (height at age 100) via h_growth() and
+Internally calculates Site Index (height at age 100) via th_growth() and
 applies species-specific yield table parameters.
 }
 \examples{

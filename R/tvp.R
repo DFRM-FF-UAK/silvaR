@@ -17,10 +17,10 @@
 #' age = c(100, 101, 102)
 #' height = c(32, 33, 34)
 #' species = c('SO', 'DB', 'BK')
-#' spg(age, height, species)
+#' tvp(age, height, species)
 
 
-spg = function(age, height, species, region = 'GLOB') {
+tvp = function(age, height, species, region = 'GLOB') {
 
 
   params_spg = readRDS(system.file("params/params_spg.rds",
@@ -31,7 +31,7 @@ spg = function(age, height, species, region = 'GLOB') {
     dplyr::left_join(params_spg)
 
   df = df %>%
-    dplyr::mutate(si = h_growth(T1 = age, T2 = rep(100, nrow(.)), H1 = height, species = species),
+    dplyr::mutate(si = th_growth(T1 = age, T2 = rep(100, nrow(.)), H1 = height, species = species),
                   spg = (psi4*si -psi5)*((1-exp(psi1*age))/(1-exp(psi1*100)))^(psi2*(psi4*si -psi5)^psi3)+psi6*height^4)
 
   return(df$spg)

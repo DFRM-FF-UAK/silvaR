@@ -2,8 +2,8 @@
 #'
 #' @description Predict stand volume increment over a specified number of years
 #' using iterative year-by-year simulation. Each annual step calculates
-#' height growth (h_growth()), site index, stocking index (zd_share()),
-#' total production (spg()) and species share to derive the volume increment.
+#' height growth (th_growth()), site index, stocking index (stock_indx()),
+#' total production (tvp()) and species share to derive the volume increment.
 #' Growth is modified by region-specific parameters (ni1-ni4).
 #'
 #' @param stand_id stand id
@@ -18,7 +18,7 @@
 #' @param output_type by default results will be returned as a vector, you can type 'df' to return data frame
 #' @return Numeric vector of cumulative volume growth over the prediction period (m3/ha),
 #' or a data frame if output_type = 'df'
-#' @seealso [v_growth_climate()], [h_growth()], [spg()], [zd_share()]
+#' @seealso [th_growth()], [tvp()], [stock_indx()]
 #' @export
 #'
 #' @examples
@@ -99,17 +99,17 @@ v_growth = function (stand_id,
                     T0 = 100,
                     #z0 = (H1 - b3),
                     #r = z0 + (z0^2 + (2 * b2 * H1)/(T1^b1))^0.5,
-                    si = h_growth(T1, T0, H1, species_cd)#,
+                    si = th_growth(T1, T0, H1, species_cd)#,
                     #vt = v_tab(T1, H1, species),
                     #vt_sh = vt * share
       ) %>%
       # dplyr::group_by(stand_id) %>%
       #dplyr::mutate(vt_stand = sum(vt_sh, na.rm = T)) %>%
       #dplyr::ungroup() %>%
-      dplyr::mutate(zd = zd_share(stand_id, volume, T1, H1, species_cd)) %>%
-      dplyr::mutate(H2 = h_growth(T1, T2, H1, species_cd),
-                    `:=` (!!spg_start, spg(T1, H1, species_cd, region)),
-                    `:=` (!!spg_end, spg(T2, H2, species_cd, region)),
+      dplyr::mutate(zd = stock_indx(stand_id, volume, T1, H1, species_cd)) %>%
+      dplyr::mutate(H2 = th_growth(T1, T2, H1, species_cd),
+                    `:=` (!!spg_start, tvp(T1, H1, species_cd, region)),
+                    `:=` (!!spg_end, tvp(T2, H2, species_cd, region)),
                     `:=`(!!growth, (((!!rlang::sym(spg_end)) - (!!rlang::sym(spg_start)))/(T2 - T1)) * ni1 * zd^ni2 * si^ni3 * T1^ni4),
                     `:=`(!!growth, !!rlang::sym(growth) * share),
                     `:=` (!!v, volume + !!rlang::sym(growth))

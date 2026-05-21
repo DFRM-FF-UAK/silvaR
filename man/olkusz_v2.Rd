@@ -20,6 +20,6 @@ data(olkusz_v2)
 }
 \description{
 Stand-level forest data from the Olkusz area used to demonstrate
-height growth prediction and Site Index calculation with h_growth().
+height growth prediction and Site Index calculation with th_growth().
 }
 \keyword{datasets}

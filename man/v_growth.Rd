@@ -41,8 +41,8 @@ or a data frame if output_type = 'df'
 \description{
 Predict stand volume increment over a specified number of years
 using iterative year-by-year simulation. Each annual step calculates
-height growth (h_growth()), site index, stocking index (zd_share()),
-total production (spg()) and species share to derive the volume increment.
+height growth (th_growth()), site index, stocking index (stock_indx()),
+total production (tvp()) and species share to derive the volume increment.
 Growth is modified by region-specific parameters (ni1-ni4).
 }
 \examples{
@@ -56,5 +56,5 @@ region = c('I', 'II', 'GLOB')
 v_growth(stand_id, years, age, height, volume, species, region, output_type = 'df')
 }
 \seealso{
-\code{\link[=v_growth_climate]{v_growth_climate()}}, \code{\link[=h_growth]{h_growth()}}, \code{\link[=spg]{spg()}}, \code{\link[=zd_share]{zd_share()}}
+\code{\link[=th_growth]{th_growth()}}, \code{\link[=tvp]{tvp()}}, \code{\link[=stock_indx]{stock_indx()}}
 }

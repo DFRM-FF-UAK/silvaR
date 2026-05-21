@@ -52,7 +52,7 @@ h_tree = function(plot_id, tree_id, species, age, layer, dbh, height,
 
   df = data.frame(plot_id, tree_id, species, age, layer, dbh, height) %>%
     dplyr::mutate(
-      av_dbh = rms_dbh(plot_id, tree_id, species, age, layer,
+      av_dbh = quad_dbh(plot_id, tree_id, species, age, layer,
                        dbh, height, only_measured_h = TRUE),
       av_h   = lorey_height(plot_id, species, age, layer,
                             height, dbh)

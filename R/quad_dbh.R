@@ -28,9 +28,9 @@
 #' height = c(21, 13, 24, NA, 12, NA, 18, NA, NA, 31, 32, 24, 25, NA)
 #' dbh = c(33, 32, 31, NA, 28, 47, 12, 22, 41, 48, 27, 42, 25, 33)
 #'
-#' rms_dbh(plot_id, tree_id, species, age, layer, dbh, height)
+#' quad_dbh(plot_id, tree_id, species, age, layer, dbh, height)
 
-rms_dbh = function(plot_id,
+quad_dbh = function(plot_id,
                    tree_id,
                    species,
                    age,

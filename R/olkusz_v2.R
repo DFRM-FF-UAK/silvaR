@@ -1,7 +1,7 @@
 #' Example dataset: Stand-level data for height growth modelling
 #'
 #' Stand-level forest data from the Olkusz area used to demonstrate
-#' height growth prediction and Site Index calculation with h_growth().
+#' height growth prediction and Site Index calculation with th_growth().
 #'
 #' @format A data frame with 100 rows and 6 variables:
 #' \describe{
