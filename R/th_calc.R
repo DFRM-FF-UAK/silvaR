@@ -1,30 +1,25 @@
 #' Top Height (TH) calculation
 #'
-#' @description Calculate top height (TH) of the tree stand from a
-#' raster canopy height model (CHM) by aggregating pixel values into coarser grid cells
-#' (default 10x10 m). Supports two aggregation methods for selecting dominant canopy
-#' heights within each cell.
+#' @description Estimates the top height (TH) of a forest stand from a canopy height
+#' model (CHM) raster. The function aggregates CHM pixels to a 10x10 m grid by
+#' selecting the mean of the tallest cells within each grid cell, which approximates
+#' the height of dominant trees. The aggregation factor is computed automatically
+#' based on the resolution of the input raster, so any CHM with a resolution of
+#' 2 meters or finer is accepted.
 #'
 #' @param chm canopy height model (resolution equal or higher than 1 meter).
 #' SpatRaster or RasterLayer
-#' @param f function used to calculate top height. Build-in functions: "h_23","h_sd"
-#' @param fact positive integer. Aggregation factor expressed as number of cells
-#' in each direction (horizontally and vertically). Or two integers (horizontal and vertical aggregation factor).
 #'
-#' @details
-#' - "h_23" - (default) mean of 1/3 highest cells to aggregate
-#' - "h_sd" - mean of cells higher than threshold: (percentile of 97 - 6.42)
-#'
-#' @return SpatRaster of top height values (m) at the aggregated resolution (default 10x10 m)
+#' @return SpatRaster of top height values (m) at 10x10 m resolution
 #' @export
 #'
 #' @examples
 #' chm = terra::rast(system.file('raster/chm.tif', package = 'silvaR'))
 #' terra::plot(chm)
-#' th = th_calc(chm, f = "h_sd")
+#' th = th_calc(chm)
 #' terra::plot(th)
 
-th_calc = function(chm, f="h_23", fact=10) {
+th_calc = function(chm, f="h_23") {
 
   # input check
   if (!inherits(chm, c("SpatRaster","RasterLayer"))) stop("Parameter chm is not a valid datatype")
@@ -38,16 +33,16 @@ th_calc = function(chm, f="h_23", fact=10) {
   )
   if (all(is.character(f) & !f%in%names(f_list))) stop("Name of the function parameter is not valid")
 
-  # resolution check
+  # resolution check and resampling to 1 m if needed
   if (terra::xres(chm) < 1) {
-    # resample raster if resolution is higher than 1 m
-    # chm = terra::aggregate(chm, fact=1, fun=mean, na.rm = T)
     r_ref <- terra::rast(xmin=terra::xmin(chm), ymin=terra::ymin(chm), resolution = 1)
     chm <- terra::resample(chm, r_ref)
+  } else if (terra::xres(chm) > 2) {
+    stop("Input raster resolution must be 10 meters or finer")
   }
-  else if (terra::xres(chm) > 1) {
-    stop("Require raster resolution is [1] meter or higher")
-  }
+
+  # derive aggregation factor to reach 10 m output
+  fact <- round(10 / terra::xres(chm))
 
   th <- terra::aggregate(chm,
                          fact=fact,
