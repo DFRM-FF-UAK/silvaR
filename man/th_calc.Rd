@@ -4,35 +4,26 @@
 \alias{th_calc}
 \title{Top Height (TH) calculation}
 \usage{
-th_calc(chm, f = "h_23", fact = 10)
+th_calc(chm, f = "h_23")
 }
 \arguments{
 \item{chm}{canopy height model (resolution equal or higher than 1 meter).
 SpatRaster or RasterLayer}
-
-\item{f}{function used to calculate top height. Build-in functions: "h_23","h_sd"}
-
-\item{fact}{positive integer. Aggregation factor expressed as number of cells
-in each direction (horizontally and vertically). Or two integers (horizontal and vertical aggregation factor).}
 }
 \value{
-SpatRaster of top height values (m) at the aggregated resolution (default 10x10 m)
+SpatRaster of top height values (m) at 10x10 m resolution
 }
 \description{
-Calculate top height (TH) of the tree stand from a
-raster canopy height model (CHM) by aggregating pixel values into coarser grid cells
-(default 10x10 m). Supports two aggregation methods for selecting dominant canopy
-heights within each cell.
-}
-\details{
-\itemize{
-\item "h_23" - (default) mean of 1/3 highest cells to aggregate
-\item "h_sd" - mean of cells higher than threshold: (percentile of 97 - 6.42)
-}
+Estimates the top height (TH) of a forest stand from a canopy height
+model (CHM) raster. The function aggregates CHM pixels to a 10x10 m grid by
+selecting the mean of the tallest cells within each grid cell, which approximates
+the height of dominant trees. The aggregation factor is computed automatically
+based on the resolution of the input raster, so any CHM with a resolution of
+2 meters or finer is accepted.
 }
 \examples{
 chm = terra::rast(system.file('raster/chm.tif', package = 'silvaR'))
 terra::plot(chm)
-th = th_calc(chm, f = "h_sd")
+th = th_calc(chm)
 terra::plot(th)
 }
