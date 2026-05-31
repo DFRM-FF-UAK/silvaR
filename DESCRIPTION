@@ -34,6 +34,8 @@ Imports:
     stringdist,
     rlang,
     ggplot2,
-    ggforce
+    ggforce,
+    exactextractr,
+    sf
 Depends: 
     R (>= 3.5)

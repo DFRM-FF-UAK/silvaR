@@ -4,26 +4,32 @@
 \alias{th_calc}
 \title{Top Height (TH) calculation}
 \usage{
-th_calc(chm, f = "h_23")
+th_calc(chm, polygon, f = "h_23")
 }
 \arguments{
 \item{chm}{canopy height model (resolution equal or higher than 1 meter).
-SpatRaster or RasterLayer}
+\code{SpatRaster} or \code{RasterLayer}.}
+
+\item{polygon}{polygon vector delineating forest stand boundaries.
+\code{sf} object with polygon or multipolygon geometry.}
 }
 \value{
-SpatRaster of top height values (m) at 10x10 m resolution
+An \code{sf} object equivalent to \code{polygon} with an additional
+column \code{top_height} containing the estimated top height (m) for each polygon.
 }
 \description{
 Estimates the top height (TH) of a forest stand from a canopy height
-model (CHM) raster. The function aggregates CHM pixels to a 10x10 m grid by
-selecting the mean of the tallest cells within each grid cell, which approximates
-the height of dominant trees. The aggregation factor is computed automatically
-based on the resolution of the input raster, so any CHM with a resolution of
-2 meters or finer is accepted.
+model (CHM) raster for a given polygon vector file based on the approach proposed
+in Hawryło et al. (2024). The function first aggregates CHM pixels to a 10x10 m
+grid; the aggregation factor is computed automatically from the resolution of the
+input raster. The mean value of the 10 m cells is then calculated, and cells with
+a height below 2/3 of that mean are removed and treated as empty cells. The top
+height for each polygon is finally calculated as the mean value of the remaining
+non-empty 10x10 m cells.
 }
 \examples{
 chm = terra::rast(system.file('raster/chm.tif', package = 'silvaR'))
-terra::plot(chm)
-th = th_calc(chm)
-terra::plot(th)
+stands = sf::st_read(system.file('vector/stands.gpkg', package = 'silvaR'))
+th = th_calc(chm, stands)
+
 }
