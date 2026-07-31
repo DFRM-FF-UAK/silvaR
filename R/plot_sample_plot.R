@@ -100,28 +100,28 @@ plot_sample_plot <- function(data,
     )
   }
 
-  # 2. Kopia danych i czyszczenie (konwersja na character!)
+  # 2. Copy the data and clean it (convert to character!)
   df_plot <- data
   df_plot[[species]] <- as.character(sp_clean(df_plot[[species]]))
 
-  # 3. Pobranie słownika z sysdata
+  # 3. Get the colour dictionary from sysdata
   if (is.null(species_colors)) {
     species_colors <- get0("species_colors", envir = asNamespace("silvaR"), ifnotfound = NULL)
   }
 
-  # 4. Budowa mapy kolorów tylko dla gatunków obecnych w tej próbie
+  # 4. Build the colour map only for species present in this sample
   present_species <- unique(df_plot[[species]])
 
-  # Tworzymy wektor kolorów: jeśli jest w słowniku - weź go, jeśli nie - daj szary (lub losowy)
+  # Build the colour vector: use the dictionary entry when present, grey otherwise
   my_palette <- sapply(present_species, function(s) {
     if (!is.null(species_colors) && s %in% names(species_colors)) {
       return(unname(species_colors[s]))
     } else {
-      return("gray70") # Kolor dla gatunków spoza Twojej listy
+      return("gray70") # Colour for species outside the supplied list
     }
   })
 
-  # 5. Współrzędne
+  # 5. Coordinates
   coords <- calculate_rel_coordinates(df_plot[[azimuth]], df_plot[[distance]])
   df_plot$x <- coords$x
   df_plot$y <- coords$y
@@ -145,11 +145,11 @@ plot_sample_plot <- function(data,
     ggplot2::coord_fixed() +
     ggplot2::labs(
       x = "X [m]", y = "Y [m]",
-      color = "Gatunek", size = "DBH [cm]"
+      color = "Species", size = "DBH [cm]"
     ) +
     ggplot2::theme_minimal()
 
-  # 7. Ręczne przypisanie palety - tutaj naprawiamy błąd "No shared levels"
+  # 7. Assign the palette manually - this is what fixes the "No shared levels" error
   p <- p + ggplot2::scale_color_manual(values = my_palette)
 
   return(p)

@@ -49,7 +49,7 @@ sp_group = function(species, type = 'GRP_P', others = "BK"){
 
 
   species = species %>% dplyr::left_join(sp_g, by = c('species' = 'GAT')) %>%
-    dplyr::rename('species_group' = type)
+    dplyr::rename('species_group' = dplyr::all_of(type))
 
   # fill in species without a group
 
@@ -73,4 +73,3 @@ sp_group = function(species, type = 'GRP_P', others = "BK"){
 
   return(species$species_group)
 }
-

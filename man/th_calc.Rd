@@ -4,11 +4,14 @@
 \alias{th_calc}
 \title{Top Height (TH) calculation}
 \usage{
-th_calc(chm, polygon, f = "h_23")
+th_calc(chm, polygon)
 }
 \arguments{
-\item{chm}{canopy height model (resolution equal or higher than 1 meter).
-\code{SpatRaster} or \code{RasterLayer}.}
+\item{chm}{canopy height model (resolution of 10 meters or finer). Ideally the
+resolution divides 10 m evenly (e.g. 0.25, 0.5, 1, 2, 2.5, 5 m); other
+resolutions are aggregated to the closest achievable grid and raise a warning,
+as the resulting cell size then departs from the 10 m grid the method is
+defined on. \code{SpatRaster} or \code{RasterLayer}.}
 
 \item{polygon}{polygon vector delineating forest stand boundaries.
 \code{sf} object with polygon or multipolygon geometry.}

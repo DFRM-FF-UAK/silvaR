@@ -36,15 +36,16 @@ av_dbh = function(plot_id, tree_id, species, age, layer, dbh, height, only_measu
 
     df = data.frame(plot_id, tree_id, species, age, layer, dbh, height)
 
+    # summarise() leaves one row per group, so the join below is many-to-one.
+    # The earlier mutate() + distinct() version joined many-to-many and relied
+    # on distinct() to collapse the duplicates back, which also silently
+    # dropped genuinely repeated input rows.
     df_fil = df %>% dplyr::group_by(plot_id, species, age, layer) %>%
       tidyr::drop_na(height) %>%
-      dplyr::mutate(DBH = mean(dbh)) %>%
-      dplyr::ungroup() %>%
-      dplyr::select(-c("tree_id",  "dbh", "height"))
+      dplyr::summarise(DBH = mean(dbh), .groups = "drop")
 
     df = df %>%
-      dplyr::left_join(df_fil) %>%
-      dplyr::distinct()
+      dplyr::left_join(df_fil, by = c("plot_id", "species", "age", "layer"))
 
     empty_d = df_fil[is.na(df_fil$DBH), ]
     if(nrow(empty_d) > 0) {

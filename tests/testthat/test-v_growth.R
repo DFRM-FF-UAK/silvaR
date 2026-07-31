@@ -1,4 +1,4 @@
-# Przykładowe dane
+# Example data
 stand_id = c(1, 2, 3)
 years = 10
 age = c(100, 101, 102)
@@ -7,17 +7,17 @@ volume = c(150, 160, 170)
 species = c('SO', 'DB', 'BK')
 region = c('I', 'II', 'GLOB')
 
-test_that("v_growth oblicza poprawne wartości przyrostu", {
+test_that("v_growth returns correct growth values", {
   result <- v_growth(stand_id = stand_id, years = years, age = age, height = height, volume = volume, species = species, region = region, output_type = 'df')
   expect_true(all(c("stand_id", "species_cd", "species", "growth_sum") %in% colnames(result)))
 })
 
-test_that("v_growth zwraca wynik jako wektor", {
+test_that("v_growth returns the result as a vector", {
   result <- v_growth(stand_id, years, age, height, volume, species, region)
   expect_true(is.vector(result))
 })
 
-test_that("v_growth zwraca poprawny wynik", {
+test_that("v_growth returns the correct result", {
   result <- v_growth(stand_id = stand_id,
                      years = years,
                      age = age,
@@ -28,6 +28,6 @@ test_that("v_growth zwraca poprawny wynik", {
   expect_equal(result, c(41.13005,51.49960,67.21530), tolerance = 1e-5)
 })
 
-test_that("v_growth obsługuje brakujące parametry", {
+test_that("v_growth handles missing parameters", {
   expect_error(v_growth(stand_id, years, age = c(100, 101), height, volume, species, region, output_type = 'df'))
 })

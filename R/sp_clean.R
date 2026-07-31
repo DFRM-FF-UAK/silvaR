@@ -30,15 +30,29 @@ sp_clean = function(species) {
     dplyr::select(SPECIES_CD, value) %>%
     dplyr::distinct(value, .keep_all = T)
 
+  # Bare Polish common names of the main forest-forming species, added so that
+  # misspellings of the common name (e.g. 'Sesna' -> 'SO') are resolved instead
+  # of returning NA. Full multi-word names in the dictionary keep priority.
+  common_names <- data.frame(
+    SPECIES_CD = c('SO','\u015aW','JD','DB','BK','BRZ','OL','OL','MD','GB','LP','KL',
+                   'JS','JW','WZ','TP','OS','WB','DG','AK','AK','CZM'),
+    value      = c('sosna','\u015bwierk','jod\u0142a','d\u0105b','buk','brzoza','olsza','olcha',
+                   'modrzew','grab','lipa','klon','jesion','jawor','wi\u0105z','topola',
+                   'osika','wierzba','daglezja','robinia','akacja','czeremcha'),
+    stringsAsFactors = FALSE
+  )
+  sp_dict <- dplyr::bind_rows(sp_dict, common_names) %>%
+    dplyr::distinct(value, .keep_all = TRUE)
+
   compare_strings <- function(input_string, dictionary, method = "lv") {
-    # Konwersja wszystkich stringów do małych liter
+    # Convert all strings to lower case
     input_string <- tolower(input_string)
     dictionary <- tolower(dictionary)
 
-    # Obliczanie odległości na podstawie wybranej metody
+    # Compute distances with the selected method
     distances <- stringdist::stringdist(input_string, dictionary, method = method)
 
-    # Tworzenie data frame z wynikami
+    # Build a data frame with the results
     results <- data.frame(
       word = dictionary,
       distance = distances
@@ -47,10 +61,10 @@ sp_clean = function(species) {
     return(results)
   }
 
-  ## Wstępne czyszczenie nazw z WS
+  ## Pre-clean the names by stripping whitespace
   species <- gsub(" ", "", species)
 
-  # Dopasowanie do słownika dla listy wejściowej. Dopuszczalna różnica w znakach - 10%
+  # Match the input list against the dictionary; tolerated character difference - 10%
   SPECIES_CD <- sapply(species, function(i) {
     dd <- compare_strings(i, sp_dict$value)
     if (min(dd$distance, na.rm = T)<=(ceiling(nchar(i)*0.1))) {

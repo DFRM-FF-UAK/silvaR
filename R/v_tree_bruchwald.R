@@ -9,7 +9,7 @@
 #'
 #' @references Bruchwald et all. (2000).
 #' *Wzory empiryczne do okreslania wysokosci i piersnicowej liczby ksztaltu grubizny drzewa.*.
-#' Sylwan, 144, 5–12
+#' Sylwan, 144, 5-12
 #'
 #' @param plot_id Unique plot id
 #' @param tree_id Unique tree id at the plot
@@ -35,14 +35,14 @@
 
 v_tree_bruchwald = function(plot_id, tree_id, species, age, layer, dbh, height, origin = NA){
 
-    # funkcja do obliczania V (ŚW, SO, JD, BK, BRZ, OL, DG) -------------------------
+    # function calculating V for spruce, pine, fir, oak, beech, birch, alder, Douglas fir -------------------------
 
     V1 = function(species, dbh, height, av_H, av_DBH, origin){
 
       if (species == 'SO') {
         f1 = 1 / (1 + (dbh / (1.2895 + 0.90645 * dbh))^4)
         s = ((dbh - 6) / (0.2834 + 0.988 * (dbh - 6)))^4
-      } else if (species == 'ŚW') {
+      } else if (species == '\u015aW') {
         if (dbh != 0) {
           f1 = 0.34 + 0.684 / sqrt(dbh)
           s = 1 - 225.73 * ((dbh - 1)^-3.2542)
@@ -85,7 +85,7 @@ v_tree_bruchwald = function(plot_id, tree_id, species, age, layer, dbh, height, 
       return(Vq)
     }
 
-    # funkcja do obliczania V (MD, OS, GB, TP, LP, CZR) -------------------------
+    # function calculating V for MD, OS, GB, TP, LP, CZR -------------------------
 
     V2 = function(species, dbh, h){
 
@@ -142,7 +142,7 @@ v_tree_bruchwald = function(plot_id, tree_id, species, age, layer, dbh, height, 
       dplyr::mutate(av_DBH = quad_dbh(plot_id, tree_id, species, age, layer, dbh, height, only_measured_h = T),
                     av_H = lorey_height(plot_id, species, age, layer, height, dbh)) %>%
       dplyr::rowwise() %>%
-      dplyr::mutate(V = ifelse(species %in% c('ŚW', 'SO', 'JD', 'DB', 'BK', 'BRZ', 'OL', 'DG'),
+      dplyr::mutate(V = ifelse(species %in% c('\u015aW', 'SO', 'JD', 'DB', 'BK', 'BRZ', 'OL', 'DG'),
                         mapply(V1, species, dbh, height, av_H, av_DBH, origin),
                         mapply(V2, species, dbh, height)
       )) %>%

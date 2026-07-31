@@ -53,8 +53,9 @@ and
 > **Forest Ecology and Management**, 551, 121528.
 
 ### **✔ Top height (TH) estimation from raster CHM**
-**silvaR** includes algorithms for top height estimation at any spatial resolution,
-useful in calculating stand parameters, segmentation or ALS-based inventory workflows.
+**silvaR** estimates top height for stand polygons from a canopy height model of
+10 m resolution or finer, useful in calculating stand parameters, segmentation or
+ALS-based inventory workflows.
 
 
 **Example:**
@@ -62,14 +63,16 @@ useful in calculating stand parameters, segmentation or ALS-based inventory work
 ```r
 library(silvaR)
 
-chm <- terra::rast(system.file("inst/raster/chm.tif", 
-                               package = "silvaR"))
+chm    <- terra::rast(system.file("raster/chm.tif", package = "silvaR"))
+stands <- sf::st_read(system.file("vector/stands.gpkg", package = "silvaR"))
 
-th <- th_calc(chm, f = "h_sd")
+# Top height for each stand polygon, computed on a 10 m grid
+th <- th_calc(chm, stands)
+th
 
 par(mfrow = c(1, 2))
 terra::plot(chm, main = "Canopy Height Model")
-terra::plot(th, main = "Top Height 20x20m")
+plot(th["top_height"], main = "Top height (m)", reset = FALSE)
 
 ```
 <img align="center" src="man/figures/th_calc_example.png">
@@ -109,7 +112,7 @@ olkusz_v1$vol_growth <- v_growth(stand_id = olkusz_v1$stand_id,
 head(olkusz_v1)
 
 # Estimate tree height at age 100
-olkusz_v2$h_at_100 <- h_growth(T1 = olkusz_v2$age, 
+olkusz_v2$h_at_100 <- th_growth(T1 = olkusz_v2$age, 
                                T2 = 100, 
                                H1 = olkusz_v2$height, 
                                species = olkusz_v2$species)

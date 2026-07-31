@@ -1,20 +1,20 @@
-# Przykładowe dane
+# Example data
 T1 = c(100, 85, 110)
 T2 = c(102, 100, 100)
 H1 = c(32, 27, 36)
 species = c('SO', 'DB', 'ŚW')
 
-test_that("th_growth oblicza poprawne wartości wysokości", {
+test_that("th_growth returns correct height values", {
   result <- th_growth(T1, T2, H1, species)
   expected_result <- c(32.24168,28.84662,34.82564)
   expect_equal(result, expected_result, tolerance = 1e-5)
 }
 )
 
-test_that("th_growth zgłasza błąd dla niepoprawnych gatunków", {
+test_that("th_growth warns for invalid species", {
   expect_warning(th_growth(T1, T2, H1, c('XYZ', 'ABC', 'DEF')))
 })
 
-test_that("th_growth poprawnie obsługuje brakujące parametry", {
+test_that("th_growth handles missing parameters", {
   expect_error(th_growth(T1, T2=c(102, 100), H1, species))
 })

@@ -8,8 +8,11 @@
 #' a height below 2/3 of that mean are removed and treated as empty cells. The top
 #' height for each polygon is finally calculated as the mean value of the remaining
 #' non-empty 10x10 m cells.
-#' @param chm canopy height model (resolution equal or higher than 1 meter).
-#' \code{SpatRaster} or \code{RasterLayer}.
+#' @param chm canopy height model (resolution of 10 meters or finer). Ideally the
+#' resolution divides 10 m evenly (e.g. 0.25, 0.5, 1, 2, 2.5, 5 m); other
+#' resolutions are aggregated to the closest achievable grid and raise a warning,
+#' as the resulting cell size then departs from the 10 m grid the method is
+#' defined on. \code{SpatRaster} or \code{RasterLayer}.
 #' @param polygon polygon vector delineating forest stand boundaries.
 #' \code{sf} object with polygon or multipolygon geometry.
 #'
@@ -25,7 +28,7 @@
 #' @importFrom exactextractr exact_extract
 #' @importFrom sf st_transform
 
-th_calc = function(chm, polygon, f = "h_23") {
+th_calc = function(chm, polygon) {
 
   # input check
   if (!inherits(chm, c("SpatRaster", "RasterLayer"))) stop("Parameter chm is not a valid datatype")
@@ -33,16 +36,30 @@ th_calc = function(chm, polygon, f = "h_23") {
 
   if (inherits(chm, "RasterLayer")) chm <- terra::rast(chm)
 
-  # resolution check and resampling to 1 m if needed
-  if (terra::xres(chm) < 1) {
-    r_ref <- terra::rast(xmin = terra::xmin(chm), ymin = terra::ymin(chm), resolution = 1)
-    chm <- terra::resample(chm, r_ref)
-  } else if (terra::xres(chm) > 10) {
-    stop("Input raster resolution must be 10 meters or finer")
+  # resolution check
+  if (terra::xres(chm) > 10) stop("Input raster resolution must be 10 meters or finer")
+
+  # aggregate() applies a single factor to both axes, so non-square pixels would
+  # silently end up on cells that are not square either
+  if (abs(terra::xres(chm) - terra::yres(chm)) > 0.05) {
+    warning(sprintf(paste("CHM pixels are not square (%s x %s m);",
+                          "top height is computed on non-square cells."),
+                    signif(terra::xres(chm), 4), signif(terra::yres(chm), 4)))
   }
 
-  # derive aggregation factor to reach 10 m output
+  # derive aggregation factor to reach the 10 m grid; valid for any input
+  # resolution finer than 10 m, including sub-metre rasters
   fact <- round(10 / terra::xres(chm))
+
+  # resolutions that do not divide 10 m land on a different grid. Compare the
+  # resulting cell size instead of testing divisibility directly, which would
+  # misfire on the floating-point noise typical of raster headers
+  cell <- fact * terra::xres(chm)
+  if (abs(cell - 10) > 0.05) {
+    warning(sprintf(paste("CHM resolution (%s m) does not divide 10 m;",
+                          "top height computed on a %s m grid instead of 10 m."),
+                    signif(terra::xres(chm), 4), signif(cell, 4)))
+  }
 
   # aggregate CHM to 10 m using mean
   chm_10m <- terra::aggregate(chm, fact = fact, fun = mean, na.rm = TRUE)
