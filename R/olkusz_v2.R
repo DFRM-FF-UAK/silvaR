@@ -3,7 +3,7 @@
 #' Stand-level forest data from the Olkusz area used to demonstrate
 #' height growth prediction and Site Index calculation with th_growth().
 #'
-#' @format A data frame with 100 rows and 6 variables:
+#' @format A data frame with 1001 rows and 6 variables:
 #' \describe{
 #'   \item{stand_id}{Unique ID of the plot}
 #'   \item{species}{Tree species in Polish abbreviations}
